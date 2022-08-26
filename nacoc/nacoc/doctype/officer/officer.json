@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "autoname": "OFF-.#####",
+ "creation": "2022-08-26 06:07:35.035333",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "middle_name",
+  "last_name",
+  "officer_name",
+  "officer_photo",
+  "column_break_6",
+  "gender",
+  "officer_email",
+  "status",
+  "phone_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "officer_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Full Name",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "officer_photo",
+   "fieldtype": "Attach Image",
+   "label": "Picture"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Female\nMale"
+  },
+  {
+   "fieldname": "officer_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nReassigned"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone Number"
+  }
+ ],
+ "icon": "fa fa-user",
+ "image_field": "officer_photo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 06:07:35.035333",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Officer",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "officer_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "officer_name",
+ "track_changes": 1
+}

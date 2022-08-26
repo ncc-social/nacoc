@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "autoname": "field:name_of_region",
+ "creation": "2022-08-26 05:31:23.909762",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_region"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_region",
+   "fieldtype": "Data",
+   "label": "Name of Region",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 05:31:23.909762",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Region",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "name_of_region",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

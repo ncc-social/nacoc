@@ -1,0 +1,247 @@
+{
+ "actions": [],
+ "autoname": "EXAM-.######",
+ "creation": "2022-08-26 06:08:26.576205",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "cargo_import",
+  "awb",
+  "pieces",
+  "column_break_5",
+  "weight",
+  "description",
+  "flight_number",
+  "column_break_9",
+  "flight_date",
+  "arrival_date",
+  "section_break_12",
+  "importer",
+  "column_break_14",
+  "forwarder",
+  "forwarder_name",
+  "column_break_17",
+  "consignee",
+  "consignee_name",
+  "section_break_20",
+  "officer",
+  "officer_name",
+  "examination_date",
+  "column_break_24",
+  "location",
+  "examination_remarks",
+  "section_break_27",
+  "supervisor",
+  "supervisor_name",
+  "column_break_29",
+  "supervisor_remarks",
+  "section_break_33",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cargo_import",
+   "fieldtype": "Link",
+   "label": "Cargo Import",
+   "options": "Cargo Import"
+  },
+  {
+   "fieldname": "awb",
+   "fieldtype": "Data",
+   "label": "AWB Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pieces",
+   "fieldtype": "Data",
+   "label": "Pieces",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description/Nature of Goods",
+   "read_only": 1
+  },
+  {
+   "fieldname": "flight_number",
+   "fieldtype": "Data",
+   "label": "Flight Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight_date",
+   "fieldtype": "Date",
+   "label": "Flight Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "importer",
+   "fieldtype": "Data",
+   "label": "Importer"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "forwarder",
+   "fieldtype": "Link",
+   "label": "Forwarder",
+   "options": "Forwarder"
+  },
+  {
+   "fieldname": "forwarder_name",
+   "fieldtype": "Data",
+   "label": "Forwarder Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Consignee"
+  },
+  {
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "label": "Consignee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "officer",
+   "fieldtype": "Link",
+   "label": "Examination Officer",
+   "options": "Officer"
+  },
+  {
+   "fieldname": "officer_name",
+   "fieldtype": "Data",
+   "label": "Examination Officer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "examination_date",
+   "fieldtype": "Date",
+   "label": "Examination Date"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "examination_remarks",
+   "fieldtype": "Small Text",
+   "label": "Examination Remarks"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "Supervisor",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supervisor_name",
+   "fieldtype": "Data",
+   "label": "Supervisor Name",
+   "permlevel": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervisor_remarks",
+   "fieldtype": "Small Text",
+   "label": "Supervisor Remarks",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Attachments",
+   "options": "Examination Attachment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 06:08:26.576205",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Examination",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "awb",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "awb",
+ "track_changes": 1
+}

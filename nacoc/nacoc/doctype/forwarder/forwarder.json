@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "autoname": "FWD-.######",
+ "creation": "2022-08-26 06:04:37.997786",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bio_data_section",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "forwarder_name",
+  "forwarder_photo",
+  "exporter_record",
+  "column_break_5",
+  "date_of_birth",
+  "place_of_birth",
+  "region_place_of_birth",
+  "hometown",
+  "region_hometown",
+  "residential_address",
+  "column_break_7",
+  "popular_landmark",
+  "postal_address",
+  "phone_number",
+  "personal_email",
+  "id_type",
+  "id_number",
+  "attachments_section",
+  "photo_id",
+  "view_photo_id",
+  "column_break_30",
+  "fingerprint_impressions",
+  "view_fingerprint",
+  "section_break_25",
+  "business_authorisation"
+ ],
+ "fields": [
+  {
+   "fieldname": "bio_data_section",
+   "fieldtype": "Section Break",
+   "label": "Bio Data"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "forwarder_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "forwarder_photo",
+   "fieldtype": "Attach Image",
+   "label": "Picture"
+  },
+  {
+   "fieldname": "exporter_record",
+   "fieldtype": "Link",
+   "label": "Exporter Record",
+   "options": "Exporter",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "place_of_birth",
+   "fieldtype": "Data",
+   "label": "Place of Birth"
+  },
+  {
+   "fieldname": "region_place_of_birth",
+   "fieldtype": "Link",
+   "label": "Region (Place of Birth)",
+   "options": "Region"
+  },
+  {
+   "fieldname": "hometown",
+   "fieldtype": "Data",
+   "label": "Hometown"
+  },
+  {
+   "fieldname": "region_hometown",
+   "fieldtype": "Link",
+   "label": "Region (Hometown)",
+   "options": "Region"
+  },
+  {
+   "fieldname": "residential_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Residential Address"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "popular_landmark",
+   "fieldtype": "Data",
+   "label": "Popular Landmark"
+  },
+  {
+   "fieldname": "postal_address",
+   "fieldtype": "Data",
+   "label": "Postal Address"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "personal_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Personal Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "--Select ID Type--\nNational ID\nPassport\nVoter ID\nDriver's Licence"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "photo_id",
+   "fieldtype": "Attach Image",
+   "label": "Photo ID"
+  },
+  {
+   "fieldname": "view_photo_id",
+   "fieldtype": "HTML",
+   "label": "View Photo ID"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fingerprint_impressions",
+   "fieldtype": "Attach Image",
+   "label": "Fingerprint Impressions"
+  },
+  {
+   "fieldname": "view_fingerprint",
+   "fieldtype": "HTML",
+   "label": "View Fingerprint"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "Authorisations"
+  },
+  {
+   "fieldname": "business_authorisation",
+   "fieldtype": "Table",
+   "label": "Business Authorisation",
+   "options": "Business Authorisation"
+  }
+ ],
+ "image_field": "forwarder_photo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 06:04:37.997786",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Forwarder",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "forwarder_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "forwarder_name",
+ "track_changes": 1
+}

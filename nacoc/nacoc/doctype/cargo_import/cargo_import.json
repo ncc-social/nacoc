@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "autoname": "IMP-.######",
+ "creation": "2022-08-26 05:33:50.977763",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "flight_number",
+  "column_break_3",
+  "flight_date",
+  "column_break_5",
+  "point_of_loading",
+  "section_break_7",
+  "awb",
+  "pieces",
+  "weight",
+  "description",
+  "column_break_12",
+  "origin",
+  "destination",
+  "arrival_date",
+  "status",
+  "column_break_16",
+  "reason_for_tagging"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "flight_number",
+   "fieldtype": "Data",
+   "label": "Flight Number"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight_date",
+   "fieldtype": "Date",
+   "label": "Flight Date"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "point_of_loading",
+   "fieldtype": "Data",
+   "label": "Point of Loading"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "columns": 4,
+   "fieldname": "awb",
+   "fieldtype": "Data",
+   "label": "Airway Bill Number"
+  },
+  {
+   "fieldname": "pieces",
+   "fieldtype": "Data",
+   "label": "Pieces"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight",
+   "precision": "2"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description/Nature of Goods"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "origin",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Origin"
+  },
+  {
+   "columns": 2,
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Destination"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "columns": 2,
+   "default": "--Select--",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "--Select--\nUntagged\nTagged"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Tagged\"",
+   "fieldname": "reason_for_tagging",
+   "fieldtype": "Small Text",
+   "label": "Reason for Tagging"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 05:33:50.977763",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Cargo Import",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "awb,origin",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "awb",
+ "track_changes": 1
+}

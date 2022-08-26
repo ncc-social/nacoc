@@ -1,0 +1,253 @@
+{
+ "actions": [],
+ "autoname": "TRANS-.########",
+ "creation": "2022-08-26 06:05:45.281536",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "exporter",
+  "exporter_name",
+  "phone_number",
+  "column_break_4",
+  "forwarder",
+  "forwarder_name",
+  "business",
+  "business_name",
+  "column_break_9",
+  "consignee",
+  "consignee_name",
+  "consignee_country",
+  "section_break_13",
+  "transaction_type",
+  "quantity",
+  "weight",
+  "column_break_17",
+  "flight",
+  "courier_service",
+  "tracking_number",
+  "awb",
+  "house_airway_bill_number",
+  "column_break_19",
+  "cargo_description",
+  "date_of_transaction",
+  "section_break_20",
+  "edf",
+  "view_edf",
+  "column_break_22",
+  "idg",
+  "view_idg"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "exporter",
+   "fieldtype": "Link",
+   "label": "Exporter",
+   "options": "Exporter"
+  },
+  {
+   "fieldname": "exporter_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Exporter Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "forwarder",
+   "fieldtype": "Link",
+   "label": "Forwarder",
+   "options": "Forwarder"
+  },
+  {
+   "fieldname": "forwarder_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Forwarder Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.forwarder_name",
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "label": "Business",
+   "options": "Business Authorisation"
+  },
+  {
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "label": "Business Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Consignee"
+  },
+  {
+   "fieldname": "consignee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Consignee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consignee_country",
+   "fieldtype": "Data",
+   "label": "Consignee Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "--Select--",
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "--Select--\nAirline\nCourier"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type !== \"--Select--\"",
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type !== \"--Select--\"",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight (kg)",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type == \"Airline\"",
+   "fieldname": "flight",
+   "fieldtype": "Link",
+   "label": "Flight",
+   "options": "Flight"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type == \"Courier\"",
+   "fieldname": "courier_service",
+   "fieldtype": "Link",
+   "label": "Courier Service",
+   "options": "Courier"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type == \"Courier\"",
+   "fieldname": "tracking_number",
+   "fieldtype": "Data",
+   "label": "Tracking Number"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type == \"Airline\"",
+   "fieldname": "awb",
+   "fieldtype": "Data",
+   "label": "Airway Bill Number"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type == \"Airline\"",
+   "fieldname": "house_airway_bill_number",
+   "fieldtype": "Data",
+   "label": "House Airway Bill Number"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type !== \"--Select--\"",
+   "fieldname": "cargo_description",
+   "fieldtype": "Small Text",
+   "label": "Cargo Description"
+  },
+  {
+   "depends_on": "eval:doc.transaction_type !== \"--Select--\"",
+   "fieldname": "date_of_transaction",
+   "fieldtype": "Date",
+   "label": "Date of Transaction"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "edf",
+   "fieldtype": "Attach Image",
+   "label": "Export Declaration Form"
+  },
+  {
+   "fieldname": "view_edf",
+   "fieldtype": "HTML",
+   "label": "View EDF"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "idg",
+   "fieldtype": "Attach Image",
+   "label": "IDG"
+  },
+  {
+   "fieldname": "view_idg",
+   "fieldtype": "HTML",
+   "label": "View IDG"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 06:05:45.281536",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Transaction",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "exporter_name,forwarder_name,consignee_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

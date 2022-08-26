@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "autoname": "format:{business_name}-{YYYY}{##}",
+ "creation": "2022-08-26 06:04:14.952424",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "year",
+  "business",
+  "business_name",
+  "phone_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year",
+   "length": 4
+  },
+  {
+   "fieldname": "business",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Business",
+   "options": "Business"
+  },
+  {
+   "fieldname": "business_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Business Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone Number",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-26 06:04:14.952424",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Business Authorisation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

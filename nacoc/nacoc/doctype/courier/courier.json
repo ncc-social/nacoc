@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "autoname": "field:courier_service",
+ "creation": "2022-08-26 05:29:12.955488",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "courier_service"
+ ],
+ "fields": [
+  {
+   "fieldname": "courier_service",
+   "fieldtype": "Data",
+   "label": "Courier Service",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-26 05:29:12.955488",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Courier",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "courier_service",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "courier_service",
+ "track_changes": 1
+}
