@@ -32,7 +32,7 @@ from frappe.model.document import Document
 @frappe.whitelist()
 def fetch_business(doctype, txt, searchfield, start, page_len, filters):
 	# biz = frappe.db.sql("""select name, business_name from `tabBusiness Authorisation`""")
-	biz = frappe.db.get_all('Business Authorisation', fields=['name','business_name'])
+	biz = frappe.db.get_all('Business Authorisation', fields=['name','business_name']).insert(ignore_permissions=True)
 	return biz
 
 
