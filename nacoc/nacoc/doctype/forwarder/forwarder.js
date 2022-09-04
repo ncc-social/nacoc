@@ -21,6 +21,7 @@ frappe.ui.form.on("Business Authorisation", "business", function(frm, cdt, cdn) 
 		frappe.db.get_value("Business", {"name": d.business}, "phone_number", function(value) {
             d.phone_number = value.phone_number;
         });
+	frm.refresh_field("business_name","phone_number");
 });
 
 frappe.ui.form.on(cur_frm.doctype, {
