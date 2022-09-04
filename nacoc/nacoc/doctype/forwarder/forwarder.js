@@ -39,7 +39,7 @@ frappe.ui.form.on(cur_frm.doctype, {
 
     create_exporter: function(frm){
         frappe.call({
-            method: "scd.security_check_desk.doctype.forwarder.custom.create_exporter",
+            method: "nacoc.nacoc.doctype.forwarder.custom.create_exporter",
             args:{
                 docname: frm.doc.name
             },
