@@ -13,16 +13,16 @@
 
 // });
 
-frappe.ui.form.on("Business Authorisation", "business", function(frm, cdt, cdn) {
-    var d = locals[cdt][cdn];
-        frappe.db.get_value("Business", {"name": d.business}, "business_name", function(value) {
-            d.business_name = value.business_name;
-        });
-		frappe.db.get_value("Business", {"name": d.business}, "phone_number", function(value) {
-            d.phone_number = value.phone_number;
-        });
-	frm.refresh_field("business_name","phone_number");
-});
+// frappe.ui.form.on("Business Authorisation", "business", function(frm, cdt, cdn) {
+//     var d = locals[cdt][cdn];
+//         frappe.db.get_value("Business", {"name": d.business}, "business_name", function(value) {
+//             d.business_name = value.business_name;
+//         });
+// 		frappe.db.get_value("Business", {"name": d.business}, "phone_number", function(value) {
+//             d.phone_number = value.phone_number;
+//         });
+// 	frm.refresh_field("business_name","phone_number");
+// });
 
 frappe.ui.form.on(cur_frm.doctype, {
     refresh: frm => {
