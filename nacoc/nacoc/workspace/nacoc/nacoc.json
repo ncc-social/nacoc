@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Exporters List\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Forwarders List\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consignees List\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cargo Imports List\",\"col\":4}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Exporter\",\"col\":4}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Transaction\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}}]",
  "creation": "2022-08-25 21:47:40.616816",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,8 +13,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Exporter",
-   "link_count": 1,
+   "label": "Lists",
+   "link_count": 5,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -27,9 +27,49 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Forwarders",
+   "link_count": 0,
+   "link_to": "Forwarder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Consignees",
+   "link_count": 0,
+   "link_to": "Consignee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cargo Imports",
+   "link_count": 0,
+   "link_to": "Cargo Import",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_count": 0,
+   "link_to": "Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2022-08-26 07:00:25.481950",
+ "modified": "2022-09-11 00:09:20.910091",
  "modified_by": "kevingee@getnada.com",
  "module": "NACOC",
  "name": "NACOC",
@@ -41,33 +81,39 @@
  "sequence_id": 1.0,
  "shortcuts": [
   {
-   "color": "Red",
-   "doc_view": "List",
-   "format": "{} Tagged",
-   "label": "Cargo Imports List",
-   "link_to": "Cargo Import",
-   "stats_filter": "{\"status\":[\"=\",\"Tagged\"]}",
-   "type": "DocType"
-  },
-  {
    "color": "Grey",
-   "doc_view": "List",
-   "label": "Exporters List",
+   "doc_view": "New",
+   "label": "New Exporter",
    "link_to": "Exporter",
    "type": "DocType"
   },
   {
    "color": "Grey",
-   "doc_view": "List",
-   "label": "Consignees List",
+   "doc_view": "New",
+   "label": "New Forwarder",
+   "link_to": "Forwarder",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New Consignee",
    "link_to": "Consignee",
    "type": "DocType"
   },
   {
    "color": "Grey",
-   "doc_view": "List",
-   "label": "Forwarders List",
-   "link_to": "Forwarder",
+   "doc_view": "New",
+   "format": "{} Tagged",
+   "label": "New Cargo Import",
+   "link_to": "Cargo Import",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New Transaction",
+   "link_to": "Transaction",
    "type": "DocType"
   }
  ],
