@@ -1,0 +1,33 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Records Management System</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Person\",\"col\":3}}]",
+ "creation": "2022-09-20 00:30:17.795756",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality",
+ "idx": 0,
+ "label": "RMS",
+ "links": [],
+ "modified": "2022-09-20 00:51:14.652755",
+ "modified_by": "kevingee@getnada.com",
+ "module": "RMS",
+ "name": "RMS",
+ "owner": "kevingee@getnada.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 30.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New Person",
+   "link_to": "Person",
+   "type": "DocType"
+  }
+ ],
+ "title": "RMS"
+}
