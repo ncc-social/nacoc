@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-23 02:59:26.391592",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "incident",
+  "column_break_3",
+  "booking_number",
+  "section_break_5",
+  "arrest_time",
+  "column_break_7",
+  "place_of_arrest",
+  "column_break_9",
+  "entered_by",
+  "column_break_11",
+  "entered_time",
+  "section_break_13",
+  "arresting_officer",
+  "column_break_15",
+  "investigating_officer",
+  "section_break_16",
+  "apprehension_type",
+  "column_break_18",
+  "armed_with",
+  "section_break_20",
+  "warrant_number",
+  "column_break_22",
+  "issuing_agency",
+  "section_break_24",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident",
+   "fieldtype": "Link",
+   "label": "Incident",
+   "options": "Incident"
+  },
+  {
+   "fieldname": "booking_number",
+   "fieldtype": "Data",
+   "label": "Booking number"
+  },
+  {
+   "fieldname": "entered_by",
+   "fieldtype": "Link",
+   "label": "Entered by",
+   "options": "User"
+  },
+  {
+   "fieldname": "entered_time",
+   "fieldtype": "Datetime",
+   "label": "Entered time"
+  },
+  {
+   "fieldname": "arrest_time",
+   "fieldtype": "Datetime",
+   "label": "Arrest time"
+  },
+  {
+   "fieldname": "place_of_arrest",
+   "fieldtype": "Data",
+   "label": "Place of arrest"
+  },
+  {
+   "fieldname": "arresting_officer",
+   "fieldtype": "Link",
+   "label": "Arresting officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "investigating_officer",
+   "fieldtype": "Link",
+   "label": "Investigating officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "apprehension_type",
+   "fieldtype": "Select",
+   "label": "Apprehension type"
+  },
+  {
+   "fieldname": "warrant_number",
+   "fieldtype": "Link",
+   "label": "Warrant Number",
+   "options": "Warrant"
+  },
+  {
+   "fetch_from": "warrant_number.issuing_agency",
+   "fieldname": "issuing_agency",
+   "fieldtype": "Data",
+   "label": "Issuing Agency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "armed_with",
+   "fieldtype": "Select",
+   "label": "Armed with?"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-23 03:14:57.706358",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Arrest",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

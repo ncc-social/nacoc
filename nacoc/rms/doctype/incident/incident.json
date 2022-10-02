@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-22 06:56:48.395557",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_info_section",
+  "incident_number",
+  "column_break_3",
+  "incident_type",
+  "column_break_5",
+  "incident_time",
+  "section_break_7",
+  "notes",
+  "section_break_9",
+  "person_involved",
+  "person_info"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Data",
+   "label": "Incident Number"
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Data",
+   "label": "Incident Type"
+  },
+  {
+   "fieldname": "incident_time",
+   "fieldtype": "Datetime",
+   "label": "Incident Time"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "incident_info_section",
+   "fieldtype": "Section Break",
+   "label": "Incident Info"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "person_involved",
+   "fieldtype": "Check",
+   "label": "Person Involved?"
+  },
+  {
+   "depends_on": "eval:doc.person_involved;",
+   "fieldname": "person_info",
+   "fieldtype": "Table",
+   "label": "Person Info",
+   "options": "Incident Person"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-24 10:53:23.412280",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Incident",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

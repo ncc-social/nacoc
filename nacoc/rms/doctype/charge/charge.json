@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-23 02:42:38.725361",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "charge_section",
+  "charge_type",
+  "column_break_3",
+  "arrest",
+  "details_section",
+  "count",
+  "column_break_7",
+  "charge_date",
+  "column_break_9",
+  "offence_date",
+  "column_break_11",
+  "offence_address",
+  "section_break_13",
+  "officer",
+  "column_break_15",
+  "offence_victim",
+  "column_break_17",
+  "status",
+  "column_break_19",
+  "court_date",
+  "section_break_21",
+  "offender_type",
+  "non_disclosure",
+  "column_break_24",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "charge_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "charge_type",
+   "fieldtype": "Select",
+   "label": "Charge Type",
+   "options": "Charge Type"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrest",
+   "fieldtype": "Select",
+   "label": "Arrest",
+   "options": "Arrest"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "count",
+   "fieldtype": "Int",
+   "label": "Count"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "charge_date",
+   "fieldtype": "Date",
+   "label": "Charge date"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "offence_date",
+   "fieldtype": "Date",
+   "label": "Offence date"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "offence_address",
+   "fieldtype": "Data",
+   "label": "Offence address"
+  },
+  {
+   "fieldname": "officer",
+   "fieldtype": "Link",
+   "label": "Officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "offence_victim",
+   "fieldtype": "Data",
+   "label": "Offence victim"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
+  },
+  {
+   "fieldname": "court_date",
+   "fieldtype": "Date",
+   "label": "Court date"
+  },
+  {
+   "fieldname": "offender_type",
+   "fieldtype": "Select",
+   "label": "Offender type",
+   "options": "\nAdult\nJuvenile\nJuvenile charged as an adult"
+  },
+  {
+   "fieldname": "non_disclosure",
+   "fieldtype": "Select",
+   "label": "Non-disclosure"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-23 02:50:06.549379",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Charge",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

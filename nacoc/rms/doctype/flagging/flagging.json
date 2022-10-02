@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-20 03:33:41.294544",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "flag_type",
+  "effective_from",
+  "flag_expiry_date",
+  "remarks",
+  "reporting_member",
+  "notify_person"
+ ],
+ "fields": [
+  {
+   "fieldname": "flag_type",
+   "fieldtype": "Data",
+   "label": "Flag Type"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Datetime",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "flag_expiry_date",
+   "fieldtype": "Datetime",
+   "label": "Flag Expiry Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "reporting_member",
+   "fieldtype": "Link",
+   "label": "Reporting Member",
+   "options": "User"
+  },
+  {
+   "fieldname": "notify_person",
+   "fieldtype": "Data",
+   "label": "Notify Person"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-20 03:33:41.294544",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Flagging",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-22 09:12:10.753678",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warrant_tab",
+  "warrant_type",
+  "incident",
+  "column_break_4",
+  "warrant_author",
+  "warrant_number",
+  "section_break_7",
+  "warrant_details",
+  "issue_warrant_tab",
+  "issuing_agency",
+  "judge",
+  "court",
+  "column_break_10",
+  "issue_date",
+  "valid_till",
+  "extradition",
+  "bond_tab",
+  "bond_conditions",
+  "bond_amount",
+  "status_tab",
+  "column_break_19",
+  "warrant_status",
+  "serving_officer",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "warrant_type",
+   "fieldtype": "Select",
+   "label": "Warrant type",
+   "options": "\nArrest Warrant\nSearch Warrant\nWarrant of Execution"
+  },
+  {
+   "fieldname": "incident",
+   "fieldtype": "Link",
+   "label": "Incident",
+   "options": "Incident"
+  },
+  {
+   "fieldname": "warrant_author",
+   "fieldtype": "Link",
+   "label": "Warrant author",
+   "options": "User"
+  },
+  {
+   "fieldname": "warrant_number",
+   "fieldtype": "Data",
+   "label": "Warrant number"
+  },
+  {
+   "fieldname": "issuing_agency",
+   "fieldtype": "Select",
+   "label": "Issuing agency",
+   "options": "\nMagistrate Court\nHigh Court\nAppeal Court"
+  },
+  {
+   "fieldname": "judge",
+   "fieldtype": "Link",
+   "label": "Judge",
+   "options": "Judge"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid till"
+  },
+  {
+   "fieldname": "extradition",
+   "fieldtype": "Select",
+   "label": "Extradition"
+  },
+  {
+   "fieldname": "bond_conditions",
+   "fieldtype": "Select",
+   "label": "Bond conditions"
+  },
+  {
+   "fieldname": "bond_amount",
+   "fieldtype": "Currency",
+   "label": "Bond amount"
+  },
+  {
+   "fieldname": "warrant_details",
+   "fieldtype": "Text Editor",
+   "label": "Warrant details"
+  },
+  {
+   "fieldname": "warrant_status",
+   "fieldtype": "Select",
+   "label": "Warrant status"
+  },
+  {
+   "fieldname": "serving_officer",
+   "fieldtype": "Link",
+   "label": "Serving Officer",
+   "options": "User"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "warrant_tab",
+   "fieldtype": "Tab Break",
+   "label": "Warrant"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bond_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bond"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issue_warrant_tab",
+   "fieldtype": "Tab Break",
+   "label": "Issue Warrant"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "judge.court",
+   "fetch_if_empty": 1,
+   "fieldname": "court",
+   "fieldtype": "Read Only",
+   "label": "Court"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-22 12:15:57.984352",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Warrant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

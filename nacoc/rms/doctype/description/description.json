@@ -1,0 +1,219 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-21 09:54:31.020035",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "info_tab",
+  "height",
+  "weight",
+  "build",
+  "column_break_5",
+  "race",
+  "ethnicity",
+  "facial_skin",
+  "column_break_9",
+  "complexion",
+  "apparent_age",
+  "hair_tab",
+  "hair_colour",
+  "partly_gray",
+  "secondary_hair_colour",
+  "hair_style",
+  "column_break_17",
+  "hair_length",
+  "hair_loss",
+  "facial_hair",
+  "miscellaneous_hair_info",
+  "column_break_22",
+  "moustache",
+  "moustache_colour",
+  "sideburns",
+  "eye_tab",
+  "eye_colour",
+  "column_break_28",
+  "second_eye_colour",
+  "column_break_30",
+  "lenses"
+ ],
+ "fields": [
+  {
+   "fieldname": "height",
+   "fieldtype": "Data",
+   "label": "Height"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "build",
+   "fieldtype": "Select",
+   "label": "Build"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "race",
+   "fieldtype": "Select",
+   "label": "Race"
+  },
+  {
+   "fieldname": "ethnicity",
+   "fieldtype": "Select",
+   "label": "Ethnicity"
+  },
+  {
+   "fieldname": "facial_skin",
+   "fieldtype": "Select",
+   "label": "Facial Skin"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "complexion",
+   "fieldtype": "Select",
+   "label": "Complexion"
+  },
+  {
+   "fieldname": "apparent_age",
+   "fieldtype": "Data",
+   "label": "Apparent Age"
+  },
+  {
+   "fieldname": "hair_colour",
+   "fieldtype": "Select",
+   "label": "Hair Colour"
+  },
+  {
+   "default": "0",
+   "fieldname": "partly_gray",
+   "fieldtype": "Check",
+   "label": "Partly gray"
+  },
+  {
+   "fieldname": "secondary_hair_colour",
+   "fieldtype": "Select",
+   "label": "Secondary Hair Colour"
+  },
+  {
+   "fieldname": "hair_style",
+   "fieldtype": "Select",
+   "label": "Hair Style"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hair_length",
+   "fieldtype": "Data",
+   "label": "Hair Length"
+  },
+  {
+   "fieldname": "hair_loss",
+   "fieldtype": "Select",
+   "label": "Hair Loss"
+  },
+  {
+   "fieldname": "facial_hair",
+   "fieldtype": "Select",
+   "label": "Facial Hair"
+  },
+  {
+   "fieldname": "miscellaneous_hair_info",
+   "fieldtype": "Data",
+   "label": "Miscellaneous hair info"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "moustache",
+   "fieldtype": "Data",
+   "label": "Moustache"
+  },
+  {
+   "fieldname": "moustache_colour",
+   "fieldtype": "Select",
+   "label": "Moustache Colour"
+  },
+  {
+   "fieldname": "sideburns",
+   "fieldtype": "Data",
+   "label": "Sideburns"
+  },
+  {
+   "fieldname": "eye_colour",
+   "fieldtype": "Select",
+   "label": "Eye colour"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "second_eye_colour",
+   "fieldtype": "Data",
+   "label": "Second eye colour"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lenses",
+   "fieldtype": "Select",
+   "label": "Lenses"
+  },
+  {
+   "fieldname": "info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Info"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "hair_tab",
+   "fieldtype": "Tab Break",
+   "label": "Hair"
+  },
+  {
+   "fieldname": "eye_tab",
+   "fieldtype": "Tab Break",
+   "label": "Eye"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-21 10:01:27.061826",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Description",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

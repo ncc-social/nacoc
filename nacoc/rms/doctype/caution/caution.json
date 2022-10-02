@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-20 03:21:04.426058",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "caution_type",
+  "description",
+  "verified",
+  "from",
+  "to",
+  "review",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "caution_type",
+   "fieldtype": "Data",
+   "label": "Caution Type"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "verified",
+   "fieldtype": "Data",
+   "label": "Verified"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "review",
+   "fieldtype": "Date",
+   "label": "Review"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-20 03:21:04.426058",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Caution",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
