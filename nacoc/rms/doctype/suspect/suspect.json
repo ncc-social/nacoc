@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "SUSPECT-.######",
+ "creation": "2022-09-20 00:25:15.935813",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "surname",
+  "other_names",
+  "full_name",
+  "maiden_name",
+  "date_of_birth",
+  "age",
+  "misc_info",
+  "gender",
+  "nationality",
+  "identification",
+  "photo",
+  "alias"
+ ],
+ "fields": [
+  {
+   "fieldname": "surname",
+   "fieldtype": "Data",
+   "label": "Surname (Last Name)"
+  },
+  {
+   "fieldname": "other_names",
+   "fieldtype": "Data",
+   "label": "Other Names"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Read Only",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Read Only",
+   "label": "Age"
+  },
+  {
+   "fieldname": "misc_info",
+   "fieldtype": "Text Editor",
+   "label": "Misc Info"
+  },
+  {
+   "fieldname": "maiden_name",
+   "fieldtype": "Data",
+   "label": "Maiden Name"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Nationality"
+  },
+  {
+   "fieldname": "identification",
+   "fieldtype": "Table",
+   "label": "Identification",
+   "options": "Suspect Identification"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "alias",
+   "fieldtype": "Table",
+   "label": "Alias",
+   "options": "Suspect Alias"
+  }
+ ],
+ "image_field": "photo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-09 04:52:06.736340",
+ "modified_by": "Administrator",
+ "module": "RMS",
+ "name": "Suspect",
+ "name_case": "UPPER CASE",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "full_name,date_of_birth",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1
+}
