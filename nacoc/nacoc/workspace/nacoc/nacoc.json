@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Transaction\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}}]",
+ "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"oGvDMFceDF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"id\":\"enic86nbMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"id\":\"OM7CbkIvKw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"id\":\"tKw_Vj2ORq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"id\":\"8QNdukLgDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Transaction\",\"col\":4}},{\"id\":\"rqcKObi6Ii\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Assessment Report\",\"col\":4}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}}]",
  "creation": "2022-08-25 21:47:40.616816",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -8,6 +8,7 @@
  "hide_custom": 0,
  "icon": "stock",
  "idx": 0,
+ "is_hidden": 0,
  "label": "NACOC",
  "links": [
   {
@@ -69,7 +70,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-11 00:09:20.910091",
+ "modified": "2023-02-23 10:33:47.457202",
  "modified_by": "kevingee@getnada.com",
  "module": "NACOC",
  "name": "NACOC",
@@ -85,6 +86,13 @@
    "doc_view": "New",
    "label": "New Exporter",
    "link_to": "Exporter",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New Assessment Report",
+   "link_to": "PCU Assessment Report",
    "type": "DocType"
   },
   {

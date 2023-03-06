@@ -1,7 +1,7 @@
 // Copyright (c) 2022, NACOC and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Transaction", "onload", function(frm) {
+// frappe.ui.form.on("EDF Airport", "onload", function(frm) {
 //     cur_frm.set_query("business", function(doc) {
 //         return {
 //             "filters": [
@@ -13,7 +13,7 @@
 // });
 
 
-frappe.ui.form.on('Transaction', {
+frappe.ui.form.on('EDF Airport', {
 	refresh: function(frm) {
 		frm.set_query("business", function(frm, cdt, cdn) {
 			// var a = locals[cdt][cdn];
@@ -64,7 +64,7 @@ frappe.form.link_formatters['Business Authorisation'] = function(value, doc) {
     }
 }
 
-// frappe.ui.form.on("Transaction", "refresh", function(frm) {
+// frappe.ui.form.on("EDF Airport", "refresh", function(frm) {
 // 	cur_frm.fields_dict['Business'].grid.get_field('business_name').get_query = function(doc, cdt, cdn) {
 // 		return {
 // 			"filters": [
@@ -75,7 +75,7 @@ frappe.form.link_formatters['Business Authorisation'] = function(value, doc) {
 // 	}
 // });
 
-// frappe.ui.form.on('Transaction', {
+// frappe.ui.form.on('EDF Airport', {
 // 	refresh: function(frm) {
 // 		var df = frappe.meta.get_docfield("Business Authorisation", "business", frm.doc.name);
 // 		df.formatter = function(value, df, options, doc) {
@@ -86,7 +86,7 @@ frappe.form.link_formatters['Business Authorisation'] = function(value, doc) {
 
 
 
-frappe.ui.form.on("Transaction", "validate", function(frm) {
+frappe.ui.form.on("EDF Airport", "validate", function(frm) {
     var awbreg = /^[0-9]{3}[-][0-9]{8}$/;
     if (awbreg.test(frm.doc.awb) === true){
         frappe.msgprint(__("Airway Bill Number is invalid."));
@@ -103,7 +103,7 @@ frappe.ui.form.on("Transaction", "validate", function(frm) {
 // 	}
 // }
 
-frappe.ui.form.on('Transaction', {
+frappe.ui.form.on('EDF Airport', {
 	refresh: function(frm) {
 		//frm.add_fetch('exporter','exporter_name','exporter_name');
 		frm.add_fetch('exporter','phone_number','exporter_phone_number');
@@ -141,7 +141,7 @@ frappe.ui.form.on('Transaction', {
 // 	}
 // });
 
-// frappe.ui.form.on('Transaction', {
+// frappe.ui.form.on('EDF Airport', {
 // 	refresh: function(frm) {
 // 		frm.set_query("business", function(doc, cdt, cdn) {
 // 			var a = locals[cdt][cdn];
@@ -160,7 +160,7 @@ frappe.ui.form.on('Transaction', {
 // 	}
 // });
 
-// frappe.ui.form.on('Transaction', {
+// frappe.ui.form.on('EDF Airport', {
 // 	refresh: function(frm) {
 // 		if(frm.doc.exporter) {
 // 			var exp_photo = '<img src="' + frm.doc.exporter_photo + '">';
