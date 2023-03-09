@@ -1,0 +1,337 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-02-22 10:32:13.990582",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task",
+  "time_started",
+  "column_break_2",
+  "assessment_date",
+  "time_ended",
+  "section_break_4",
+  "officer",
+  "company_details_section",
+  "company_name",
+  "company_address",
+  "mandate_of_company",
+  "column_break_8",
+  "company_file_number",
+  "digital_address",
+  "column_break_10",
+  "chemical",
+  "gps_location",
+  "company_representative_section",
+  "rep_name",
+  "nationality",
+  "column_break_24",
+  "rep_role",
+  "phone_number",
+  "column_break_26",
+  "rep_occupation",
+  "email",
+  "section_break_33",
+  "assigned_date",
+  "column_break_41",
+  "assigned_resources",
+  "section_break_quheq",
+  "assigned_officers",
+  "section_break_40",
+  "chemicals_available",
+  "initial_information",
+  "section_break_35",
+  "observation",
+  "column_break_35",
+  "recommendation",
+  "section_break_39",
+  "reporting_officer",
+  "reporting_officer_signature",
+  "column_break_42",
+  "officer_1",
+  "officer_1_signature",
+  "column_break_45",
+  "officer_2",
+  "officer_2_signature",
+  "section_break_48",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "task",
+   "fieldtype": "Select",
+   "label": "Task",
+   "options": "\nPre-Registration\nFollow-Up\nRoutine Site Inspection"
+  },
+  {
+   "fieldname": "time_started",
+   "fieldtype": "Time",
+   "label": "Time Started"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date"
+  },
+  {
+   "fieldname": "time_ended",
+   "fieldtype": "Time",
+   "label": "Time Ended"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "officer",
+   "fieldtype": "Table",
+   "label": "Case Officer",
+   "options": "Assessment Officer"
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Link",
+   "label": "Company Name",
+   "options": "Company"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Data",
+   "label": "Company Address"
+  },
+  {
+   "fieldname": "mandate_of_company",
+   "fieldtype": "Data",
+   "label": "Mandate of Company"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_file_number",
+   "fieldtype": "Data",
+   "label": "Company File Number"
+  },
+  {
+   "fieldname": "digital_address",
+   "fieldtype": "Data",
+   "label": "Digital Address"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chemical",
+   "fieldtype": "Table MultiSelect",
+   "label": "Chemical",
+   "options": "Substances Available"
+  },
+  {
+   "fieldname": "gps_location",
+   "fieldtype": "Data",
+   "label": "GPS Location"
+  },
+  {
+   "fieldname": "company_representative_section",
+   "fieldtype": "Section Break",
+   "label": "Company Representative"
+  },
+  {
+   "fieldname": "rep_name",
+   "fieldtype": "Data",
+   "label": "Rep Name"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rep_role",
+   "fieldtype": "Data",
+   "label": "Rep Role"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rep_occupation",
+   "fieldtype": "Data",
+   "label": "Rep Occupation"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Assignment"
+  },
+  {
+   "fieldname": "assigned_date",
+   "fieldtype": "Date",
+   "label": "Assigned Date"
+  },
+  {
+   "fieldname": "column_break_41",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_resources",
+   "fieldtype": "Data",
+   "label": "Assigned Resources"
+  },
+  {
+   "fieldname": "section_break_quheq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assigned_officers",
+   "fieldtype": "Table",
+   "label": "Assigned Officers",
+   "options": "Assessment Officer"
+  },
+  {
+   "fieldname": "section_break_40",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Details"
+  },
+  {
+   "fieldname": "chemicals_available",
+   "fieldtype": "Table",
+   "label": "Chemicals Available",
+   "options": "Substances Available"
+  },
+  {
+   "fieldname": "initial_information",
+   "fieldtype": "Small Text",
+   "label": "Initial Information"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Small Text",
+   "label": "Observation"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "reporting_officer",
+   "fieldtype": "Data",
+   "label": "Reporting Officer"
+  },
+  {
+   "fieldname": "reporting_officer_signature",
+   "fieldtype": "Signature",
+   "label": "Reporting Officer Signature"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "officer_1",
+   "fieldtype": "Data",
+   "label": "Officer 1"
+  },
+  {
+   "fieldname": "officer_1_signature",
+   "fieldtype": "Signature",
+   "label": "Officer 1 Signature"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "officer_2",
+   "fieldtype": "Data",
+   "label": "Officer 2"
+  },
+  {
+   "fieldname": "officer_2_signature",
+   "fieldtype": "Signature",
+   "label": "Officer 2 Signature"
+  },
+  {
+   "fieldname": "section_break_48",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2023-03-09 21:50:13.709544",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "PCU Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
