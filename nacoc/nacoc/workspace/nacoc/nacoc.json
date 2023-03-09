@@ -64,14 +64,14 @@
    "is_query_report": 0,
    "label": "Transaction",
    "link_count": 0,
-   "link_to": "Transaction",
+   "link_to": "EDF Airport",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2023-02-23 10:33:47.457202",
- "modified_by": "kevingee@getnada.com",
+ "modified": "2023-03-06 23:22:58.462977",
+ "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
  "owner": "Administrator",
@@ -92,7 +92,7 @@
    "color": "Grey",
    "doc_view": "New",
    "label": "New Assessment Report",
-   "link_to": "PCU Assessment Report",
+   "link_to": "PCU Assessment",
    "type": "DocType"
   },
   {
@@ -121,7 +121,7 @@
    "color": "Grey",
    "doc_view": "New",
    "label": "New Transaction",
-   "link_to": "Transaction",
+   "link_to": "EDF Airport",
    "type": "DocType"
   }
  ],
