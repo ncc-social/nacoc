@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "FWD-.######",
  "creation": "2022-08-26 06:04:37.997786",
  "doctype": "DocType",
@@ -7,9 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "bio_data_section",
-  "first_name",
-  "middle_name",
-  "last_name",
   "forwarder_name",
   "forwarder_photo",
   "exporter_record",
@@ -43,23 +41,6 @@
    "label": "Bio Data"
   },
   {
-   "fieldname": "first_name",
-   "fieldtype": "Data",
-   "label": "First Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "middle_name",
-   "fieldtype": "Data",
-   "label": "Middle Name"
-  },
-  {
-   "fieldname": "last_name",
-   "fieldtype": "Data",
-   "label": "Last Name",
-   "reqd": 1
-  },
-  {
    "bold": 1,
    "fieldname": "forwarder_name",
    "fieldtype": "Data",
@@ -68,6 +49,7 @@
    "in_standard_filter": 1,
    "label": "Full Name",
    "read_only": 1,
+   "reqd": 1,
    "search_index": 1
   },
   {
@@ -202,7 +184,7 @@
  "image_field": "forwarder_photo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-26 06:04:37.997786",
+ "modified": "2023-03-14 16:10:29.316345",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Forwarder",
@@ -224,6 +206,7 @@
  ],
  "search_fields": "forwarder_name",
  "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

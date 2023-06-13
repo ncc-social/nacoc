@@ -9,18 +9,53 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company_name"
+  "company_name",
+  "company_address",
+  "description_of_location",
+  "column_break_to9yj",
+  "company_file_number",
+  "digital_address",
+  "mandate_of_company"
  ],
  "fields": [
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
    "label": "Company Name"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Data",
+   "label": "Company Address"
+  },
+  {
+   "fieldname": "company_file_number",
+   "fieldtype": "Data",
+   "label": "Company File Number"
+  },
+  {
+   "fieldname": "digital_address",
+   "fieldtype": "Data",
+   "label": "Digital Address"
+  },
+  {
+   "fieldname": "description_of_location",
+   "fieldtype": "Data",
+   "label": "Description of Location"
+  },
+  {
+   "fieldname": "mandate_of_company",
+   "fieldtype": "Data",
+   "label": "Mandate of Company"
+  },
+  {
+   "fieldname": "column_break_to9yj",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-07 00:28:44.870201",
+ "modified": "2023-03-30 16:44:17.667562",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Precursor Company",

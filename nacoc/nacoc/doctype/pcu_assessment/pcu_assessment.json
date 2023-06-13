@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "creation": "2023-02-22 10:32:13.990582",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,7 +9,7 @@
   "task",
   "time_started",
   "column_break_2",
-  "assessment_date",
+  "reporting_date",
   "time_ended",
   "section_break_4",
   "officer",
@@ -21,6 +20,7 @@
   "column_break_8",
   "company_file_number",
   "digital_address",
+  "description_of_location",
   "column_break_10",
   "chemical",
   "gps_location",
@@ -34,11 +34,9 @@
   "rep_occupation",
   "email",
   "section_break_33",
-  "assigned_date",
-  "column_break_41",
   "assigned_resources",
   "section_break_quheq",
-  "assigned_officers",
+  "assigned_officer",
   "section_break_40",
   "chemicals_available",
   "initial_information",
@@ -47,16 +45,16 @@
   "column_break_35",
   "recommendation",
   "section_break_39",
-  "reporting_officer",
-  "reporting_officer_signature",
+  "reporting_officer_1",
+  "reporting_officer_1_signature",
   "column_break_42",
-  "officer_1",
-  "officer_1_signature",
-  "column_break_45",
-  "officer_2",
-  "officer_2_signature",
+  "reporting_officer_2",
+  "reporting_officer_2_signature",
   "section_break_48",
-  "comments"
+  "supervisor_comments",
+  "column_break_45",
+  "supervisor",
+  "supervisor_signature"
  ],
  "fields": [
   {
@@ -73,11 +71,6 @@
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "assessment_date",
-   "fieldtype": "Date",
-   "label": "Assessment Date"
   },
   {
    "fieldname": "time_ended",
@@ -102,6 +95,8 @@
   {
    "fieldname": "company_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Company Name",
    "options": "Precursor Company"
   },
@@ -113,7 +108,8 @@
   {
    "fieldname": "mandate_of_company",
    "fieldtype": "Data",
-   "label": "Mandate of Company"
+   "label": "Mandate of Company",
+   "length": 256
   },
   {
    "fieldname": "column_break_8",
@@ -152,13 +148,15 @@
   {
    "fieldname": "rep_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Rep Name"
   },
   {
    "fieldname": "nationality",
    "fieldtype": "Link",
    "label": "Nationality",
-   "options": "Country"
+   "options": "Nationality"
   },
   {
    "fieldname": "column_break_24",
@@ -196,15 +194,6 @@
    "label": "Assignment"
   },
   {
-   "fieldname": "assigned_date",
-   "fieldtype": "Date",
-   "label": "Assigned Date"
-  },
-  {
-   "fieldname": "column_break_41",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "assigned_resources",
    "fieldtype": "Data",
    "label": "Assigned Resources"
@@ -212,12 +201,6 @@
   {
    "fieldname": "section_break_quheq",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "assigned_officers",
-   "fieldtype": "Table",
-   "label": "Assigned Officers",
-   "options": "Assessment Officer"
   },
   {
    "fieldname": "section_break_40",
@@ -261,75 +244,84 @@
    "label": "Declaration"
   },
   {
-   "fieldname": "reporting_officer",
-   "fieldtype": "Data",
-   "label": "Reporting Officer"
-  },
-  {
-   "fieldname": "reporting_officer_signature",
-   "fieldtype": "Signature",
-   "label": "Reporting Officer Signature"
-  },
-  {
    "fieldname": "column_break_42",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "officer_1",
-   "fieldtype": "Data",
-   "label": "Officer 1"
-  },
-  {
-   "fieldname": "officer_1_signature",
-   "fieldtype": "Signature",
-   "label": "Officer 1 Signature"
   },
   {
    "fieldname": "column_break_45",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "officer_2",
-   "fieldtype": "Data",
-   "label": "Officer 2"
-  },
-  {
-   "fieldname": "officer_2_signature",
-   "fieldtype": "Signature",
-   "label": "Officer 2 Signature"
-  },
-  {
    "fieldname": "section_break_48",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Supervisor Declaration"
   },
   {
-   "fieldname": "comments",
-   "fieldtype": "Small Text",
-   "label": "Comments"
+   "fieldname": "assigned_officer",
+   "fieldtype": "Table",
+   "label": "Assigned Officer",
+   "options": "Assigned Precursor Officer"
+  },
+  {
+   "fieldname": "reporting_officer_1",
+   "fieldtype": "Data",
+   "label": "Reporting Officer 1"
+  },
+  {
+   "fieldname": "reporting_officer_1_signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "reporting_officer_2",
+   "fieldtype": "Data",
+   "label": "Reporting Officer 2"
+  },
+  {
+   "fieldname": "reporting_officer_2_signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Data",
+   "label": "Supervisor",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supervisor_signature",
+   "fieldtype": "Signature",
+   "label": "Signature",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "reporting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Reporting Date"
+  },
+  {
+   "fieldname": "supervisor_comments",
+   "fieldtype": "Long Text",
+   "label": "Supervisor Comments",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "description_of_location",
+   "fieldtype": "Data",
+   "label": "Description of Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2023-03-10 21:48:29.030443",
+ "modified": "2023-04-06 10:09:37.675421",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "PCU Assessment",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
