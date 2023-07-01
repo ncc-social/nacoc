@@ -2,6 +2,7 @@
  "charts": [],
  "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"oGvDMFceDF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"id\":\"enic86nbMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"id\":\"OM7CbkIvKw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"id\":\"tKw_Vj2ORq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"id\":\"8QNdukLgDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Airport\",\"col\":4}},{\"id\":\"0nNBqyUDFY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Seaport\",\"col\":4}},{\"id\":\"OeGBXXYTbm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New PCU Assessment\",\"col\":4}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":4}}]",
  "creation": "2022-08-25 21:47:40.616816",
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -118,7 +119,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-04-06 10:28:37.012908",
+ "modified": "2023-07-01 16:21:03.047060",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
