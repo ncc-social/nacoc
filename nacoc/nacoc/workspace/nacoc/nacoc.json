@@ -98,6 +98,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "PCU Assessment",
+   "link_count": 0,
+   "link_to": "PCU Assessment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Precursor Company",
    "link_count": 0,
    "link_to": "Precursor Company",
@@ -116,20 +126,10 @@
    "onboard": 0,
    "only_for": "Ghana",
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "PCU Assessment",
-   "link_count": 0,
-   "link_to": "PCU Assessment",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2023-07-01 14:50:56.304555",
- "modified_by": "kevingee@getnada.com",
+ "modified": "2023-07-01 14:59:43.086214",
+ "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
  "owner": "kevingee@getnada.com",
