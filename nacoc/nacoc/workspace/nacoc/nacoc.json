@@ -128,7 +128,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-07-01 14:59:43.086214",
+ "modified": "2023-07-01 15:05:53.764663",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
@@ -180,6 +180,12 @@
    "format": "{} Tagged",
    "label": "New Cargo Import",
    "link_to": "Cargo Import",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "New",
+   "label": "New PCU Assessment",
+   "link_to": "PCU Assessment",
    "type": "DocType"
   }
  ],
