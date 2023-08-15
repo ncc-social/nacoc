@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2023-07-29 06:08:04.383482",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vessel_details_section",
+  "vessel_name",
+  "imo",
+  "column_break_hith3",
+  "mmsi",
+  "flag",
+  "vessel_movement_section",
+  "date_of_entry",
+  "port_of_origin",
+  "previous_ports",
+  "column_break_avpt9",
+  "time_of_entry",
+  "port_of_destination",
+  "crew_list",
+  "column_break_yhok1",
+  "status",
+  "name_of_captain"
+ ],
+ "fields": [
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Link",
+   "label": "Vessel Name",
+   "options": "MMU Vessel"
+  },
+  {
+   "fetch_from": "vessel_name.imo",
+   "fieldname": "imo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "IMO",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vessel_name.mmsi",
+   "fieldname": "mmsi",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "MMSI",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vessel_name.flag",
+   "fieldname": "flag",
+   "fieldtype": "Data",
+   "label": "Flag",
+   "read_only": 1
+  },
+  {
+   "fieldname": "port_of_origin",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Port of Origin"
+  },
+  {
+   "fieldname": "port_of_destination",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Port of Destination"
+  },
+  {
+   "fieldname": "previous_ports",
+   "fieldtype": "Small Text",
+   "label": "Previous Ports"
+  },
+  {
+   "fieldname": "column_break_hith3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel_movement_section",
+   "fieldtype": "Section Break",
+   "label": "Vessel Movement"
+  },
+  {
+   "fieldname": "column_break_yhok1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_of_captain",
+   "fieldtype": "Data",
+   "label": "Name of Captain"
+  },
+  {
+   "fieldname": "crew_list",
+   "fieldtype": "Small Text",
+   "label": "Crew List"
+  },
+  {
+   "fieldname": "vessel_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vessel Details"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nAnchor\nMoored\nUnderway\nStopped\nNot defined\nNot under command\nRestricted"
+  },
+  {
+   "fieldname": "date_of_entry",
+   "fieldtype": "Date",
+   "label": "Date of Entry"
+  },
+  {
+   "fieldname": "column_break_avpt9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_of_entry",
+   "fieldtype": "Time",
+   "label": "Time of Entry"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-15 10:26:04.340228",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "MMU Vessel History",
+ "owner": "Administrator",
+ "permissions": [],
+ "search_fields": "vessel_name,imo,mmsi",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

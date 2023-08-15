@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"oGvDMFceDF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"id\":\"enic86nbMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"id\":\"OM7CbkIvKw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"id\":\"tKw_Vj2ORq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"id\":\"8QNdukLgDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Airport\",\"col\":4}},{\"id\":\"0nNBqyUDFY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Seaport\",\"col\":4}},{\"id\":\"OeGBXXYTbm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New PCU Assessment\",\"col\":4}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":4}}]",
+ "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Workspace</b></span>\",\"col\":12}},{\"id\":\"wlUiosBoGM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Number of Vessels\",\"col\":3}},{\"id\":\"R9gE2TfSpa\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vessels at Anchorage\",\"col\":3}},{\"id\":\"qcy86nAK67\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Field Assessments\",\"col\":3}},{\"id\":\"SfRchF476V\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Routine Site Inspection\",\"col\":3}},{\"id\":\"JHMkutB0TB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pre-Registration\",\"col\":3}},{\"id\":\"5SsFYOKiGI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow-Up\",\"col\":3}},{\"id\":\"Xu9oqjMQo7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oGvDMFceDF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Exporter\",\"col\":4}},{\"id\":\"enic86nbMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Forwarder\",\"col\":4}},{\"id\":\"OM7CbkIvKw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Consignee\",\"col\":4}},{\"id\":\"tKw_Vj2ORq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Cargo Import\",\"col\":4}},{\"id\":\"8QNdukLgDL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Airport\",\"col\":4}},{\"id\":\"0nNBqyUDFY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New EDF Seaport\",\"col\":4}},{\"id\":\"OeGBXXYTbm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New PCU Assessment\",\"col\":4}},{\"id\":\"I_kFepRWfX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New MMU Vessel History\",\"col\":4}},{\"id\":\"Poqq_y6_Ko\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":4}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":4}}]",
  "creation": "2022-08-25 21:47:40.616816",
  "custom_blocks": [],
  "docstatus": 0,
@@ -117,13 +117,86 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maritime Monitoring",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel History",
+   "link_count": 0,
+   "link_to": "MMU Vessel History",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel",
+   "link_count": 0,
+   "link_to": "MMU Vessel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel Type",
+   "link_count": 0,
+   "link_to": "MMU Vessel Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel at Anchorage",
+   "link_count": 0,
+   "link_to": "MMU Vessels at Anchorage",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-07-01 16:21:03.047060",
+ "modified": "2023-08-15 14:04:55.197550",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Number of Vessels",
+   "number_card_name": "No of Vessels"
+  },
+  {
+   "label": "Vessels at Anchorage",
+   "number_card_name": "Vessels at Anchorage"
+  },
+  {
+   "label": "Routine Site Inspection",
+   "number_card_name": "Routine Site Inspection"
+  },
+  {
+   "label": "Pre-Registration",
+   "number_card_name": "Pre-Registration"
+  },
+  {
+   "label": "Field Assessments",
+   "number_card_name": "Field Assessments"
+  },
+  {
+   "label": "Follow-Up",
+   "number_card_name": "Follow-Up"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -136,6 +209,13 @@
    "doc_view": "New",
    "label": "New EDF Airport",
    "link_to": "EDF Airport",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "New MMU Vessel History",
+   "link_to": "MMU Vessel History",
    "type": "DocType"
   },
   {

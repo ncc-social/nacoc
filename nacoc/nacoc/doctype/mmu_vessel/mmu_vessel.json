@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:V-{######}",
+ "creation": "2023-07-28 12:57:38.849351",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "imo",
+  "mmsi",
+  "column_break_ekjh6",
+  "vessel_name",
+  "vessel_type",
+  "section_break_aoebc",
+  "flag",
+  "column_break_om4y7",
+  "vessel_image_1",
+  "column_break_54mza",
+  "vessel_image_2"
+ ],
+ "fields": [
+  {
+   "fieldname": "imo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "IMO"
+  },
+  {
+   "fieldname": "mmsi",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "MMSI"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vessel Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "flag",
+   "fieldtype": "Link",
+   "label": "Flag",
+   "options": "Country"
+  },
+  {
+   "fieldname": "vessel_type",
+   "fieldtype": "Link",
+   "label": "Vessel Type",
+   "options": "MMU Vessel Type"
+  },
+  {
+   "fieldname": "column_break_ekjh6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_aoebc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_om4y7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel_image_1",
+   "fieldtype": "Attach Image",
+   "label": "Vessel Image 1"
+  },
+  {
+   "fieldname": "column_break_54mza",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel_image_2",
+   "fieldtype": "Attach Image",
+   "label": "Vessel Image 2"
+  }
+ ],
+ "image_field": "vessel_image_1",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "MMU Vessel History",
+   "link_fieldname": "vessel_name"
+  }
+ ],
+ "modified": "2023-07-29 06:32:34.629584",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "MMU Vessel",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vessel_name"
+}
