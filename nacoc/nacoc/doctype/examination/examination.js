@@ -27,15 +27,11 @@ frappe.ui.form.on('Examination', {
 		frm.add_fetch('cargo_import','pieces','pieces');
 		frm.add_fetch('cargo_import','description','description');
 		frm.add_fetch('cargo_import','arrival_date','arrival_date');
-		frm.add_fetch('cargo_import','description','description');
+		
 		frm.add_fetch('officer','officer_name','officer_name');
 		frm.add_fetch('supervisor','supervisor_name','supervisor_name');
 		frm.add_fetch('forwarder','forwarder_name','forwarder_name');
 		frm.add_fetch('consignee','consignee_name','consignee_name');
-		// frm.add_fetch('exporter','phone_number','phone_number');
-		// frm.add_fetch('exporter','exporter_photo','exporter_photo');
-		// frm.add_fetch('consignee','consignee_name','consignee_name');
-		// frm.add_fetch('consignee','consignee_country','consignee_country');
-		// frm.add_fetch('business','business_name','business_name');
+		
 	}
 });
