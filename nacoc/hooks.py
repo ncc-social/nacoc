@@ -7,6 +7,32 @@ app_description = "NACOC Apps"
 app_email = "social@ncc.gov.gh"
 app_license = "MIT"
 
+fixtures = [
+    {"dt": "Workspace", "filters": [
+        [
+            "module", "in", [
+                "NACOC"
+            ]
+        ]
+    ]},
+    {"dt": "Number Card", "filters": [
+        [
+            "document_type", "in", [
+                "PCU Assessment",
+                "MMU Vessel"
+            ]
+        ]
+    ]},
+    {"dt": "Dashboard Chart", "filters": [
+        [
+            "document_type", "in", [
+                "PCU Assessment",
+                "MMU Vessel"
+            ]
+        ]
+    ]}
+]
+
 # Includes in <head>
 # ------------------
 
