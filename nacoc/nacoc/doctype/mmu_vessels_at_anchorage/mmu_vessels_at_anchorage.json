@@ -1,0 +1,261 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:VANC-{######}",
+ "creation": "2023-08-15 10:46:14.979763",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vessel_details_tab",
+  "vessel",
+  "mmsi",
+  "column_break_dseys",
+  "vessel_type",
+  "year_built",
+  "column_break_xvsho",
+  "imo",
+  "ais_details_section",
+  "date_ais_turned_off",
+  "column_break_vgywg",
+  "time_ais_turned_off",
+  "column_break_xcqf8",
+  "date_ais_turned_on",
+  "column_break_crrmb",
+  "time_ais_turned_on",
+  "section_break_xdqkt",
+  "duration_of_last_ais_gap",
+  "vessel_movement_section",
+  "continent_of_origin",
+  "destination_country",
+  "eda",
+  "column_break_mdcse",
+  "port_of_origin",
+  "destination_port",
+  "eta",
+  "column_break_zpmtj",
+  "ports_of_call",
+  "last_known_vessel_position_section",
+  "latitude",
+  "column_break_qrzxv",
+  "longitude",
+  "departure_details_tab",
+  "date_of_departure",
+  "column_break_wrlex",
+  "time_of_departure"
+ ],
+ "fields": [
+  {
+   "fieldname": "vessel_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vessel Details"
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Link",
+   "label": "Vessel",
+   "options": "MMU Vessel"
+  },
+  {
+   "fetch_from": "vessel.mmsi",
+   "fieldname": "mmsi",
+   "fieldtype": "Data",
+   "label": "MMSI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dseys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vessel.vessel_type",
+   "fieldname": "vessel_type",
+   "fieldtype": "Data",
+   "label": "Vessel Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vessel.year_built",
+   "fieldname": "year_built",
+   "fieldtype": "Data",
+   "label": "Year Built",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xvsho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vessel.imo",
+   "fieldname": "imo",
+   "fieldtype": "Data",
+   "label": "IMO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ais_details_section",
+   "fieldtype": "Section Break",
+   "label": "AIS Details"
+  },
+  {
+   "fieldname": "date_ais_turned_off",
+   "fieldtype": "Date",
+   "label": "Date AIS Turned Off"
+  },
+  {
+   "fieldname": "column_break_vgywg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_ais_turned_off",
+   "fieldtype": "Time",
+   "label": "Time AIS Turned Off"
+  },
+  {
+   "fieldname": "column_break_xcqf8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_ais_turned_on",
+   "fieldtype": "Date",
+   "label": "Date AIS Turned On"
+  },
+  {
+   "fieldname": "column_break_crrmb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_ais_turned_on",
+   "fieldtype": "Time",
+   "label": "Time AIS Turned On"
+  },
+  {
+   "depends_on": "eval:doc.date_ais_turned_off && doc.time_ais_turned_off && doc.date_ais_turned_on && doc.time_ais_turned_on",
+   "fieldname": "section_break_xdqkt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "duration_of_last_ais_gap",
+   "fieldtype": "Data",
+   "label": "Duration of Last AIS Gap",
+   "read_only": 1,
+   "read_only_depends_on": "eval:doc.date_ais_turned_off && \ndoc.time_ais_turned_off && doc.date_ais_turned_on &&\ndoc.time_ais_turned_on"
+  },
+  {
+   "fieldname": "vessel_movement_section",
+   "fieldtype": "Section Break",
+   "label": "Vessel Movement"
+  },
+  {
+   "fieldname": "continent_of_origin",
+   "fieldtype": "Select",
+   "label": "Continent of Origin",
+   "options": "\nAfrica\nAntarctica\nAsia\nEurope\nNorth America\nOceania\nSouth America"
+  },
+  {
+   "fieldname": "destination_country",
+   "fieldtype": "Link",
+   "label": "Destination Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "eda",
+   "fieldtype": "Date",
+   "label": "Estimated Date of Arrival"
+  },
+  {
+   "fieldname": "column_break_mdcse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_of_origin",
+   "fieldtype": "Data",
+   "label": "Port of Origin"
+  },
+  {
+   "fieldname": "destination_port",
+   "fieldtype": "Data",
+   "label": "Destination Port"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Time",
+   "label": "Estimated Time of Arrival"
+  },
+  {
+   "fieldname": "column_break_zpmtj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ports_of_call",
+   "fieldtype": "Small Text",
+   "label": "Ports of Call"
+  },
+  {
+   "fieldname": "last_known_vessel_position_section",
+   "fieldtype": "Section Break",
+   "label": "Last Known Vessel Position"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "column_break_qrzxv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "departure_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Departure Details"
+  },
+  {
+   "fieldname": "date_of_departure",
+   "fieldtype": "Date",
+   "label": "Date of Departure"
+  },
+  {
+   "fieldname": "column_break_wrlex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_of_departure",
+   "fieldtype": "Time",
+   "label": "Time of Departure"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-21 13:40:35.117661",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "MMU Vessels at Anchorage",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
