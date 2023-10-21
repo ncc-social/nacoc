@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "creation": "2023-02-22 10:32:13.990582",
  "default_view": "List",
  "doctype": "DocType",
@@ -270,7 +271,7 @@
   {
    "fieldname": "reporting_officer_1_signature",
    "fieldtype": "Signature",
-   "label": "Signature"
+   "label": "Officer 1 Signature"
   },
   {
    "fieldname": "reporting_officer_2",
@@ -280,7 +281,7 @@
   {
    "fieldname": "reporting_officer_2_signature",
    "fieldtype": "Signature",
-   "label": "Signature"
+   "label": "Officer 2 Signature"
   },
   {
    "fieldname": "supervisor",
@@ -291,7 +292,7 @@
   {
    "fieldname": "supervisor_signature",
    "fieldtype": "Signature",
-   "label": "Signature",
+   "label": "Supervisor Signature",
    "permlevel": 1
   },
   {
@@ -316,7 +317,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2023-07-01 17:39:40.835282",
+ "modified": "2023-09-03 13:24:00.149611",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "PCU Assessment",
