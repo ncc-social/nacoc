@@ -30,6 +30,28 @@ fixtures = [
                 "MMU Vessel"
             ]
         ]
+    ]},
+    {"dt": "Client Script", "filters": [
+        [
+            "module", "in", [
+                "NACOC"
+            ]
+        ]
+    ]},
+    {"dt": "Role Profile", "filters": [
+        [
+            "role_name", "in", [
+                "Precursor Manager",
+                "Precursor Officer"
+            ]
+        ]
+    ]},
+    {"dt": "Module Profile", "filters": [
+        [
+            "role_name", "in", [
+                "NACOC Profile"
+            ]
+        ]
     ]}
 ]
 
