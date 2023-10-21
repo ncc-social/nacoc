@@ -40,7 +40,7 @@ fixtures = [
     ]},
     {"dt": "Role Profile", "filters": [
         [
-            "role_name", "in", [
+            "role_profile", "in", [
                 "Precursor Manager",
                 "Precursor Officer"
             ]
@@ -48,7 +48,7 @@ fixtures = [
     ]},
     {"dt": "Module Profile", "filters": [
         [
-            "role_name", "in", [
+            "module_profile_name", "in", [
                 "NACOC Profile"
             ]
         ]

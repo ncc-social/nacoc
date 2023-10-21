@@ -1,0 +1,38 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-03-12 17:15:03.744521",
+  "name": "Precursor Officer",
+  "role_profile": "Precursor Officer",
+  "roles": [
+   {
+    "parent": "Precursor Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Precursor Officer"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-03-12 17:17:27.879435",
+  "name": "Precursor Manager",
+  "role_profile": "Precursor Manager",
+  "roles": [
+   {
+    "parent": "Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Precursor Manager"
+   },
+   {
+    "parent": "Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Precursor Officer"
+   }
+  ]
+ }
+]

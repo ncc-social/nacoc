@@ -1,0 +1,257 @@
+[
+ {
+  "block_modules": [
+   {
+    "module": "Accounts",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Assets",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Automation",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Bulk Transaction",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Buying",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "CRM",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Communication",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Contacts",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Core",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Desk",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "E-commerce",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "ERPNext Integrations",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Email",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Erpnext14 Custom",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Event Streaming",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Geo",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "HR",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Integrations",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Job",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "LMS",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Loan Management",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Maintenance",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Manufacturing",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Payment Gateways",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Payments",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Payroll",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Portal",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Projects",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Quality Management",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "RMS",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Regional",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Selling",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Setup",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Social",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Stock",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Subcontracting",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Support",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Telephony",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Utilities",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Website",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Workflow",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Module Profile",
+  "modified": "2023-09-03 17:00:47.899749",
+  "module_profile_name": "NACOC Profile",
+  "name": "NACOC Profile"
+ }
+]
