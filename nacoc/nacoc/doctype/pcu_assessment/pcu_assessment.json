@@ -102,29 +102,37 @@
    "options": "Precursor Company"
   },
   {
+   "fetch_from": "company_name.company_address",
    "fieldname": "company_address",
    "fieldtype": "Data",
-   "label": "Company Address"
+   "label": "Company Address",
+   "read_only": 1
   },
   {
+   "fetch_from": "company_name.mandate_of_company",
    "fieldname": "mandate_of_company",
    "fieldtype": "Data",
    "label": "Mandate of Company",
-   "length": 256
+   "length": 256,
+   "read_only": 1
   },
   {
    "fieldname": "column_break_8",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "company_name.company_file_number",
    "fieldname": "company_file_number",
    "fieldtype": "Data",
-   "label": "Company File Number"
+   "label": "Company File Number",
+   "read_only": 1
   },
   {
+   "fetch_from": "company_name.digital_address",
    "fieldname": "digital_address",
    "fieldtype": "Data",
-   "label": "Digital Address"
+   "label": "Digital Address",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_10",
@@ -309,15 +317,17 @@
    "permlevel": 1
   },
   {
+   "fetch_from": "company_name.description_of_location",
    "fieldname": "description_of_location",
    "fieldtype": "Data",
-   "label": "Description of Location"
+   "label": "Description of Location",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2023-09-03 13:24:00.149611",
+ "modified": "2023-10-27 09:34:57.359554",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "PCU Assessment",
