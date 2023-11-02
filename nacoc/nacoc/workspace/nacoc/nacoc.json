@@ -185,7 +185,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-01 19:14:39.177957",
+ "modified": "2023-11-02 08:17:16.664545",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
@@ -193,7 +193,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "NACOC User"
+  }
+ ],
  "sequence_id": 3.0,
  "shortcuts": [],
  "title": "NACOC"
