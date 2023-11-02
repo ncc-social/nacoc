@@ -42,7 +42,10 @@ fixtures = [
         [
             "role_profile", "in", [
                 "Precursor Manager",
-                "Precursor Officer"
+                "Precursor Officer",
+                "NACOC Profile",
+                "MMU Manager",
+                "MMU Officer"
             ]
         ]
     ]},
