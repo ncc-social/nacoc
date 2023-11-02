@@ -301,7 +301,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2023-11-02 08:17:16.664545",
+  "modified": "2023-11-02 15:50:18.467266",
   "module": "NACOC",
   "name": "NACOC",
   "number_cards": [],
@@ -309,20 +309,7 @@
   "public": 1,
   "quick_lists": [],
   "restrict_to_domain": null,
-  "roles": [
-   {
-    "parent": "NACOC",
-    "parentfield": "roles",
-    "parenttype": "Workspace",
-    "role": "Employee"
-   },
-   {
-    "parent": "NACOC",
-    "parentfield": "roles",
-    "parenttype": "Workspace",
-    "role": "NACOC User"
-   }
-  ],
+  "roles": [],
   "sequence_id": 3.0,
   "shortcuts": [],
   "title": "NACOC"
