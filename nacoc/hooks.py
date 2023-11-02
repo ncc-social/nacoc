@@ -10,7 +10,7 @@ app_license = "MIT"
 fixtures = [
     {"dt": "Workspace", "filters": [
         [
-            "module", "in", [
+            "title", "in", [
                 "NACOC"
             ]
         ]
