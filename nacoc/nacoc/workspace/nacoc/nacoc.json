@@ -170,7 +170,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Human Resource",
-   "link_count": 1,
+   "link_count": 2,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -183,9 +183,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-11-02 15:50:18.467266",
+ "modified": "2023-11-04 07:32:13.331611",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
