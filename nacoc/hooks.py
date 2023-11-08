@@ -52,10 +52,29 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "Custom DocPerm", "filters": [
+        [
+            "role", "in", [
+                "Precursor Manager",
+                "Precursor Officer",
+                "NACOC User",
+                "MMU Manager",
+                "MMU Officer",
+                "Aviance Officer",
+                "Aviance Manager"
+            ]
+        ]
+    ]},
     {"dt": "Role", "filters": [
         [
             "role_name", "in", [
-                "NACOC User"
+                "Precursor Manager",
+                "Precursor Officer",
+                "NACOC User",
+                "MMU Manager",
+                "MMU Officer",
+                "Aviance Officer",
+                "Aviance Manager"
             ]
         ]
     ]},
