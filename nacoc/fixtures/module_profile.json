@@ -80,49 +80,13 @@
     "parenttype": "Module Profile"
    },
    {
-    "module": "Erpnext14 Custom",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "Event Streaming",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
     "module": "Geo",
     "parent": "NACOC Profile",
     "parentfield": "block_modules",
     "parenttype": "Module Profile"
    },
    {
-    "module": "HR",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
     "module": "Integrations",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "Job",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "LMS",
-    "parent": "NACOC Profile",
-    "parentfield": "block_modules",
-    "parenttype": "Module Profile"
-   },
-   {
-    "module": "Loan Management",
     "parent": "NACOC Profile",
     "parentfield": "block_modules",
     "parenttype": "Module Profile"
@@ -246,11 +210,35 @@
     "parent": "NACOC Profile",
     "parentfield": "block_modules",
     "parenttype": "Module Profile"
+   },
+   {
+    "module": "Erpnext15 Custom",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "CaseMaster",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Insights",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Printing",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
    }
   ],
   "docstatus": 0,
   "doctype": "Module Profile",
-  "modified": "2023-09-03 17:00:47.899749",
+  "modified": "2023-11-05 09:09:00.111523",
   "module_profile_name": "NACOC Profile",
   "name": "NACOC Profile"
  }
