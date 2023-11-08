@@ -85,5 +85,65 @@
     "role": "Precursor Officer"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-11-08 11:13:04.360429",
+  "name": "Aviance Officer",
+  "role_profile": "Aviance Officer",
+  "roles": [
+   {
+    "parent": "Aviance Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Aviance Officer"
+   },
+   {
+    "parent": "Aviance Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "NACOC User"
+   },
+   {
+    "parent": "Aviance Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-11-08 11:13:24.481401",
+  "name": "Aviance Manager",
+  "role_profile": "Aviance Manager",
+  "roles": [
+   {
+    "parent": "Aviance Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Aviance Manager"
+   },
+   {
+    "parent": "Aviance Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Aviance Officer"
+   },
+   {
+    "parent": "Aviance Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "Aviance Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "NACOC User"
+   }
+  ]
  }
 ]

@@ -46,7 +46,9 @@ fixtures = [
                 "Precursor Officer",
                 "NACOC Profile",
                 "MMU Manager",
-                "MMU Officer"
+                "MMU Officer",
+                "Aviance Officer",
+                "Aviance Manager"
             ]
         ]
     ]},

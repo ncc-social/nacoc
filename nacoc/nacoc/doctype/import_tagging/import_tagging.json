@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-08 10:06:30.289419",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "import_details_tab",
+  "cargo_warehouse",
+  "title",
+  "column_break_ylre",
+  "tagging_date",
+  "tagging_officer",
+  "section_break_xjrw",
+  "reason_for_tagging",
+  "section_break_yzji",
+  "exporter",
+  "column_break_geqe",
+  "consignee",
+  "section_break_knpv",
+  "column_break_nngm",
+  "description",
+  "section_break_wqqo",
+  "forwarder",
+  "id_number",
+  "column_break_zmdw",
+  "forwarder_phone_number",
+  "section_break_qrol",
+  "reason_for_release",
+  "column_break_gmoe",
+  "release_date",
+  "releasing_officer",
+  "releasing_officer_signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Airway Bill"
+  },
+  {
+   "fieldname": "cargo_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cargo Warehouse",
+   "options": "Cargo Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tagging_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Tagging Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ylre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tagging_officer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tagging Officer",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_knpv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "exporter",
+   "fieldtype": "Link",
+   "label": "Exporter",
+   "options": "Exporter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nngm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Consignee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_wqqo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "forwarder",
+   "fieldtype": "Link",
+   "label": "Forwarder",
+   "options": "Forwarder",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zmdw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "forwarder.phone_number",
+   "fieldname": "forwarder_phone_number",
+   "fieldtype": "Data",
+   "label": "Forwarder Phone Number"
+  },
+  {
+   "fetch_from": "forwarder.id_number",
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "import_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Import Details"
+  },
+  {
+   "fieldname": "section_break_qrol",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gmoe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "release_date",
+   "fieldtype": "Date",
+   "label": "Release Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_xjrw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_for_tagging",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Reason for Tagging",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_yzji",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_geqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "releasing_officer",
+   "fieldtype": "Link",
+   "label": "Releasing Officer",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reason_for_release",
+   "fieldtype": "Text Editor",
+   "label": "Reason for Release",
+   "reqd": 1
+  },
+  {
+   "fieldname": "releasing_officer_signature",
+   "fieldtype": "Signature",
+   "label": "Releasing Officer Signature"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-08 10:49:46.590903",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Import Tagging",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

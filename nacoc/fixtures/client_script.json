@@ -53,5 +53,16 @@
   "name": "Calculate Duration of Last AIS Gap",
   "script": "frappe.ui.form.on('MMU Vessels at Anchorage', {\n\trefresh: function(frm) {\n         // Merge date_ais_turned_off and time_ais_turned_off into a datetime field\n        let turned_off = new Date(frm.doc.date_ais_turned_off + ' ' + frm.doc.time_ais_turned_off);\n\n        // Merge date_ais_turned_on and time_ais_turned_on into a datetime field\n        let turned_on = new Date(frm.doc.date_ais_turned_on + ' ' + frm.doc.time_ais_turned_on);\n\n        // Calculate duration when form is loaded\n        if (frm.doc.date_ais_turned_off && frm.doc.time_ais_turned_off && frm.doc.date_ais_turned_on && frm.doc.time_ais_turned_on) {\n            let duration = \"\";\n            let diffMs = Math.abs(turned_on - turned_off);\n            \n            let diffDays = Math.floor(diffMs / 86400000); // days\n            let diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours\n            let diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes\n            \n            let diffDaysText = diffDays > 1 ? \" days, \" : \" day, \"\n            let diffHrsText = diffHrs > 1 ? \" hours, \" : \" hour, \"\n            let diffMinsText = diffDays > 1 ? \" minutes\" : \" minutes\"\n            \n            duration = \"AIS was down for \" + diffDays + diffDaysText + diffHrs + diffHrsText + \"and \" + diffMins + diffMinsText;\n            frm.set_value('duration_of_last_ais_gap', duration);\n        }\n    },\n\n    date_ais_turned_off: function(frm) {\n        frm.trigger('refresh');\n    },\n\n    time_ais_turned_off: function(frm) {\n        frm.trigger('refresh');\n    },\n\n    date_ais_turned_on: function(frm) {\n        frm.trigger('refresh');\n    },\n\n    time_ais_turned_on: function(frm) {\n        frm.trigger('refresh');\n    }\n\t\n});",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Import Tagging",
+  "enabled": 1,
+  "modified": "2023-11-08 11:20:16.681840",
+  "module": "NACOC",
+  "name": "Filter Aviance Officers",
+  "script": "frappe.ui.form.on('Import Tagging', {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"tagging_officer\", function(doc) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Aviance Officer\", \"Aviance Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t\tfrm.set_query(\"releasing_officer\", function(doc) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Aviance Officer\", \"Aviance Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t},\n})",
+  "view": "Form"
  }
 ]
