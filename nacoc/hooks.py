@@ -50,6 +50,13 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "Role", "filters": [
+        [
+            "role_name", "in", [
+                "NACOC User"
+            ]
+        ]
+    ]},
     {"dt": "Module Profile", "filters": [
         [
             "module_profile_name", "in", [

@@ -7,7 +7,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "share-people",
+ "icon": "share",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
@@ -42,7 +42,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-04 07:56:35.193492",
+ "modified": "2023-11-04 16:27:20.600235",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Staff Zone",
