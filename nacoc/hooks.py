@@ -24,6 +24,13 @@ fixtures = [
             ]
         ]
     ]},
+    {"dt": "Document Naming Rule", "filters": [
+        [
+            "document_type", "in", [
+                "PCU Assessment"
+            ]
+        ]
+    ]},
     {"dt": "Dashboard Chart", "filters": [
         [
             "document_type", "in", [

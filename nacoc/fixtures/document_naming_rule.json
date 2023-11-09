@@ -1,0 +1,68 @@
+[
+ {
+  "conditions": [
+   {
+    "condition": "=",
+    "field": "task",
+    "parent": "064812bef8",
+    "parentfield": "conditions",
+    "parenttype": "Document Naming Rule",
+    "value": "Pre-Registration"
+   }
+  ],
+  "counter": 18,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Document Naming Rule",
+  "document_type": "PCU Assessment",
+  "modified": "2023-09-15 16:33:19.644395",
+  "name": "064812bef8",
+  "prefix": "A-PREREG-.YY.-",
+  "prefix_digits": 5,
+  "priority": 0
+ },
+ {
+  "conditions": [
+   {
+    "condition": "=",
+    "field": "task",
+    "parent": "bddd904bdf",
+    "parentfield": "conditions",
+    "parenttype": "Document Naming Rule",
+    "value": "Follow-Up"
+   }
+  ],
+  "counter": 15,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Document Naming Rule",
+  "document_type": "PCU Assessment",
+  "modified": "2023-10-20 15:37:43.240174",
+  "name": "bddd904bdf",
+  "prefix": "A-FOLUP-.YY.-",
+  "prefix_digits": 5,
+  "priority": 0
+ },
+ {
+  "conditions": [
+   {
+    "condition": "=",
+    "field": "task",
+    "parent": "62828c22a8",
+    "parentfield": "conditions",
+    "parenttype": "Document Naming Rule",
+    "value": "Routine Site Inspection"
+   }
+  ],
+  "counter": 84,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Document Naming Rule",
+  "document_type": "PCU Assessment",
+  "modified": "2023-11-08 10:14:33.805194",
+  "name": "62828c22a8",
+  "prefix": "A-RSI-.YY.-",
+  "prefix_digits": 5,
+  "priority": 0
+ }
+]
