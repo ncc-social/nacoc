@@ -14,13 +14,15 @@
   {
    "fieldname": "cargo_warehouse",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Cargo Warehouse",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-09 10:41:03.354468",
+ "modified": "2023-11-09 10:49:06.147367",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Cargo Warehouse",
