@@ -1294,5 +1294,29 @@
   "share": 0,
   "submit": 0,
   "write": 1
+ },
+ {
+  "amend": 0,
+  "cancel": 0,
+  "create": 1,
+  "delete": 1,
+  "docstatus": 0,
+  "doctype": "Custom DocPerm",
+  "email": 0,
+  "export": 0,
+  "if_owner": 0,
+  "import": 0,
+  "modified": "2023-12-15 10:17:37.047373",
+  "name": "cbdbf43ab8",
+  "parent": "Substance",
+  "permlevel": 0,
+  "print": 0,
+  "read": 1,
+  "report": 0,
+  "role": "NACOC User",
+  "select": 0,
+  "share": 0,
+  "submit": 0,
+  "write": 1
  }
 ]
