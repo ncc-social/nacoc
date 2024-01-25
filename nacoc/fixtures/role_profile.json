@@ -2,7 +2,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-03-12 17:17:27.879435",
+  "modified": "2023-12-25 11:13:25.613718",
   "name": "Precursor Manager",
   "role_profile": "Precursor Manager",
   "roles": [
@@ -17,6 +17,18 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Precursor Officer"
+   },
+   {
+    "parent": "Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Leave Approver"
+   },
+   {
+    "parent": "Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
    }
   ]
  },
@@ -38,7 +50,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-11-02 14:13:13.928620",
+  "modified": "2023-12-25 09:44:30.697251",
   "name": "MMU Officer",
   "role_profile": "MMU Officer",
   "roles": [
@@ -47,13 +59,19 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "MMU Officer"
+   },
+   {
+    "parent": "MMU Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
    }
   ]
  },
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-11-02 14:13:24.074075",
+  "modified": "2023-12-25 11:13:07.763055",
   "name": "MMU Manager",
   "role_profile": "MMU Manager",
   "roles": [
@@ -68,6 +86,18 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "MMU Officer"
+   },
+   {
+    "parent": "MMU Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "MMU Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Leave Approver"
    }
   ]
  },
@@ -116,7 +146,7 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-11-08 11:13:24.481401",
+  "modified": "2023-12-25 11:12:55.509221",
   "name": "Aviance Manager",
   "role_profile": "Aviance Manager",
   "roles": [
@@ -143,6 +173,12 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "NACOC User"
+   },
+   {
+    "parent": "Aviance Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Leave Approver"
    }
   ]
  }

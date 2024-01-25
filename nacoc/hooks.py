@@ -12,7 +12,7 @@ fixtures = [
         [
             "title", "in", [
                 "NACOC",
-                "Staff Zone"
+                "Staff Domain"
             ]
         ]
     ]},
