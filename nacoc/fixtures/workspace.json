@@ -12,8 +12,13 @@
   "is_hidden": 0,
   "label": "Staff Domain",
   "links": [],
+<<<<<<< HEAD
   "modified": "2024-01-25 14:51:28.998794",
   "module": "NACOC",
+=======
+  "modified": "2024-01-22 10:35:43.081457",
+  "module": "Erpnext15 Custom",
+>>>>>>> 324459bb2e9ca8701d4e69bd9a1f11eea4d66325
   "name": "Staff Domain",
   "number_cards": [],
   "parent_page": "",
@@ -411,7 +416,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2023-11-08 11:04:28.183940",
+  "modified": "2024-01-25 15:12:50.272643",
   "module": "NACOC",
   "name": "NACOC",
   "number_cards": [],

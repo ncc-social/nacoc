@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}}]",
- "creation": "2023-11-08 09:49:48.032277",
+ "creation": "2024-01-22 11:17:07.036762",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -205,7 +205,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-08 11:04:28.183940",
+ "modified": "2024-01-25 15:12:50.272643",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",

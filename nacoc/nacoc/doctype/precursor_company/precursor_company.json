@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:PCU/COMP/{#####}",
+ "autoname": "format:PCU/COMP/{######}",
  "creation": "2023-03-07 00:09:23.795130",
  "default_view": "List",
  "doctype": "DocType",
@@ -65,7 +65,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-01-23 15:42:20.880763",
+=======
+ "modified": "2023-12-08 12:27:41.391266",
+>>>>>>> 324459bb2e9ca8701d4e69bd9a1f11eea4d66325
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Precursor Company",
