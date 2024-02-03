@@ -11,8 +11,7 @@ fixtures = [
     {"dt": "Workspace", "filters": [
         [
             "title", "in", [
-                "NACOC",
-                "Staff Domain"
+                "NACOC"
             ]
         ]
     ]},
