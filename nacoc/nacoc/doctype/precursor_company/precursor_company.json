@@ -12,6 +12,7 @@
   "company_name",
   "company_address",
   "description_of_location",
+  "region",
   "column_break_to9yj",
   "company_file_number",
   "digital_address",
@@ -21,7 +22,9 @@
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
-   "label": "Company Name"
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1
   },
   {
    "fieldname": "company_address",
@@ -51,11 +54,22 @@
   {
    "fieldname": "column_break_to9yj",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Select",
+   "label": "Region",
+   "options": "\nAshanti\nBono\nCentral\nEastern\nGreater Accra\nNorthern\nUpper East\nUpper West\nVolta\nWestern\nSavannah\nBono East\nOti\nAhafo\nWestern North\nNorth East",
+   "sort_options": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
+ "modified": "2024-01-23 15:42:20.880763",
+=======
  "modified": "2023-12-08 12:27:41.391266",
+>>>>>>> 324459bb2e9ca8701d4e69bd9a1f11eea4d66325
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Precursor Company",

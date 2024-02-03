@@ -234,11 +234,29 @@
     "parent": "NACOC Profile",
     "parentfield": "block_modules",
     "parenttype": "Module Profile"
+   },
+   {
+    "module": "PuSMAG",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Custom",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
+   },
+   {
+    "module": "Tldraw Whiteboard",
+    "parent": "NACOC Profile",
+    "parentfield": "block_modules",
+    "parenttype": "Module Profile"
    }
   ],
   "docstatus": 0,
   "doctype": "Module Profile",
-  "modified": "2023-11-05 09:09:00.111523",
+  "modified": "2023-12-25 09:49:40.545899",
   "module_profile_name": "NACOC Profile",
   "name": "NACOC Profile"
  }
