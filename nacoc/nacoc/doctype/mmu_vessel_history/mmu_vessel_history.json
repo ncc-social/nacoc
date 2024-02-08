@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:VH-{######}",
  "creation": "2023-07-29 06:08:04.383482",
  "default_view": "List",
  "doctype": "DocType",
@@ -11,6 +12,7 @@
   "vessel_details_section",
   "vessel_name",
   "imo",
+  "year_built",
   "column_break_hith3",
   "mmsi",
   "flag",
@@ -31,7 +33,9 @@
    "fieldname": "vessel_name",
    "fieldtype": "Link",
    "label": "Vessel Name",
-   "options": "MMU Vessel"
+   "options": "MMU Vessel",
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fetch_from": "vessel_name.imo",
@@ -128,19 +132,28 @@
    "fieldname": "time_of_entry",
    "fieldtype": "Time",
    "label": "Time of Entry"
+  },
+  {
+   "fetch_from": "vessel_name.year_built",
+   "fieldname": "year_built",
+   "fieldtype": "Data",
+   "label": "Year Built",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-15 10:26:04.340228",
+ "modified": "2024-02-08 12:33:48.513715",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel History",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
  "search_fields": "vessel_name,imo,mmsi",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "vessel_name",
  "track_changes": 1
 }

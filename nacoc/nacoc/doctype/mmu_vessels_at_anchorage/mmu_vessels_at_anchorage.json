@@ -17,6 +17,7 @@
   "year_built",
   "column_break_xvsho",
   "imo",
+  "registered_owner",
   "ais_details_section",
   "date_ais_turned_off",
   "column_break_vgywg",
@@ -39,8 +40,9 @@
   "ports_of_call",
   "last_known_vessel_position_section",
   "latitude",
-  "column_break_qrzxv",
   "longitude",
+  "column_break_qrzxv",
+  "anchorage_map",
   "departure_details_tab",
   "date_of_departure",
   "column_break_wrlex",
@@ -230,11 +232,23 @@
    "fieldname": "time_of_departure",
    "fieldtype": "Time",
    "label": "Time of Departure"
+  },
+  {
+   "depends_on": "eval:doc.vessel",
+   "fieldname": "registered_owner",
+   "fieldtype": "Data",
+   "label": "Registered Owner"
+  },
+  {
+   "fieldname": "anchorage_map",
+   "fieldtype": "HTML",
+   "label": "Anchorage Map",
+   "options": "<div id=\"anchorage_map\" style=\"min-height: 300px;\"></div>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-21 13:40:35.117661",
+ "modified": "2024-02-08 13:16:17.766805",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessels at Anchorage",
