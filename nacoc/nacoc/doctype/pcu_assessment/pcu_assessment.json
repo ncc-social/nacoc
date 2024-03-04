@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
+ "allow_rename": 1,
  "creation": "2023-02-22 10:32:13.990582",
  "default_view": "List",
  "doctype": "DocType",
@@ -16,6 +17,7 @@
   "officer",
   "company_details_section",
   "company_name",
+  "region",
   "company_address",
   "mandate_of_company",
   "column_break_8",
@@ -157,8 +159,6 @@
   {
    "fieldname": "rep_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Rep Name"
   },
   {
@@ -322,12 +322,21 @@
    "fieldtype": "Data",
    "label": "Description of Location",
    "read_only": 1
+  },
+  {
+   "fetch_from": "company_name.region",
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Region",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2023-10-27 09:34:57.359554",
+ "modified": "2024-02-23 09:21:09.127693",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "PCU Assessment",
