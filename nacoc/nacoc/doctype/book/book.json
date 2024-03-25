@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-24 09:47:53.123902",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "book_title",
+  "isbn",
+  "year_published",
+  "shelf_number",
+  "book_cover",
+  "column_break_rihj",
+  "book_type",
+  "edition",
+  "genre",
+  "number_of_copies"
+ ],
+ "fields": [
+  {
+   "fieldname": "book_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Book Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "edition",
+   "fieldtype": "Data",
+   "label": "Edition"
+  },
+  {
+   "fieldname": "year_published",
+   "fieldtype": "Data",
+   "label": "Year Published"
+  },
+  {
+   "fieldname": "shelf_number",
+   "fieldtype": "Select",
+   "label": "Shelf Number",
+   "options": "\nA1\nA2\nA3\nB1\nB2\nB3"
+  },
+  {
+   "fieldname": "book_cover",
+   "fieldtype": "Attach Image",
+   "label": "Book Cover"
+  },
+  {
+   "fieldname": "column_break_rihj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "book_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Book Type",
+   "options": "\nDissertation\nNovel\nBook\nReport\nResearch Paper\nJournals",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "ISBN"
+  },
+  {
+   "fieldname": "genre",
+   "fieldtype": "Data",
+   "label": "Genre"
+  },
+  {
+   "fieldname": "number_of_copies",
+   "fieldtype": "Int",
+   "label": "Number of Copies"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-24 09:57:19.395489",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Book",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
