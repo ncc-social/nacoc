@@ -1,7 +1,7 @@
 [
  {
   "charts": [],
-  "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}}]",
+  "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -14,6 +14,7 @@
   "links": [
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -30,6 +31,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -46,6 +48,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -62,6 +65,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -78,6 +82,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -94,6 +99,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -110,6 +116,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -126,6 +133,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -142,6 +150,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -158,6 +167,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -174,6 +184,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -190,6 +201,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -206,6 +218,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -222,6 +235,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -238,6 +252,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -254,6 +269,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -270,6 +286,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -286,6 +303,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -302,6 +320,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -318,6 +337,7 @@
    },
    {
     "dependencies": null,
+    "description": null,
     "hidden": 0,
     "icon": null,
     "is_query_report": 0,
@@ -331,9 +351,94 @@
     "parentfield": "links",
     "parenttype": "Workspace",
     "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": "Modules for Library Management",
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Library",
+    "link_count": 4,
+    "link_to": null,
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "NACOC",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Card Break"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Book List",
+    "link_count": 0,
+    "link_to": "Book",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "NACOC",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Author List",
+    "link_count": 0,
+    "link_to": "Author",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "NACOC",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Issue Book",
+    "link_count": 0,
+    "link_to": "Issue Book",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "NACOC",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "description": null,
+    "hidden": 0,
+    "icon": null,
+    "is_query_report": 0,
+    "label": "Return Book",
+    "link_count": 0,
+    "link_to": "Return Book",
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "NACOC",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Link"
    }
   ],
-  "modified": "2024-01-25 15:12:50.272643",
+  "modified": "2024-03-25 08:07:55.214891",
   "module": "NACOC",
   "name": "NACOC",
   "number_cards": [],

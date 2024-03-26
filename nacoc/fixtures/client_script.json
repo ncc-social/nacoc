@@ -4,6 +4,39 @@
   "doctype": "Client Script",
   "dt": "PCU Assessment",
   "enabled": 1,
+  "modified": "2024-02-11 10:58:46.437908",
+  "module": "NACOC",
+  "name": "Filter Precursor Officers",
+  "script": "frappe.ui.form.on('PCU Assessment', {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"officer\", \"officer\", function(doc, cdt, cdn) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Precursor Officer\", \"Precursor Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t\tfrm.set_query(\"assigned_officer\", \"assigned_officer\", function(doc, cdt, cdn) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Precursor Officer\", \"Precursor Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t}\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "PCU Assessment",
+  "enabled": 1,
+  "modified": "2024-03-24 14:26:14.749011",
+  "module": "NACOC",
+  "name": "Filter Assessment List",
+  "script": "async function fetchPermittedRegions() {\n    try {\n        const response = await frappe.call({\n            method: \"nacoc.my_scripts.custom.get_permitted_regions\"\n        });\n        return response.message || [];\n    } catch (error) {\n        console.error(\"Error fetching permitted regions:\", error);\n        return [];\n    }\n}\n\nasync function applyPermittedRegionFilter(listview) {\n    const permittedRegions = await fetchPermittedRegions();\n    \n    // Check if permittedRegions array is empty\n    if (permittedRegions.length > 0) {\n        frappe.route_options = {\n            \"region\": [\"in\", permittedRegions]\n        };\n    } else {\n        // If permittedRegions array is empty, clear the filter\n        frappe.route_options = {};\n    }\n}\n\nfrappe.listview_settings[\"PCU Assessment\"] = {\n    hide_name_column: true,\n    hide_name_filter: true,\n    onload: applyPermittedRegionFilter,\n    refresh: applyPermittedRegionFilter\n};\n",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "MMU Vessels at Anchorage",
+  "enabled": 1,
+  "modified": "2024-03-14 10:19:00.521408",
+  "module": "NACOC",
+  "name": "Anchorage List View",
+  "script": "",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "PCU Assessment",
+  "enabled": 1,
   "modified": "2023-03-12 17:51:28.888038",
   "module": "NACOC",
   "name": "Filter Precursor Case Officer",
@@ -63,6 +96,28 @@
   "module": "NACOC",
   "name": "Filter Aviance Officers",
   "script": "frappe.ui.form.on('Import Tagging', {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"tagging_officer\", function(doc) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Aviance Officer\", \"Aviance Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t\tfrm.set_query(\"releasing_officer\", function(doc) {\n\t\t\t// let d = locals[cdt][cdn];\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"role_profile_name\": [\"in\", [\"Aviance Officer\", \"Aviance Manager\"]]\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t},\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Issue Book",
+  "enabled": 1,
+  "modified": "2024-03-24 16:48:29.264687",
+  "module": "NACOC",
+  "name": "Issue Book-Form",
+  "script": "frappe.ui.form.on('Issue Book', {\n\trefresh(frm) {\n\t\tfrm.set_query(\"book\", function() {\n\t\t\treturn {\n\t\t\t\tfilters: {\n\t\t\t\t\t\"status\": \"Available\"\n\t\t\t\t}\n\t\t\t};\n\t\t});\n\t},\n\tissue_date: function(frm) {\n\t    var issueDate = frm.doc.issue_date;\n\n        // Calculate due date (10 working days from the issue date)\n        var dueDate = addWorkingDays(issueDate, 10);\n        \n        // Format the due date as 'YYYY-MM-DD'\n        var formattedDueDate = formatDate(dueDate);\n\n\n        // Set the calculated due date in the form\n        frm.set_value('due_date', formattedDueDate); \n\t},\n\tbefore_save: function(frm) {\n        // Get the book linked to the issue log\n        var book = frm.doc.book;\n        \n        // Make an AJAX call to update the status of the linked book to \"Issued\"\n        frappe.call({\n            method: \"nacoc.my_scripts.custom.update_book_status_on_issue\",\n            args: {\n                book: book\n            },\n            callback: function(response) {\n                console.log(response);\n                // Handle the response\n                if (response.message) {\n                    frappe.msgprint(\"Book issued successfully\");\n                } else {\n                    frappe.msgprint(\"An error occurred while updating book status\");\n                }\n            }\n        });\n    }\n});\n\nfunction addWorkingDays(startDate, numWorkingDays) {\n    var currentDate = new Date(startDate);\n    var workingDaysAdded = 0;\n\n    while (workingDaysAdded < numWorkingDays) {\n        // Move to the next day\n        currentDate.setDate(currentDate.getDate() + 1);\n\n        // Check if the current day is a weekday (Monday to Friday)\n        if (currentDate.getDay() !== 0 && currentDate.getDay() !== 6) {\n            // Increment the count of working days added\n            workingDaysAdded++;\n        }\n    }\n\n    // Return the calculated due date\n    return currentDate;\n}\n\nfunction formatDate(date) {\n    var year = date.getFullYear();\n    var month = String(date.getMonth() + 1).padStart(2, '0');\n    var day = String(date.getDate()).padStart(2, '0');\n    \n    return `${year}-${month}-${day}`;\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Return Book",
+  "enabled": 1,
+  "modified": "2024-03-24 17:40:29.917960",
+  "module": "NACOC",
+  "name": "Return Book-Form",
+  "script": "frappe.ui.form.on('Return Book', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\tonload: function(frm) {\n        // Filter the Book field to only show books that have been issued\n        frm.set_query('book', function() {\n            return {\n                filters: {\n                    'status': 'Issued'\n                }\n            };\n        });\n    },\n    return_date: function(frm) {\n        // Get the return date and issue date values\n        var returnDate = frm.doc.return_date;\n        var issueDate = frm.doc.issue_date;\n\n        // Perform validation only if both return date and issue date are set\n        if (returnDate && issueDate) {\n            // Check if return date is less than or equal to issue date\n            if (returnDate <= issueDate) {\n                frappe.msgprint({\n                    title: __('Error'),\n                    indicator: 'red',\n                    message: __(\"Return Date must be later than the Issue Date\")\n                });\n                // Clear the return date field\n                frm.set_value('return_date', '');\n            }\n        }\n    },\n    book: function(frm) {\n        // Retrieve the latest issuance of the selected book\n        var book = frm.doc.book;\n        frappe.call({\n            method: 'nacoc.my_scripts.custom.get_latest_issuance',\n            args: {\n                book: book\n            },\n            callback: function(response) {\n                if (response.message) {\n                    // Automatically select the latest issuance\n                    let issuance = response.message;\n                    frm.set_value('employee', issuance.employee);\n                    frm.set_value('issue_date', issuance.issue_date);\n                    frm.set_value('due_date', issuance.due_date);\n                    frm.refresh_fields();\n                }\n            }\n        });\n    },\n    before_save: function(frm) {\n        // Get the book linked to the issue log\n        var book = frm.doc.book;\n        var condition = frm.doc.condition;\n    \n        // Validate that book and condition are not empty\n        if (book && condition) {\n            // Make an AJAX call to update the status of the linked book to the condition\n            frappe.call({\n                method: \"nacoc.my_scripts.custom.update_book_status\",\n                args: {\n                    book: book,\n                    condition: condition\n                },\n                callback: function(response) {\n                    console.log(response);\n                    // Handle the response\n                    if (response.message) {\n                        frappe.msgprint(\"Book status updated successfully\");\n                        // Proceed with saving the form\n                        frm.save();\n                    } else {\n                        frappe.msgprint(\"An error occurred while updating book status\");\n                    }\n                }\n            });\n        } else {\n            // Display error message if book or condition is empty\n            frappe.msgprint(\"Book or condition is empty\");\n        }\n        // Return false to prevent the form from being saved immediately\n        return false;\n    }\n});",
   "view": "Form"
  }
 ]
