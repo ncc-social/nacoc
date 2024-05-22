@@ -10,6 +10,7 @@
  "engine": "InnoDB",
  "field_order": [
   "vessel_details_section",
+  "vessel",
   "vessel_name",
   "imo",
   "year_built",
@@ -30,11 +31,11 @@
  ],
  "fields": [
   {
+   "fetch_from": "vessel.vessel_name",
    "fieldname": "vessel_name",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
+   "hidden": 1,
    "label": "Vessel Name",
-   "options": "MMU Vessel",
-   "reqd": 1,
    "search_index": 1
   },
   {
@@ -139,11 +140,19 @@
    "fieldtype": "Data",
    "label": "Year Built",
    "read_only": 1
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Link",
+   "label": "Vessel",
+   "options": "MMU Vessel",
+   "reqd": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 12:33:48.513715",
+ "modified": "2024-05-21 15:37:57.364592",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel History",
@@ -153,7 +162,36 @@
  "search_fields": "vessel_name,imo,mmsi",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Purple",
+   "title": "Anchor"
+  },
+  {
+   "color": "Blue",
+   "title": "Moored"
+  },
+  {
+   "color": "Green",
+   "title": "Underway"
+  },
+  {
+   "color": "Red",
+   "title": "Stopped"
+  },
+  {
+   "color": "Yellow",
+   "title": "Not defined"
+  },
+  {
+   "color": "Orange",
+   "title": "Not under command"
+  },
+  {
+   "color": "Pink",
+   "title": "Restricted"
+  }
+ ],
  "title_field": "vessel_name",
  "track_changes": 1
 }
