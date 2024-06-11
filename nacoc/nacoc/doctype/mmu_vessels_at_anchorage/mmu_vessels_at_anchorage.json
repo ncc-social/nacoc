@@ -11,6 +11,7 @@
  "field_order": [
   "vessel_details_tab",
   "vessel",
+  "vessel_name",
   "mmsi",
   "column_break_dseys",
   "vessel_type",
@@ -244,11 +245,18 @@
    "fieldtype": "HTML",
    "label": "Anchorage Map",
    "options": "<div id=\"anchorage_map\" style=\"min-height: 300px;\"></div>"
+  },
+  {
+   "fetch_from": "vessel.vessel_name",
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Vessel Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 13:16:17.766805",
+ "modified": "2024-05-22 13:41:34.436777",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessels at Anchorage",
@@ -268,8 +276,10 @@
    "write": 1
   }
  ],
+ "search_fields": "vessel_name,imo",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "vessel_name",
  "track_changes": 1
 }

@@ -39,7 +39,7 @@
    "search_index": 1
   },
   {
-   "fetch_from": "vessel_name.imo",
+   "fetch_from": "vessel.imo",
    "fieldname": "imo",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -49,7 +49,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "vessel_name.mmsi",
+   "fetch_from": "vessel.mmsi",
    "fieldname": "mmsi",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -59,7 +59,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "vessel_name.flag",
+   "fetch_from": "vessel.flag",
    "fieldname": "flag",
    "fieldtype": "Data",
    "label": "Flag",
@@ -152,7 +152,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 15:37:57.364592",
+ "modified": "2024-05-22 11:26:57.210671",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel History",

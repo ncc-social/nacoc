@@ -95,10 +95,10 @@
  "links": [
   {
    "link_doctype": "MMU Vessel History",
-   "link_fieldname": "vessel_name"
+   "link_fieldname": "vessel"
   }
  ],
- "modified": "2024-05-20 11:59:20.894231",
+ "modified": "2024-05-22 11:30:11.055240",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel",

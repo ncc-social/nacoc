@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}}]",
- "creation": "2024-03-23 14:13:38.862319",
+ "creation": "2024-05-23 12:05:08.110742",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -255,7 +255,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-03-25 08:07:55.214891",
+ "modified": "2024-05-23 12:07:37.750177",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
@@ -264,7 +264,20 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "NACOC User"
+  },
+  {
+   "role": "Precursor Officer"
+  },
+  {
+   "role": "MMU Officer"
+  }
+ ],
  "sequence_id": 3.0,
  "shortcuts": [],
  "title": "NACOC"

@@ -1,20 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:call_number",
  "creation": "2024-03-24 09:47:53.123902",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "book_title",
+  "call_number",
   "isbn",
+  "book_title",
   "year_published",
+  "number_of_pages",
   "shelf_number",
   "book_cover",
   "column_break_rihj",
+  "status",
   "book_type",
+  "category",
   "edition",
-  "genre",
-  "number_of_copies"
+  "book_description"
  ],
  "fields": [
   {
@@ -32,6 +36,7 @@
   {
    "fieldname": "year_published",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Year Published"
   },
   {
@@ -52,50 +57,91 @@
   {
    "fieldname": "book_type",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Book Type",
-   "options": "\nDissertation\nNovel\nBook\nReport\nResearch Paper\nJournals",
+   "options": "\nBOOK\nNOVEL\nREPORT\nRESEARCH PAPER\nJOURNAL",
    "reqd": 1,
    "sort_options": 1
   },
   {
    "fieldname": "isbn",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "ISBN"
   },
   {
-   "fieldname": "genre",
-   "fieldtype": "Data",
-   "label": "Genre"
+   "default": "-",
+   "fieldname": "number_of_pages",
+   "fieldtype": "Int",
+   "label": "Number of Pages"
   },
   {
-   "fieldname": "number_of_copies",
-   "fieldtype": "Int",
-   "label": "Number of Copies"
+   "fieldname": "book_description",
+   "fieldtype": "Text",
+   "label": "Book Description"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category"
+  },
+  {
+   "fieldname": "call_number",
+   "fieldtype": "Data",
+   "label": "Call Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Good",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nGood\nLost\nDamaged\nIssued",
+   "reqd": 1
   }
  ],
+ "image_field": "book_cover",
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-03-24 09:57:19.395489",
+ "links": [
+  {
+   "link_doctype": "Issue Book",
+   "link_fieldname": "book"
+  },
+  {
+   "link_doctype": "Return Book",
+   "link_fieldname": "book"
+  }
+ ],
+ "modified": "2024-06-11 10:14:23.553412",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Book",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
+ "search_fields": "isbn",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Green",
+   "title": "Good"
+  },
+  {
+   "color": "Red",
+   "title": "Issued"
+  },
+  {
+   "color": "Pink",
+   "title": "Lost"
+  },
+  {
+   "color": "Yellow",
+   "title": "Damaged"
+  }
+ ],
+ "title_field": "book_title"
 }
