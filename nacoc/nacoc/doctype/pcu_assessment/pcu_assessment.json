@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:PCUA-{YY}-{MM}-{#######}",
  "creation": "2023-02-22 10:32:13.990582",
  "default_view": "List",
  "doctype": "DocType",
@@ -16,6 +17,7 @@
   "section_break_4",
   "officer",
   "company_details_section",
+  "company",
   "company_name",
   "region",
   "company_address",
@@ -96,22 +98,23 @@
    "label": "Company Details"
   },
   {
+   "fetch_from": "company.company_name",
    "fieldname": "company_name",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Company Name",
-   "options": "Precursor Company"
+   "label": "Company Name"
   },
   {
-   "fetch_from": "company_name.company_address",
+   "fetch_from": "company.company_address",
    "fieldname": "company_address",
    "fieldtype": "Data",
    "label": "Company Address",
    "read_only": 1
   },
   {
-   "fetch_from": "company_name.mandate_of_company",
+   "fetch_from": "company.mandate_of_company",
    "fieldname": "mandate_of_company",
    "fieldtype": "Data",
    "label": "Mandate of Company",
@@ -123,14 +126,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "company_name.company_file_number",
+   "fetch_from": "company.company_file_number",
    "fieldname": "company_file_number",
    "fieldtype": "Data",
    "label": "Company File Number",
    "read_only": 1
   },
   {
-   "fetch_from": "company_name.digital_address",
+   "fetch_from": "company.digital_address",
    "fieldname": "digital_address",
    "fieldtype": "Data",
    "label": "Digital Address",
@@ -317,33 +320,42 @@
    "permlevel": 1
   },
   {
-   "fetch_from": "company_name.description_of_location",
+   "fetch_from": "company.description_of_location",
    "fieldname": "description_of_location",
    "fieldtype": "Data",
    "label": "Description of Location",
    "read_only": 1
   },
   {
-   "fetch_from": "company_name.region",
+   "fetch_from": "company.region",
    "fieldname": "region",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Region",
    "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Precursor Company"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-02-23 09:21:09.127693",
+ "modified": "2024-06-13 15:39:54.172520",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "PCU Assessment",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "company_name",
  "track_changes": 1
 }
