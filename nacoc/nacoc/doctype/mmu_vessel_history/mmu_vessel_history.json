@@ -15,6 +15,7 @@
   "imo",
   "year_built",
   "column_break_hith3",
+  "vessel_type",
   "mmsi",
   "flag",
   "vessel_movement_section",
@@ -135,7 +136,7 @@
    "label": "Time of Entry"
   },
   {
-   "fetch_from": "vessel_name.year_built",
+   "fetch_from": "vessel.year_built",
    "fieldname": "year_built",
    "fieldtype": "Data",
    "label": "Year Built",
@@ -148,11 +149,18 @@
    "options": "MMU Vessel",
    "reqd": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "vessel.vessel_type",
+   "fieldname": "vessel_type",
+   "fieldtype": "Data",
+   "label": "Vessel Type",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-22 11:26:57.210671",
+ "modified": "2024-06-13 10:14:44.029686",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel History",
