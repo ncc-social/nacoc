@@ -199,23 +199,11 @@ fixtures = [
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"nacoc.tasks.all"
-#	],
-#	"daily": [
-#		"nacoc.tasks.daily"
-#	],
-#	"hourly": [
-#		"nacoc.tasks.hourly"
-#	],
-#	"weekly": [
-#		"nacoc.tasks.weekly"
-#	],
-#	"monthly": [
-#		"nacoc.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+    "cron": {
+        "* * * * *": ["nacoc.my_scripts.smartermail.log_server_status"]
+    }
+}
 
 # Testing
 # -------

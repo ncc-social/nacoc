@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CREW-{######}",
+ "creation": "2024-06-25 12:15:43.936598",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crew_name",
+  "nationality",
+  "column_break_crhz",
+  "date_of_birth",
+  "passport_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "crew_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Crew Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "column_break_crhz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Nationality",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-07 10:32:28.279897",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Crew",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "crew_name"
+}

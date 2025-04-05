@@ -13,6 +13,7 @@
   "company_address",
   "description_of_location",
   "region",
+  "head_of_region",
   "column_break_to9yj",
   "company_file_number",
   "digital_address",
@@ -67,11 +68,18 @@
    "options": "Region",
    "reqd": 1,
    "sort_options": 1
+  },
+  {
+   "fetch_from": "region.head_of_region",
+   "fieldname": "head_of_region",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Head of Region"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-09 19:22:28.392461",
+ "modified": "2025-04-01 11:38:11.090512",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Precursor Company",

@@ -1,0 +1,325 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:target_number",
+ "creation": "2024-06-25 13:07:43.572271",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "team",
+  "report_date",
+  "container_number",
+  "column_break_arrx",
+  "target_number",
+  "berth",
+  "category",
+  "section_break_jhuw",
+  "reasons_deployed",
+  "vessel_information_tab",
+  "vessel_information_section",
+  "vessel",
+  "imo",
+  "vessel_type",
+  "year_of_build",
+  "nationality_of_vessel",
+  "previous_name_of_vessel",
+  "vessel_name",
+  "column_break_kxks",
+  "estimated_arrival_date",
+  "sailing_date",
+  "port_of_origin",
+  "previous_port",
+  "next_port",
+  "column_break_aqqp",
+  "nr_tonnage",
+  "agent_of_vessel",
+  "rummage_seizures",
+  "registered_owner",
+  "section_break_kaxo",
+  "crew_list",
+  "section_break_pdtk",
+  "comment_text",
+  "handling_instruction_tab",
+  "disseminated_to",
+  "column_break_itdh",
+  "email",
+  "section_break_oaim",
+  "feedback_to",
+  "column_break_rqxh",
+  "feedback_date",
+  "section_break_cobp",
+  "rummage_detail_and_results"
+ ],
+ "fields": [
+  {
+   "fieldname": "team",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Report Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "berth",
+   "fieldtype": "Data",
+   "label": "Berth"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "\nA\nB\nC\nD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reasons_deployed",
+   "fieldtype": "Text Editor",
+   "label": "Reasons Deployed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vessel_information_section",
+   "fieldtype": "Section Break",
+   "label": "Vessel Information"
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Link",
+   "label": "Vessel",
+   "options": "MMU Vessel",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vessel.imo",
+   "fieldname": "imo",
+   "fieldtype": "Data",
+   "label": "IMO",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vessel.vessel_type",
+   "fieldname": "vessel_type",
+   "fieldtype": "Data",
+   "label": "Vessel Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_name_of_vessel",
+   "fieldtype": "Data",
+   "label": "Previous Name of Vessel"
+  },
+  {
+   "fieldname": "column_break_kxks",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vessel.year_built",
+   "fieldname": "year_of_build",
+   "fieldtype": "Data",
+   "label": "Year of Build",
+   "read_only": 1
+  },
+  {
+   "fieldname": "nr_tonnage",
+   "fieldtype": "Data",
+   "label": "NR Tonnage"
+  },
+  {
+   "fieldname": "sailing_date",
+   "fieldtype": "Date",
+   "label": "Sailing Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_port",
+   "fieldtype": "Link",
+   "label": "Next Port",
+   "options": "Global Port",
+   "reqd": 1
+  },
+  {
+   "fieldname": "previous_port",
+   "fieldtype": "Link",
+   "label": "Previous Port",
+   "options": "Global Port",
+   "reqd": 1
+  },
+  {
+   "fieldname": "port_of_origin",
+   "fieldtype": "Link",
+   "label": "Port of Origin",
+   "options": "Global Port",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agent_of_vessel",
+   "fieldtype": "Data",
+   "label": "Agent of Vessel"
+  },
+  {
+   "fieldname": "column_break_arrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Target Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_jhuw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_aqqp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rummage_seizures",
+   "fieldtype": "Data",
+   "label": "Rummage Seizures"
+  },
+  {
+   "fieldname": "handling_instruction_tab",
+   "fieldtype": "Tab Break",
+   "label": "Handling Instructions"
+  },
+  {
+   "fieldname": "disseminated_to",
+   "fieldtype": "Data",
+   "label": "Disseminated To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_itdh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_oaim",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "feedback_to",
+   "fieldtype": "Data",
+   "label": "Feedback To"
+  },
+  {
+   "fieldname": "column_break_rqxh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "feedback_date",
+   "fieldtype": "Date",
+   "label": "Feedback Date"
+  },
+  {
+   "fieldname": "section_break_cobp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rummage_detail_and_results",
+   "fieldtype": "Text Editor",
+   "label": "Rummage Detail and Results"
+  },
+  {
+   "fieldname": "vessel_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vessel"
+  },
+  {
+   "fetch_from": "vessel.flag",
+   "fieldname": "nationality_of_vessel",
+   "fieldtype": "Data",
+   "label": "Nationality of Vessel",
+   "read_only": 1
+  },
+  {
+   "fieldname": "registered_owner",
+   "fieldtype": "Data",
+   "label": "Registered Owner"
+  },
+  {
+   "fieldname": "section_break_kaxo",
+   "fieldtype": "Section Break",
+   "label": "Vessel Crew"
+  },
+  {
+   "fieldname": "crew_list",
+   "fieldtype": "Table",
+   "label": "Crew List",
+   "options": "Vessel Target Crew"
+  },
+  {
+   "fetch_from": "vessel.vessel_name",
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Vessel Name"
+  },
+  {
+   "fieldname": "section_break_pdtk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comment_text",
+   "fieldtype": "Text Editor",
+   "label": "Comment"
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "label": "Container Number"
+  },
+  {
+   "fieldname": "estimated_arrival_date",
+   "fieldtype": "Date",
+   "label": "Estimated Arrival Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-11 16:56:12.089740",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "MMU Vessel Target",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "vessel_name,registered_owner,disseminated_to",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vessel_name"
+}

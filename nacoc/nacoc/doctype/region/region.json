@@ -1,28 +1,38 @@
 {
  "actions": [],
- "autoname": "field:name_of_region",
+ "autoname": "format:{name_of_region}",
  "creation": "2022-08-26 05:31:23.909762",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name_of_region"
+  "name_of_region",
+  "head_of_region"
  ],
  "fields": [
   {
    "fieldname": "name_of_region",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name of Region",
+   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "head_of_region",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Head of Region",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-26 05:31:23.909762",
+ "modified": "2025-04-01 11:23:05.591928",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Region",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmarterMail Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+        /* [data-bs-theme="light"],
+        [data-bs-theme="dark"] {
+            --tblr-primary: #0ca678 !important;
+            --tblr-primary-darken: #086b4d !important;
+        } */
+
+        .datagrid {
+            --tblr-datagrid-item-width: 10rem !important;
+        }
+
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="page-wrapper">
+            <div class="card card-borderless p-2 bg-transparent">
+                <div class="page-header">
+                    <div class="container">
+                        <div class="row g-3 align-items-center">
+                            <div class="col ms-auto">
+                                <button id="themeToggle" class="btn btn-primary btn-icon" data-bs-toggle="tooltip"
+                                    data-bs-title="Toggle Dark/Light mode" data-bs-placement="bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-moon">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="col-auto">
+                                <span id="statusIndicator"
+                                    class="status-indicator status-green status-indicator-animated">
+                                    <span class="status-indicator-circle"></span>
+                                    <span class="status-indicator-circle"></span>
+                                    <span class="status-indicator-circle"></span>
+                                </span>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="page-title mb-2">Mail Server <span
+                                        class="fs-5 fw-normal text-secondary ms-3" id="last-checked">Last
+                                        checked: --</span></div>
+                                <div class="text-secondary col-6">
+                                    <ul class="list-inline list-inline-dots mb-0">
+                                        <div class="tracking" id="tracking-status">
+                                            <!-- Tracking blocks inserted dynamically -->
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="container-xl mb-3">
+                        <div class="row row-cards row-deck">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Spool Count</div>
+                                        <div class="display-4 fw-bold my-2" id="spoolCount"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Current
+                                            Connections
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="currentConnections"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Active Users
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="userActivity"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Used Disk Space
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="diskSpace"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Mails delivered
+                                            (server start)</div>
+                                        <div class="display-4 fw-bold my-2" id="deliveryCountSinceLastStart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Last
+                                            24 hours
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="deliveryCountLast24Hours"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Last
+                                            hour
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="deliveryCountLastHour"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="text-uppercase text-secondary font-weight-medium">Last
+                                            5 mins
+                                        </div>
+                                        <div class="display-4 fw-bold my-2" id="deliveryCountLast5Minutes"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-xl my-3">
+                        <div class="row row-cards mb-3">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Domain Statistics</h3>
+                                    </div>
+                                    <div class="card-body domain-stats">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-5 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Start Date</label>
+                                                    <input type="date" id="startDate" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label">End Date</label>
+                                                    <input type="date" id="endDate" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-12">
+                                                <div class="d-grid"><button id="searchButton"
+                                                        class="btn btn-primary mt-2">Search</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="datagrid mt-4" id="domainStats" style="display: none;">
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Domain Name</div>
+                                                <div class="datagrid-content" id="domainName"></div>
+                                            </div>
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Messages Received</div>
+                                                <div class="datagrid-content" id="messagesReceived"></div>
+                                            </div>
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Messages Sent</div>
+                                                <div class="datagrid-content" id="messagesSent"></div>
+                                            </div>
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Bytes Received</div>
+                                                <div class="datagrid-content" id="bytesReceived"></div>
+                                            </div>
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Bytes Sent</div>
+                                                <div class="datagrid-content" id="bytesSent"></div>
+                                            </div>
+                                            <div class="datagrid-item">
+                                                <div class="datagrid-title">Size on Disk</div>
+                                                <div class="datagrid-content" id="bytesSize"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/js/tabler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function (fn) {
+            frappe.ready_events.push(fn);
+        }
+    </script>
+    <script>
+        const API_BASE_URL = "https://mail.ncc.gov.gh/api/v1";
+
+        let adminAuthInProgress = false;
+        let domainAuthInProgress = false;
+        let adminAuthFailCount = 0;
+        let domainAuthFailCount = 0;
+        const MAX_AUTH_ATTEMPTS = 3; // Prevent infinite loops
+
+        const targetUrl = "https://mail.ncc.gov.gh"; // Change this to your actual server URL or IP.
+
+        let lastUpTime = localStorage.getItem("lastUpTime") || "--"; // Retrieve last UP time from local storage
+        let isPreviouslyDown = false; // To track state change
+
+        async function authenticateAdmin() {
+            if (adminAuthInProgress) return; // Avoid multiple calls at once
+            adminAuthInProgress = true;
+
+            try {
+                const response = await fetch("/api/method/nacoc.my_scripts.smartermail.authenticate_admin", {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include"
+                });
+
+                if (!response.ok) throw new Error("Failed to authenticate Admin");
+
+                const data = await response.json();
+                localStorage.setItem("adminAccessToken", data.message.accessToken);
+                localStorage.setItem("adminRefreshToken", data.message.refreshToken);
+                adminAuthFailCount = 0; // Reset fail count
+            } catch (error) {
+                adminAuthFailCount++;
+                console.error(`Admin Authentication error (Attempt ${adminAuthFailCount}):`, error);
+                if (adminAuthFailCount >= MAX_AUTH_ATTEMPTS) {
+                    console.error("Max retries reached for Admin authentication. Stopping further attempts.");
+                }
+            } finally {
+                adminAuthInProgress = false;
+            }
+        }
+
+        async function authenticateDomain() {
+            if (domainAuthInProgress) return;
+            domainAuthInProgress = true;
+
+            try {
+                const response = await fetch("/api/method/nacoc.my_scripts.smartermail.authenticate_domain", {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include"
+                });
+
+                if (!response.ok) throw new Error("Failed to authenticate Domain Admin");
+
+                const data = await response.json();
+                localStorage.setItem("domainAccessToken", data.message.accessToken);
+                localStorage.setItem("domainRefreshToken", data.message.refreshToken);
+                domainAuthFailCount = 0;
+            } catch (error) {
+                domainAuthFailCount++;
+                console.error(`Domain Authentication error (Attempt ${domainAuthFailCount}):`, error);
+                if (domainAuthFailCount >= MAX_AUTH_ATTEMPTS) {
+                    console.error("Max retries reached for Domain authentication. Stopping further attempts.");
+                }
+            } finally {
+                domainAuthInProgress = false;
+            }
+        }
+
+        async function refreshToken(tokenType) {
+            const refreshToken = localStorage.getItem(`${tokenType}RefreshToken`);
+            if (!refreshToken) {
+                console.warn(`${tokenType} refresh token missing. Authenticating instead.`);
+                tokenType === "admin" ? await authenticateAdmin() : await authenticateDomain();
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/refresh-token`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ token: refreshToken })
+                });
+
+                if (!response.ok) throw new Error(`Failed to refresh ${tokenType} token`);
+
+                const data = await response.json();
+                localStorage.setItem(`${tokenType}AccessToken`, data.accessToken);
+                localStorage.setItem(`${tokenType}RefreshToken`, data.refreshToken);
+            } catch (error) {
+                console.error(`${tokenType} Token Refresh error:`, error);
+                tokenType === "admin" ? await authenticateAdmin() : await authenticateDomain();
+            }
+        }
+
+        async function fetchData(tokenType, endpoint) {
+            let accessToken = localStorage.getItem(`${tokenType}AccessToken`);
+
+            if (!accessToken) {
+                console.warn(`${tokenType} token missing. Authenticating...`);
+                tokenType === "admin" ? await authenticateAdmin() : await authenticateDomain();
+                accessToken = localStorage.getItem(`${tokenType}AccessToken`);
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+                    headers: { Authorization: `Bearer ${accessToken}` }
+                });
+
+                if (response.status === 401) {
+                    console.warn(`${tokenType} token expired. Refreshing...`);
+                    await refreshToken(tokenType);
+                    return fetchData(tokenType, endpoint);
+                }
+
+                if (!response.ok) throw new Error(`Failed to fetch ${tokenType} data from ${endpoint}`);
+
+                return await response.json();
+            } catch (error) {
+                console.error(`Error fetching ${tokenType} data:`, error);
+            }
+        }
+
+        async function showDashboard() {
+            try {
+                const serverStats = await fetchData("admin", "/settings/sysadmin/dashboard-stats");
+                const userStats = await fetchData("domain", "/settings/domain/account-list-counts");
+                const systemStats = await fetchData("admin", "/settings/sysadmin/message-traffic-statistics");
+                const diskSpace = await fetchData("admin", "/report/domain-stats/2025-03-20/2025-03-21/ncc.gov.gh");
+                // const serverUsers = await fetchData("domain", "/settings/domain/total-server-users");
+
+                const totalBytes = 500 * 1024 * 1024 * 1024; // 500 GB in bytes
+                const bytesSize = diskSpace?.bytesSize || "N/A"; // Use 0 if bytesSize is undefined
+
+                // Format the bytes and calculate the percentage
+                const formattedBytes = formatBytes(bytesSize);
+                const percentage = calculatePercentage(bytesSize, totalBytes);
+
+                document.getElementById("spoolCount").innerText = serverStats?.spoolCount || 0;
+                document.getElementById("currentConnections").innerText = serverStats?.currentConnections || "N/A";
+                document.getElementById("userActivity").innerText = serverStats?.userActivity || "N/A";
+                // document.getElementById("users").innerText = userStats?.users || "N/A";
+                document.getElementById("diskSpace").innerText = percentage;
+                document.getElementById("deliveryCountSinceLastStart").innerText = systemStats?.stats.deliveryCountSinceLastStart || "N/A";
+                document.getElementById("deliveryCountLast24Hours").innerText = systemStats?.stats.deliveryCountLast24Hours || "N/A";
+                document.getElementById("deliveryCountLastHour").innerText = systemStats?.stats.deliveryCountLastHour || "N/A";
+                document.getElementById("deliveryCountLast5Minutes").innerText = systemStats?.stats.deliveryCountLast5Minutes || "N/A";
+
+                updateServerTrackingUI();
+            } catch (error) {
+                console.error("Error updating dashboard:", error);
+            }
+        }
+
+        async function fetchDomainStatistics(startDate, endDate) {
+            let accessToken = localStorage.getItem("adminAccessToken");
+            if (!accessToken) {
+                await authenticateAdmin();
+                accessToken = localStorage.getItem("adminAccessToken");
+            }
+
+            const endpoint = `/report/domain-stats/${startDate}/${endDate}/ncc.gov.gh`;
+            const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            });
+
+            if (response.status === 401) {
+                await refreshAdminAuthToken();
+                return fetchDomainStatistics(startDate, endDate);
+            }
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch domain statistics`);
+            }
+
+            return response.json();
+        }
+
+        async function fetchServerStatus(serverName) {
+            try {
+                const response = await fetch(`/api/method/nacoc.my_scripts.smartermail.get_server_status_logs?server_name=${serverName}`);
+                const data = await response.json();
+
+                if (!data.message) {
+                    console.error("Error fetching logs:", data);
+                    return [];
+                }
+
+                return data.message;
+            } catch (error) {
+                console.error("Fetch Error:", error);
+                return [];
+            }
+        }
+
+
+        async function updateServerTrackingUI() {
+            const serverName = "mail.ncc.gov.gh"; // Change to your actual server name
+            const logs = await fetchServerStatus(serverName);
+
+            const trackingContainer = document.getElementById("tracking-status");
+            trackingContainer.innerHTML = ""; // Clear previous data
+            if (!logs.length) {
+                trackingContainer.innerHTML = "<p class='text-muted'>No logs available.</p>";
+                return;
+            }
+
+            logs.forEach(log => {
+                const block = document.createElement("div");
+                block.classList.add("tracking-block");
+
+                const date = new Date(log.timestamp);
+                const friendlyTime = new Intl.DateTimeFormat('en-GB', {
+                    year: 'numeric',  // e.g., 2025
+                    month: 'long',   // e.g., Mar
+                    day: 'numeric',   // e.g., 21
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true // Converts to AM/PM format
+                }).format(date);
+
+                if (log.status === "Up") {
+                    block.classList.add("bg-success");
+                    block.setAttribute("title", `Server UP on ${friendlyTime}`);
+                } else {
+                    block.classList.add("bg-danger");
+                    block.setAttribute("title", `Server DOWN on ${friendlyTime}`);
+                }
+
+                trackingContainer.appendChild(block);
+            });
+
+            // Reinitialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+        }
+
+        // Call function on page load
+        document.addEventListener("DOMContentLoaded", updateServerTrackingUI);
+
+
+
+
+
+
+
+        function checkServerStatus() {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000); // Timeout after 5 seconds
+
+            fetch(targetUrl, { method: "HEAD", mode: "no-cors", signal: controller.signal })
+                .then(() => {
+                    lastUpTime = new Date().toLocaleTimeString();
+                    localStorage.setItem("lastUpTime", lastUpTime); // Save last UP time in local storage
+                    updateStatus(true);
+                })
+                .catch(() => {
+                    updateStatus(false);
+                })
+                .finally(() => clearTimeout(timeoutId));
+        }
+
+        function updateStatus(isOnline) {
+            const serverName = "mail.ncc.gov.gh";
+            const statusIndicator = document.querySelector(".status-indicator");
+            const lastChecked = document.querySelector("#last-checked");
+
+            const now = new Date();
+            const formattedTime = now.toLocaleTimeString();
+
+            if (isOnline) {
+                statusIndicator.classList.remove("status-red");
+                statusIndicator.classList.add("status-green");
+                lastChecked.innerHTML = `Last checked: ${formattedTime}`;
+
+                if (isPreviouslyDown) {
+                    isPreviouslyDown = false;
+                    sendNotification("✅ Server is back online!");
+                }
+            } else {
+                statusIndicator.classList.remove("status-green");
+                statusIndicator.classList.add("status-red");
+                lastChecked.innerHTML = `❌ Last UP: ${lastUpTime}`;
+
+                if (!isPreviouslyDown) {
+                    sendNotification("❌ Server is down!");
+                    isPreviouslyDown = true;
+                }
+
+            }
+        }
+
+        function sendNotification(message) {
+            if (Notification.permission === "granted") {
+                new Notification(message);
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then((permission) => {
+                    if (permission === "granted") {
+                        new Notification(message);
+                    }
+                });
+            }
+        }
+
+        // Initial check
+        checkServerStatus();
+
+        // Check every 1 minute
+        setInterval(checkServerStatus, 60000);
+
+        function formatBytes(bytes, decimals = 2) {
+            if (bytes === 0) return "0 Bytes";
+
+            const k = 1024;
+            const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+            // Calculate the unit index
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+            // Format the number with the appropriate unit
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + " " + sizes[i];
+        }
+
+        function validateDates(startDate, endDate) {
+            if (!startDate || !endDate) {
+                alert("Please select both start and end dates.");
+                return false;
+            }
+            if (new Date(startDate) > new Date(endDate)) {
+                alert("Start date cannot be after end date.");
+                return false;
+            }
+            return true;
+        }
+
+        function calculatePercentage(bytes, totalBytes) {
+            return ((bytes / totalBytes) * 100).toFixed(2) + "%";
+        }
+
+        document.getElementById("searchButton").addEventListener("click", async () => {
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+
+            if (!validateDates(startDate, endDate)) return;
+
+            try {
+                const data = await fetchDomainStatistics(startDate, endDate);
+                document.getElementById("domainName").innerText = data?.domainName || "N/A";
+                document.getElementById("messagesReceived").innerText = data?.messagesReceived || "N/A";
+                document.getElementById("messagesSent").innerText = data?.messagesSent || "N/A";
+                document.getElementById("bytesReceived").innerText = data?.bytesReceived ? formatBytes(data.bytesReceived) : "N/A";
+                document.getElementById("bytesSent").innerText = data?.bytesSent ? formatBytes(data.bytesSent) : "N/A";
+                document.getElementById("bytesSize").innerText = data?.bytesSize ? formatBytes(data.bytesSize) : "N/A";
+
+                document.getElementById("domainStats").removeAttribute("style");
+
+
+            } catch (error) {
+                console.error("Error fetching domain statistics:", error);
+            }
+        });
+
+        // Auto Refresh Logic
+        let intervalId;
+
+        function startAutoRefresh() {
+            stopAutoRefresh();
+            intervalId = setInterval(async () => {
+                console.log("Refreshing tokens and updating dashboard...");
+                await refreshToken("admin");
+                await refreshToken("domain");
+                await showDashboard();
+            }, 30000);
+        }
+
+        function stopAutoRefresh() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        // Visibility Handling
+        document.addEventListener("visibilitychange", async () => {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else {
+                console.log("Tab is active, refreshing dashboard...");
+                await refreshToken("admin");
+                await refreshToken("domain");
+                await showDashboard();
+                startAutoRefresh();
+            }
+        });
+
+        // Authenticate & Initialize
+        async function authenticateBoth() {
+            console.log("Starting authentication...");
+            await authenticateAdmin();
+            await authenticateDomain();
+            await showDashboard();
+            startAutoRefresh();
+        }
+
+        // Start
+        authenticateBoth();
+
+    </script>
+    <script>
+        function getMoonIcon() {
+            return `
+            <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" class="icon icon-tabler icon-tabler-moon">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/>
+            </svg>
+        `;
+        }
+
+        function getSunIcon() {
+            return `
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  
+                fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  
+                stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+            </svg>
+        `;
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle("theme-dark");
+
+            // Set Bootstrap's data attribute for dark mode
+            document.body.setAttribute("data-bs-theme", isDark ? "dark" : "light");
+
+            // Save preference
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+
+            // Update icon
+            updateIcon(isDark);
+        }
+
+        function updateIcon(isDark) {
+            document.getElementById("themeToggle").innerHTML = isDark ? getSunIcon() : getMoonIcon();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            const isDark = savedTheme === "dark";
+
+            if (isDark) {
+                document.documentElement.classList.add("theme-dark");
+                document.body.setAttribute("data-bs-theme", "dark");
+            } else {
+                document.body.setAttribute("data-bs-theme", "light");
+            }
+
+            updateIcon(isDark);
+
+            document.getElementById("themeToggle").addEventListener("click", toggleDarkMode);
+        });
+    </script>
+</body>
+
+</html>

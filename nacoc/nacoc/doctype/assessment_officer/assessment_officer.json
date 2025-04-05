@@ -16,7 +16,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Officer",
-   "options": "User"
+   "options": "User",
+   "reqd": 1
   },
   {
    "fetch_from": "officer.full_name",
@@ -30,7 +31,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-25 16:16:49.851706",
+ "modified": "2024-11-04 12:02:26.185710",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Assessment Officer",

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:imo",
+ "autoname": "format:{imo}",
  "creation": "2023-07-28 12:57:38.849351",
  "default_view": "List",
  "doctype": "DocType",
@@ -86,8 +86,9 @@
   },
   {
    "fieldname": "year_built",
-   "fieldtype": "Data",
-   "label": "Year Built"
+   "fieldtype": "Link",
+   "label": "Year Built",
+   "options": "Year"
   }
  ],
  "image_field": "vessel_image_1",
@@ -96,13 +97,21 @@
   {
    "link_doctype": "MMU Vessel History",
    "link_fieldname": "vessel"
+  },
+  {
+   "link_doctype": "MMU Vessels at Anchorage",
+   "link_fieldname": "vessel"
+  },
+  {
+   "link_doctype": "MMU Vessel Target",
+   "link_fieldname": "vessel"
   }
  ],
- "modified": "2024-05-22 11:30:11.055240",
+ "modified": "2025-03-10 11:44:17.769722",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "MMU Vessel",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
