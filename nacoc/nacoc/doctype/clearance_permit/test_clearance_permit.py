@@ -1,9 +1,9 @@
-# Copyright (c) 2023, NACOC and Contributors
+# Copyright (c) 2025, NACOC and Contributors
 # See license.txt
 
 # import frappe
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestPCUAssessment(FrappeTestCase):
+class TestClearancePermit(FrappeTestCase):
 	pass

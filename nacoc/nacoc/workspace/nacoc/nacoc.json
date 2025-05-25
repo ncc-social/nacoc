@@ -1,7 +1,12 @@
 {
- "charts": [],
- "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}}]",
- "creation": "2025-01-11 14:51:19.442319",
+ "charts": [
+  {
+   "chart_name": "Field Assessments by Day",
+   "label": "Daily Assessments"
+  }
+ ],
+ "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"WA1FQLmasG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Assessments\",\"col\":3}},{\"id\":\"oNF-EGUpAp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"RSI\",\"col\":3}},{\"id\":\"tEjEdktrxe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pre-Registration\",\"col\":3}},{\"id\":\"tu1jm-pbPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow-Up\",\"col\":3}},{\"id\":\"oZUPmUNxt0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Vessels\",\"col\":4}},{\"id\":\"TrhfZkKOrM\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Vessel Targets\",\"col\":4}},{\"id\":\"3UQpBkyemc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vessels at Anchorage\",\"col\":4}},{\"id\":\"IMUpBe92kh\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Daily Assessments\",\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"Xr6z7z7V58\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":4}},{\"id\":\"rLxzF4y83p\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":4}},{\"id\":\"v4HKDDI6i0\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":4}},{\"id\":\"hthwCIr4fK\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee\",\"col\":4}}]",
+ "creation": "2025-05-13 12:27:11.743677",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -17,15 +22,16 @@
    "is_query_report": 0,
    "label": "Precursor Control",
    "link_count": 3,
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "PCU Assessment",
+   "label": "Precursor Assessment",
    "link_count": 0,
-   "link_to": "PCU Assessment",
+   "link_to": "Precursor Assessment",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -43,7 +49,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Substance/Chemical",
+   "label": "Precursor Chemical",
    "link_count": 0,
    "link_to": "Substance",
    "link_type": "DocType",
@@ -53,114 +59,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Human Resource",
-   "link_count": 2,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Leave Application",
-   "link_count": 0,
-   "link_to": "Leave Application",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Employee",
-   "link_count": 0,
-   "link_to": "Employee",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Freight",
-   "link_count": 7,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Exporters",
-   "link_count": 0,
-   "link_to": "Exporter",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Forwarders",
-   "link_count": 0,
-   "link_to": "Forwarder",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Consignees",
-   "link_count": 0,
-   "link_to": "Consignee",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Cargo Imports",
-   "link_count": 0,
-   "link_to": "Cargo Import",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "EDF Airport",
-   "link_count": 0,
-   "link_to": "EDF Airport",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "EDF Seaport",
-   "link_count": 0,
-   "link_to": "EDF Seaport",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Import Tagging",
-   "link_count": 0,
-   "link_to": "Import Tagging",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "description": "Modules for Library Management",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Library",
+   "label": "Maritime Monitoring",
    "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
@@ -169,9 +68,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Book List",
+   "label": "Vessel",
    "link_count": 0,
-   "link_to": "Book",
+   "link_to": "MMU Vessel",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -179,12 +78,41 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Author List",
+   "label": "Vessel History",
    "link_count": 0,
-   "link_to": "Author",
+   "link_to": "MMU Vessel History",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel Target",
+   "link_count": 0,
+   "link_to": "MMU Vessel Target",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel at Anchorage",
+   "link_count": 0,
+   "link_to": "MMU Vessels at Anchorage",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Library",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
   },
   {
    "hidden": 0,
@@ -209,8 +137,18 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Maritime Monitoring",
-   "link_count": 5,
+   "label": "Book List",
+   "link_count": 0,
+   "link_to": "Book",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 2,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -218,9 +156,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Vessel History",
+   "label": "Employee",
    "link_count": 0,
-   "link_to": "MMU Vessel History",
+   "link_to": "Employee",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -228,49 +166,48 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Vessel",
+   "label": "Leave Application",
    "link_count": 0,
-   "link_to": "MMU Vessel",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vessel Type",
-   "link_count": 0,
-   "link_to": "MMU Vessel Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vessel at Anchorage",
-   "link_count": 0,
-   "link_to": "MMU Vessels at Anchorage",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vessel Target",
-   "link_count": 0,
-   "link_to": "MMU Vessel Target",
+   "link_to": "Leave Application",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2025-01-15 09:39:04.997808",
+ "modified": "2025-05-20 09:50:05.142131",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "No of Assessments",
+   "number_card_name": "Field Assessments"
+  },
+  {
+   "label": "RSI",
+   "number_card_name": "Routine Site Inspection"
+  },
+  {
+   "label": "Pre-Registration",
+   "number_card_name": "Pre-Registration"
+  },
+  {
+   "label": "No of Vessels",
+   "number_card_name": "No of Vessels"
+  },
+  {
+   "label": "Follow-Up",
+   "number_card_name": "Follow-Up"
+  },
+  {
+   "label": "No of Vessel Targets",
+   "number_card_name": "Vessel Target"
+  },
+  {
+   "label": "Vessels at Anchorage",
+   "number_card_name": "Vessels at Anchorage"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,

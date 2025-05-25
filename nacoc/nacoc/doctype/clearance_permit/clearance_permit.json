@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{permit_no}",
+ "creation": "2025-04-06 16:53:35.790976",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company_details_section",
+  "importing_company",
+  "importing_company_name",
+  "importing_company_address",
+  "column_break_oqtt",
+  "exporting_company",
+  "exporting_company_address",
+  "section_break_utbm",
+  "precursor_chemical",
+  "quantity",
+  "uom",
+  "precursor_chemical_code",
+  "column_break_dbli",
+  "eda",
+  "swb",
+  "permit_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "importing_company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Importing Company",
+   "options": "Precursor Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "importing_company_address",
+   "fieldtype": "Small Text",
+   "label": "Importing Company Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oqtt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exporting_company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Exporting Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exporting_company_address",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Exporting Company Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_utbm",
+   "fieldtype": "Section Break",
+   "label": "Permit Details"
+  },
+  {
+   "fieldname": "precursor_chemical",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Precursor Chemical",
+   "options": "Substance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Select",
+   "label": "UoM",
+   "options": "\nKg\nL\ng\nAmpoule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dbli",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "eda",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "EDA",
+   "reqd": 1
+  },
+  {
+   "fieldname": "swb",
+   "fieldtype": "Data",
+   "label": "Sea Waybill No.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_details_section",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "permit_no",
+   "fieldtype": "Data",
+   "label": "Permit No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "precursor_chemical_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Precursor Chemical Code"
+  },
+  {
+   "fetch_from": "importing_company.company_name",
+   "fieldname": "importing_company_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Importing Company Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-16 14:36:30.956047",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Clearance Permit",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

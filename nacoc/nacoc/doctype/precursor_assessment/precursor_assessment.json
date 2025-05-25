@@ -317,12 +317,14 @@
    "fieldname": "supervisor",
    "fieldtype": "Data",
    "label": "Supervisor",
+   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
    "permlevel": 1
   },
   {
    "fieldname": "supervisor_signature",
    "fieldtype": "Signature",
    "label": "Supervisor Signature",
+   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
    "permlevel": 1
   },
   {
@@ -337,6 +339,7 @@
    "fieldname": "supervisor_comments",
    "fieldtype": "Long Text",
    "label": "Supervisor Comments",
+   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
    "permlevel": 1
   },
   {
@@ -368,7 +371,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "PCU Assessment",
+   "options": "Precursor Assessment",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -398,13 +401,14 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-01 11:44:56.667161",
+ "modified": "2025-05-07 11:05:20.203786",
  "modified_by": "Administrator",
  "module": "NACOC",
- "name": "PCU Assessment",
+ "name": "Precursor Assessment",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

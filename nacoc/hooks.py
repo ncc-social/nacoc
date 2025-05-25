@@ -131,6 +131,13 @@ fixtures = [
 #	"Role": "home_page"
 # }
 
+website_route_rules = [
+    {
+        'from_route': '/clearance-permit/<docname>',
+        'to_route': 'clearance-permit'
+    }
+]
+
 # Generators
 # ----------
 
@@ -202,7 +209,10 @@ fixtures = [
 scheduler_events = {
     "cron": {
         "* * * * *": ["nacoc.my_scripts.smartermail.log_server_status"]
-    }
+    },
+    "monthly": [
+        "nacoc.my_scripts.leave_months.send_leave_month_notifications"
+    ]
 }
 
 # Testing

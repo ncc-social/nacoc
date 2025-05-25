@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-23 15:32:59.135401",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "employee_email",
+  "department",
+  "department_name",
+  "department_email",
+  "column_break_bqve",
+  "leave_year",
+  "first_month",
+  "second_month"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee.user_id",
+   "fieldname": "employee_email",
+   "fieldtype": "Data",
+   "label": "Employee Email"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "column_break_bqve",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "department.custom_department_email",
+   "fieldname": "department_email",
+   "fieldtype": "Data",
+   "label": "Department Email"
+  },
+  {
+   "fieldname": "leave_year",
+   "fieldtype": "Data",
+   "label": "Leave Year"
+  },
+  {
+   "fieldname": "first_month",
+   "fieldtype": "Link",
+   "label": "First Month",
+   "options": "Month"
+  },
+  {
+   "depends_on": "eval:doc.first_month",
+   "fieldname": "second_month",
+   "fieldtype": "Link",
+   "label": "Second Month",
+   "options": "Month"
+  },
+  {
+   "fetch_from": "department.department_name",
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-24 08:19:08.441584",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Leave Months",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

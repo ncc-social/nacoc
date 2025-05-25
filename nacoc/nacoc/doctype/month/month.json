@@ -1,41 +1,36 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:substance_name",
- "creation": "2023-03-06 23:47:52.271882",
- "default_view": "List",
+ "autoname": "format:{month}",
+ "creation": "2025-05-23 15:37:58.614957",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "substance_name",
-  "substance_code"
+  "month",
+  "month_index"
  ],
  "fields": [
   {
-   "fieldname": "substance_name",
+   "fieldname": "month",
    "fieldtype": "Data",
-   "label": "Substance Name",
-   "reqd": 1,
-   "unique": 1
+   "label": "Month"
   },
   {
-   "fieldname": "substance_code",
-   "fieldtype": "Data",
+   "fieldname": "month_index",
+   "fieldtype": "Int",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Substance Code"
+   "label": "Month Index",
+   "non_negative": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-08 14:27:45.559026",
+ "modified": "2025-05-23 15:57:24.599886",
  "modified_by": "Administrator",
  "module": "NACOC",
- "name": "Substance",
- "naming_rule": "By fieldname",
+ "name": "Month",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -52,7 +47,7 @@
   }
  ],
  "row_format": "Dynamic",
- "sort_field": "substance_name",
+ "sort_field": "month_index",
  "sort_order": "ASC",
  "states": []
 }
