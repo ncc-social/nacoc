@@ -69,13 +69,13 @@ def send_leave_month_notifications():
     
     hr_context = {
         "current_month": current_month,
-        "departments": hr_department_map  # Dict: { "Department A": [Employee1, Employee2], ... }
+        "departments": hr_department_map
     }
     hr_subject = frappe.render_template(hr_template.subject, hr_context)
     hr_message = frappe.render_template(hr_template.response, hr_context)
 
     frappe.sendmail(
-        recipients=["it@ncc.gov.gh"],
+        recipients=["hr@ncc.gov.gh"],
         subject=hr_subject,
         message=hr_message
     )

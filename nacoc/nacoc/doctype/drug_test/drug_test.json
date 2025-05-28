@@ -1,0 +1,324 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-25 06:55:28.779745",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zrsu",
+  "test_date",
+  "time_started",
+  "time_ended",
+  "source_of_sample",
+  "column_break_ufqt",
+  "html_igpp",
+  "urine",
+  "drug",
+  "precursor_chemical",
+  "other",
+  "other_specify",
+  "amended_from",
+  "section_break_gbdz",
+  "full_name",
+  "age",
+  "gender",
+  "organisation",
+  "column_break_nuos",
+  "phone_number",
+  "id_type",
+  "id_number",
+  "reason_for_test",
+  "column_break_hspt",
+  "drug_substance_detected",
+  "section_break_hqvy",
+  "description",
+  "column_break_fqrf",
+  "background",
+  "section_break_zcpl",
+  "preliminary_test_results",
+  "column_break_ahes",
+  "remarks",
+  "column_break_zwtg",
+  "recommendation",
+  "section_break_veyc",
+  "testing_officer",
+  "testing_officer_name",
+  "testing_officer_signature",
+  "column_break_apzj",
+  "supervisor",
+  "supervisor_name",
+  "supervisor_signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zrsu",
+   "fieldtype": "Section Break",
+   "label": "Drug Test Info"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Drug Test",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "test_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Test Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_started",
+   "fieldtype": "Time",
+   "label": "Time Started",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_ended",
+   "fieldtype": "Time",
+   "label": "Time Ended",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source_of_sample",
+   "fieldtype": "Data",
+   "label": "Source of Sample"
+  },
+  {
+   "fieldname": "column_break_ufqt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "urine",
+   "fieldtype": "Check",
+   "label": "Urine"
+  },
+  {
+   "default": "0",
+   "fieldname": "drug",
+   "fieldtype": "Check",
+   "label": "Drug"
+  },
+  {
+   "default": "0",
+   "fieldname": "precursor_chemical",
+   "fieldtype": "Check",
+   "label": "Precursor Chemical"
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.other",
+   "fieldname": "other_specify",
+   "fieldtype": "Data",
+   "label": "Other (Specify)"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_gbdz",
+   "fieldtype": "Section Break",
+   "label": "Particulars"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fieldname": "column_break_nuos",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "organisation",
+   "fieldtype": "Data",
+   "label": "Organisation"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "\nGhanaCard\nPassport"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "reason_for_test",
+   "fieldtype": "Select",
+   "label": "Reason for Test",
+   "options": "\nPre-Employment\nRandom\nPeriodic\nReasonable Suspicion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_hqvy",
+   "fieldtype": "Section Break",
+   "label": "Information"
+  },
+  {
+   "fieldname": "background",
+   "fieldtype": "Text Editor",
+   "label": "Background",
+   "reqd": 1
+  },
+  {
+   "fieldname": "drug_substance_detected",
+   "fieldtype": "Table MultiSelect",
+   "label": "Drug/Substance Detected",
+   "options": "Drug Test Substance Detected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zcpl",
+   "fieldtype": "Section Break",
+   "label": "Post Test"
+  },
+  {
+   "fieldname": "preliminary_test_results",
+   "fieldtype": "Text Editor",
+   "label": "Preliminary Test Results",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ahes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zwtg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Text Editor",
+   "label": "Recommendation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "html_igpp",
+   "fieldtype": "HTML",
+   "label": "Sample to be tested",
+   "options": "<p class=\"control-label\">Sample to be tested</p>"
+  },
+  {
+   "fieldname": "column_break_fqrf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hspt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_veyc",
+   "fieldtype": "Section Break",
+   "label": "Declaration"
+  },
+  {
+   "fieldname": "testing_officer",
+   "fieldtype": "Link",
+   "label": "Testing Officer",
+   "link_filters": "[[\"User\",\"role_profile_name\",\"=\",\"Precursor Officer\"]]",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "testing_officer_signature",
+   "fieldtype": "Signature",
+   "label": "Testing Officer Signature",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_apzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "link_filters": "[[\"User\",\"role_profile_name\",\"=\",\"Precursor Manager\"]]",
+   "options": "User"
+  },
+  {
+   "fetch_from": "testing_officer.full_name",
+   "fieldname": "testing_officer_name",
+   "fieldtype": "Data",
+   "label": "Testing Officer Name"
+  },
+  {
+   "fetch_from": "supervisor.full_name",
+   "fieldname": "supervisor_name",
+   "fieldtype": "Data",
+   "label": "Supervisor Name"
+  },
+  {
+   "fieldname": "supervisor_signature",
+   "fieldtype": "Signature",
+   "label": "Supervisor Signature"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-25 13:10:29.596485",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Drug Test",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
