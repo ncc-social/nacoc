@@ -18,22 +18,15 @@ fixtures = [
     {"dt": "Number Card", "filters": [
         [
             "document_type", "in", [
-                "PCU Assessment",
+                "Precursor Assessment",
                 "MMU Vessel"
-            ]
-        ]
-    ]},
-    {"dt": "Document Naming Rule", "filters": [
-        [
-            "document_type", "in", [
-                "PCU Assessment"
             ]
         ]
     ]},
     {"dt": "Dashboard Chart", "filters": [
         [
             "document_type", "in", [
-                "PCU Assessment",
+                "Precursor Assessment",
                 "MMU Vessel"
             ]
         ]
@@ -50,6 +43,8 @@ fixtures = [
             "role_profile", "in", [
                 "Precursor Manager",
                 "Precursor Officer",
+                "Regional Precursor Manager",
+                "Regional Precursor Officer",
                 "NACOC Profile",
                 "MMU Manager",
                 "MMU Officer",
@@ -63,6 +58,8 @@ fixtures = [
             "role", "in", [
                 "Precursor Manager",
                 "Precursor Officer",
+                "Regional Precursor Manager",
+                "Regional Precursor Officer",
                 "NACOC User",
                 "MMU Manager",
                 "MMU Officer",
@@ -76,6 +73,8 @@ fixtures = [
             "role_name", "in", [
                 "Precursor Manager",
                 "Precursor Officer",
+                "Regional Precursor Manager",
+                "Regional Precursor Officer",
                 "NACOC User",
                 "MMU Manager",
                 "MMU Officer",
