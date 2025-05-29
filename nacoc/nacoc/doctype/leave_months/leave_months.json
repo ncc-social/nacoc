@@ -21,12 +21,14 @@
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1
   },
   {
    "fetch_from": "employee.employee_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Employee Name"
   },
   {
@@ -39,6 +41,7 @@
    "fetch_from": "employee.department",
    "fieldname": "department",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Department",
    "options": "Department"
   },
@@ -50,25 +53,32 @@
    "fetch_from": "department.custom_department_email",
    "fieldname": "department_email",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Department Email"
   },
   {
    "fieldname": "leave_year",
    "fieldtype": "Data",
-   "label": "Leave Year"
+   "in_list_view": 1,
+   "label": "Leave Year",
+   "reqd": 1
   },
   {
    "fieldname": "first_month",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "First Month",
-   "options": "Month"
+   "options": "Month",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.first_month",
    "fieldname": "second_month",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Second Month",
-   "options": "Month"
+   "options": "Month",
+   "reqd": 1
   },
   {
    "fetch_from": "department.department_name",
@@ -80,7 +90,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-24 08:19:08.441584",
+ "modified": "2025-05-28 14:34:47.580413",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Leave Months",
@@ -102,5 +112,6 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "employee_name"
 }

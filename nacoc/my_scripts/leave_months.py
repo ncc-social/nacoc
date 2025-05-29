@@ -84,7 +84,7 @@ def send_leave_month_notifications():
 def get_months(doctype, txt, searchfield, start, page_len, filters):
     return frappe.db.sql("""
         SELECT name, name FROM `tabMonth`
-        WHERE name LIKE %(txt)s
+        WHERE name LIKE %(txt)s AND month_index <= 11
         ORDER BY month_index ASC
         LIMIT %(start)s, %(page_len)s
     """, {

@@ -90,6 +90,17 @@ fixtures = [
                 "NACOC Profile"
             ]
         ]
+    ]},
+    {"dt": "Print Format", "filters": [
+        [
+            "name", "in", [
+                "Leave Letter Format",
+                "Clearance Permit",
+                "PCU Assessment Report",
+                "MMU Target Sheet",
+                "Drug Test Report",
+            ]
+        ]
     ]}
 ]
 
