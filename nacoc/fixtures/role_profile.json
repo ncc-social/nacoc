@@ -187,5 +187,38 @@
     "role": "Employee"
    }
   ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-06-19 17:01:40.505843",
+  "name": "Regional Precursor Manager",
+  "role_profile": "Regional Precursor Manager",
+  "roles": [
+   {
+    "parent": "Regional Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
+   },
+   {
+    "parent": "Regional Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Leave Approver"
+   },
+   {
+    "parent": "Regional Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Regional Precursor Manager"
+   },
+   {
+    "parent": "Regional Precursor Manager",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Regional Precursor Officer"
+   }
+  ]
  }
 ]
