@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TRG-{YYYY}-{#####}",
+ "creation": "2025-06-13 11:25:46.134195",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_programme",
+  "institution",
+  "venue",
+  "column_break_dlzo",
+  "type",
+  "mode_of_programme",
+  "source_of_funding",
+  "section_break_acwn",
+  "start_date",
+  "end_date",
+  "column_break_prea",
+  "start_time",
+  "end_time",
+  "start_time_set",
+  "end_time_set",
+  "section_break_xipq",
+  "programme_info",
+  "section_break_kyez",
+  "table_kvrl"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_programme",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Programme",
+   "reqd": 1
+  },
+  {
+   "fieldname": "institution",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Institution"
+  },
+  {
+   "fieldname": "mode_of_programme",
+   "fieldtype": "Select",
+   "label": "Mode of Programme",
+   "options": "\nVirtual\nIn-person\nHybrid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Venue"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "source_of_funding",
+   "fieldtype": "Data",
+   "label": "Source of Funding"
+  },
+  {
+   "fieldname": "column_break_dlzo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_acwn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_prea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kyez",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_kvrl",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Trainees"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nTraining\nSeminar\nWorkshop\nConference\nMeeting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_xipq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "programme_info",
+   "fieldtype": "Long Text",
+   "label": "Programme Info"
+  },
+  {
+   "default": "0",
+   "fieldname": "start_time_set",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Start Time Set"
+  },
+  {
+   "default": "0",
+   "fieldname": "end_time_set",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "End Time Set"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-17 09:20:46.955469",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Training",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name_of_programme",
+ "track_changes": 1
+}

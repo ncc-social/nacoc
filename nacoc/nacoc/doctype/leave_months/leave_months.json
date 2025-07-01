@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:LM-{leave_year}-{#####}",
  "creation": "2025-05-23 15:32:59.135401",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -57,6 +58,7 @@
    "label": "Department Email"
   },
   {
+   "default": "2025",
    "fieldname": "leave_year",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -90,10 +92,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-28 14:34:47.580413",
+ "modified": "2025-06-03 16:43:18.005000",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Leave Months",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -113,5 +116,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "employee_name"
+ "title_field": "employee_name",
+ "track_changes": 1
 }

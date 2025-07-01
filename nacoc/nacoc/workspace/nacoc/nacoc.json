@@ -5,7 +5,7 @@
    "label": "Field Assessments by Day"
   }
  ],
- "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Welcome to NACOC Workspace. Each link below redirects you to the requested module.</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xOfKOBuyZy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Field Assessments\",\"col\":3}},{\"id\":\"XC6dMtg0M6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Routine Site Inspection\",\"col\":3}},{\"id\":\"o5-653RCe3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow-Up\",\"col\":3}},{\"id\":\"WnquWRzywp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pre-Registration\",\"col\":3}},{\"id\":\"9O10cd_0UL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Vessels\",\"col\":4}},{\"id\":\"bHCpkwh051\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Targets\",\"col\":4}},{\"id\":\"16tKbeFq9Y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vessels at Anchorage\",\"col\":4}},{\"id\":\"Wn6FYiCpuu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Field Assessments by Day\",\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}}]",
+ "content": "[{\"id\":\"xOfKOBuyZy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Field Assessments\",\"col\":3}},{\"id\":\"XC6dMtg0M6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Routine Site Inspection\",\"col\":3}},{\"id\":\"o5-653RCe3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow-Up\",\"col\":3}},{\"id\":\"WnquWRzywp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pre-Registration\",\"col\":3}},{\"id\":\"9O10cd_0UL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Vessels\",\"col\":4}},{\"id\":\"bHCpkwh051\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Targets\",\"col\":4}},{\"id\":\"16tKbeFq9Y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vessels at Anchorage\",\"col\":4}},{\"id\":\"Wn6FYiCpuu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Field Assessments by Day\",\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}}]",
  "creation": "2025-05-25 06:49:23.612322",
  "custom_blocks": [],
  "docstatus": 0,
@@ -235,7 +235,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Human Resource",
-   "link_count": 3,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -269,9 +269,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Training",
+   "link_count": 0,
+   "link_to": "Training",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-05-28 11:13:52.311631",
+ "modified": "2025-06-13 11:59:19.478999",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "NACOC",

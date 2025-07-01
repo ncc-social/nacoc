@@ -49,6 +49,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Phone Number",
+   "options": "Phone",
    "reqd": 1
   },
   {
@@ -199,7 +200,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-20 14:20:45.064823",
+ "modified": "2025-05-29 19:13:37.253738",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Vehicle Maintenance Allowance",

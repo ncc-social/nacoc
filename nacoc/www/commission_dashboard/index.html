@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.3.2/dist/css/tabler.min.css">
+    <style>
+        :root {
+            --tblr-primary: #14c874;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: black;
+            /* font-weight: bold; */
+        }
+
+        g.apexcharts-yaxis text,
+        .apexcharts-xaxis-texts-g text {
+            fill: var(--tblr-body-color) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar">
+                    <div class="container-xl">
+                        <div class="row flex-column flex-md-row flex-fill align-items-center">
+                            <div class="col">
+                                <!-- BEGIN NAVBAR MENU -->
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/commission_dashboard">
+                                            <span
+                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-1">
+                                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                                                </svg></span>
+                                            <span class="nav-link-title"> Commission </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/department_dashboard">
+                                            <span
+                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-1">
+                                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                                                </svg></span>
+                                            <span class="nav-link-title"> Department </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/employee_dashboard">
+                                            <span
+                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-1">
+                                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                                                </svg></span>
+                                            <span class="nav-link-title"> Employee </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- END NAVBAR MENU -->
+                            </div>
+                            <div class="col col-md-auto">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasSettings">
+                                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                                <!-- Download SVG icon from http://tabler.io/icons/icon/settings -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-1">
+                                                    <path
+                                                        d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
+                                                    </path>
+                                                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <div class="nav-item dropdown">
+                                        <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown"
+                                            aria-label="Open user menu">
+                                            <span class="avatar avatar-sm"
+                                                style="background-image: url(./static/avatars/000m.jpg)"> </span>
+                                            <div class="d-none d-xl-block ps-2">
+                                                <div>{{ frappe.session.user}}</div>
+                                                <div class="mt-1 small text-secondary"></div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <a href="#" class="dropdown-item">Status</a>
+                                            <a href="./profile.html" class="dropdown-item">Profile</a>
+                                            <a href="#" class="dropdown-item">Feedback</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="./settings.html" class="dropdown-item">Settings</a>
+                                            <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                                        </div>
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="container-xl">
+                    <div class="row row-deck row-cards">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card te">
+                                <div class="card-body">
+                                    <div class="subheader te">Total Employees</div>
+                                    <div class="d-flex align-items-baseline">
+                                        <div id="total_employees" class="display-4 fw-bold mb-0 me-2"></div>
+                                    </div>
+                                </div>
+                                <div id="total_employees_chart" class="position-relative mb-4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader">Staff employed this year</div>
+                                    <div class="d-flex align-items-baseline">
+                                        <div id="new_hires_count" class="display-4 fw-bold mb-0 me-2"></div>
+                                    </div>
+                                </div>
+                                <div id="new-hires-this-year" class="position-relative" style="min-height: 96px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader">Employee Exits this year</div>
+                                    <div class="d-flex align-items-baseline">
+                                        <div id="employee_exits_count" class="display-4 fw-bold mb-0 me-2"></div>
+                                    </div>
+                                </div>
+                                <div id="employee_exits_this_year" class="position-relative" style="min-height: 96px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader">Gender Diversity</div>
+                                </div>
+                                <div id="gender-diversity" class="position-relative" style="min-height: 96px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader mb-2">Employees by Rank</div>
+                                    <div id="employees_by_grade_chart" style="min-height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader mb-2">Employees by Department (Top 10)</div>
+                                    <div id="employees_by_dept_chart" style="min-height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="subheader mb-2">Leaves ending This Month</div>
+                                    <input type="text" id="leave_table_search" class="form-control mb-2"
+                                        placeholder="Search...">
+
+                                    <div style="max-height: 300px; overflow-y: auto;">
+                                        <table class="table table-sm table-hover" id="leave_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Employee</th>
+                                                    <th>Leave Type</th>
+                                                    <th>Department</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Leave Days</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.3.2/dist/js/tabler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function (fn) {
+            frappe.ready_events.push(fn);
+        }
+        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--tblr-primary').trim();
+        const strokeColor = getComputedStyle(document.documentElement).getPropertyValue('--tblr-body-bg').trim();
+        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--tblr-body-color').trim();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_total_employees_and_yearly_data', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                credentials: 'include' // important to send cookies/session
+            })
+                .then(response => response.json())
+                .then(res => {
+                    if (res.message) {
+                        const data = res.message;
+
+                        const countElement = document.getElementById("total_employees");
+                        if (countElement) {
+                            countElement.textContent = data.total_employees;
+                        }
+
+                        // Render the ApexChart line chart
+                        const options = {
+                            chart: {
+                                type: 'line',
+                                height: 96,
+                                sparkline: {
+                                    enabled: true
+                                },
+                                animations: {
+                                    enabled: false
+                                },
+                                // offsetY: -50,
+                            },
+                            tooltip: {
+                                theme: 'dark',
+                            },
+                            series: [{
+                                name: 'Employees',
+                                data: data.counts
+                            }],
+                            grid: {
+                                strokeDashArray: 4,
+                            },
+                            xaxis: {
+                                categories: data.years
+                            },
+                            stroke: {
+                                width: 2,
+                                lineCap: 'round',
+                                curve: 'smooth'
+                            },
+                            colors: [primaryColor],
+                        };
+
+                        const chart = new ApexCharts(document.querySelector("#total_employees_chart"), options);
+                        chart.render();
+                    }
+                })
+                .catch(err => {
+                    console.error("Error loading employee data:", err);
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_new_hires_this_year', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => response.json())
+                .then(res => {
+                    const count = res.message.count;
+                    const countElement = document.getElementById("new_hires_count");
+                    if (countElement) {
+                        countElement.textContent = count;
+                    }
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_employee_exits_this_year', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => response.json())
+                .then(res => {
+                    const count = res.message.count;
+                    const countElement = document.getElementById("employee_exits_count");
+                    if (countElement) {
+                        countElement.textContent = count;
+                    }
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_gender_distribution', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => response.json())
+                .then(res => {
+                    const data = res.message;
+
+                    const options = {
+                        chart: {
+                            type: 'pie',
+                            width: '80%',
+                            height: '80%',
+
+                        },
+                        stroke: {
+                            colors: [strokeColor]
+                        },
+                        labels: data.labels,
+                        series: data.counts,
+                        legend: {
+                            position: 'bottom'
+                        },
+                        theme: {
+                            monochrome: {
+                                enabled: true,
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--tblr-primary').trim(),
+                            },
+                        },
+                        plotOptions: {
+                            pie: {
+                                dataLabels: {
+                                    offset: -25,
+                                },
+                            },
+                        },
+                        dataLabels: {
+                            formatter(val, opts) {
+                                const name = opts.w.globals.labels[opts.seriesIndex]
+                                return [name, val.toFixed(1) + '%']
+                            },
+                        },
+                        legend: {
+                            show: false,
+                        },
+                    };
+
+                    const chart = new ApexCharts(document.querySelector("#gender-diversity"), options);
+                    chart.render();
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_employees_by_rank', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => response.json())
+                .then(res => {
+                    const data = res.message;
+
+                    const options = {
+                        chart: {
+                            type: 'bar',
+                            fontFamily: 'inherit',
+                            height: 300,
+                            toolbar: {
+                                show: false
+                            },
+                        },
+                        series: [{
+                            name: 'Employees',
+                            data: data.counts
+                        }],
+                        xaxis: {
+                            categories: data.labels,
+                            labels: {
+                                style: {
+                                    colors: Array(data.labels.length).fill(textColor),
+                                    fontSize: '12px',
+                                },
+                                padding: 4
+                            }
+                        },
+                        yaxis: {
+                            title: { text: 'Number of Employees' },
+                            labels: {
+                                style: {
+                                    fill: "#fff",
+                                    fontSize: '12px',
+                                },
+                                padding: 4
+                            }
+                        },
+                        colors: [primaryColor],
+                        dataLabels: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            theme: 'dark',
+                        },
+                        grid: {
+                            show: true,
+                            padding: {
+                                top: -20,
+                                right: 0,
+                                left: -4,
+                                bottom: -4,
+                            },
+                            strokeDashArray: 4,
+                            xaxis: {
+                                lines: {
+                                    show: false
+                                }
+                            },
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        },
+                        yaxis: {
+                            axisBorder: {
+                                show: true,
+                                color: 'rgb(224, 224, 224);',
+                                offsetX: -17,
+                                offsetY: 0
+                            },
+                            labels: {
+                                padding: 4,
+                            }
+                        },
+                        legend: {
+                            show: false
+                        },
+                        toolbar: {
+                            show: false
+                        },
+
+                        axisTicks: {
+                            show: true,
+                            borderType: 'solid',
+                            color: '#78909C',
+                            width: 6,
+                            offsetX: 0,
+                            offsetY: 0
+                        },
+                    };
+
+                    const chart = new ApexCharts(document.querySelector("#employees_by_grade_chart"), options);
+                    chart.render();
+                })
+                .catch(err => {
+                    console.error("Error loading grade chart:", err);
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_employees_by_dept', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => response.json())
+                .then(res => {
+                    const data = res.message;
+
+                    const options = {
+                        series: [{
+                            data: data.counts
+                        }],
+                        chart: {
+                            type: 'bar',
+                            height: 300,
+                            toolbar: {
+                                show: false
+                            },
+                        },
+                        colors: [primaryColor],
+                        plotOptions: {
+                            bar: {
+                                barHeight: '100%',
+                                distributed: true,
+                                horizontal: true,
+                                dataLabels: {
+                                    position: 'bottom'
+                                },
+                            }
+                        },
+                        tooltip: {
+                            theme: 'dark',
+                            x: {
+                                show: false
+                            },
+                            y: {
+                                title: {
+                                    formatter: function () {
+                                        return ''
+                                    }
+                                }
+                            }
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            textAnchor: 'start',
+                            style: {
+                                colors: [textColor]
+                            },
+                            formatter: function (val, opt) {
+                                return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+                            },
+                            offsetX: 80,
+                            dropShadow: {
+                                enabled: true,
+                                top: 1,
+                                left: 1,
+                                blur: 1,
+                                color: '#000',
+                                opacity: 0.45
+                            }
+                        },
+                        xaxis: {
+                            categories: data.labels,
+                        },
+                        yaxis: {
+                            labels: {
+                                show: false,
+                                padding: 4
+                            }
+                        },
+                        legend: {
+                            show: false
+                        },
+                        grid: {
+                            show: false,
+                            padding: {
+                                top: -20,
+                                right: 0,
+                                left: -4,
+                                bottom: -4,
+                            },
+                            // strokeDashArray: 4,
+                            // xaxis: {
+                            //     lines: {
+                            //         show: true
+                            //     }
+                            // },
+                            yaxis: {
+                                lines: {
+                                    show: true
+                                }
+                            }
+                        },
+                    };
+
+                    const chart = new ApexCharts(document.querySelector("#employees_by_dept_chart"), options);
+                    chart.render();
+                })
+                .catch(err => {
+                    console.error("Error loading grade chart:", err);
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_approved_leaves_this_month', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                credentials: 'include'
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(res => {
+                    if (!res.message || !Array.isArray(res.message)) {
+                        console.error('Unexpected response format or empty data');
+                        return;
+                    }
+
+                    const tbody = document.querySelector("#leave_table tbody");
+                    if (!tbody) {
+                        console.error('Table body not found');
+                        return;
+                    }
+
+                    const data = res.message;
+                    tbody.innerHTML = data.map(row => `
+            <tr>
+                <td>${row.employee || ''}</td>
+                <td>${row.leave_type || ''}</td>
+                <td>${row.department || ''}</td>
+                <td>${row.start_date || ''}</td>
+                <td>${row.end_date || ''}</td>
+                <td>${row.leave_days || ''}</td>
+            </tr>
+        `).join('');
+
+                    // Search filtering
+                    const searchInput = document.getElementById("leave_table_search");
+                    if (searchInput) {
+                        searchInput.addEventListener("keyup", function () {
+                            const query = this.value.toLowerCase();
+                            if (!query) {
+                                // If search is empty, remove all highlights and show all rows
+                                document.querySelectorAll("#leave_table tbody tr").forEach(row => {
+                                    row.style.display = '';
+                                    row.querySelectorAll('span.highlight').forEach(span => {
+                                        span.replaceWith(span.textContent);
+                                    });
+                                });
+                                return;
+                            }
+
+                            document.querySelectorAll("#leave_table tbody tr").forEach(row => {
+                                let rowVisible = false;
+                                [...row.cells].forEach(cell => {
+                                    // Remove previous highlights
+                                    cell.querySelectorAll('span.highlight').forEach(span => {
+                                        span.replaceWith(span.textContent);
+                                    });
+
+                                    const text = cell.textContent.toLowerCase();
+                                    if (text.includes(query)) {
+                                        rowVisible = true;
+                                        // Highlight the matching text
+                                        const originalText = cell.textContent;
+                                        const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+                                        cell.innerHTML = originalText.replace(regex, '<span class="highlight">$1</span>');
+                                    }
+                                });
+                                row.style.display = rowVisible ? '' : 'none';
+                            });
+                        });
+
+                        // Helper function to escape special regex characters
+                        function escapeRegExp(string) {
+                            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching leave data:', error);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
