@@ -11,7 +11,7 @@ from hrms.hr.doctype.leave_application.leave_application import get_leave_detail
 @frappe.whitelist()
 def get_total_employees_and_yearly_data(department=None):
     filters = {
-        "status": "Active",
+        "status": ["in", ["Active", "Inactive"]],
         "grade": ["in", ["ANDO", "DNDO", "NDO", "SNDO", "PNDO", "CNDO", "ANCO", "DNCO", "NCO", "SNCO", "PNCO", "CNCO", "DDG", "DG"]]
         }
     if department:
@@ -21,7 +21,7 @@ def get_total_employees_and_yearly_data(department=None):
     total = frappe.db.count("Employee", filters)
 
     # SQL filter clause
-    sql_filter = "status = 'Active' AND date_of_joining IS NOT NULL"
+    sql_filter = "status in ('Active','Inactive') AND date_of_joining IS NOT NULL"
     sql_params = []
 
     if department:
@@ -48,7 +48,7 @@ def get_total_employees_and_yearly_data(department=None):
 
 @frappe.whitelist()
 def get_total_secondment(department=None):
-    # Filters for employees with grade NOT in A1, A2, A3 or NULL
+    # Filters for employees with grade NOT in ANDO, DNDO, NDO, etc or NULL
     filters = {
         "status": "Active",
     }

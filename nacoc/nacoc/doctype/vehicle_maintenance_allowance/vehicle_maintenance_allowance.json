@@ -9,6 +9,7 @@
   "employee_info",
   "employee_name",
   "phone_number",
+  "status",
   "column_break_srpq",
   "application_year",
   "vehicle_type",
@@ -33,7 +34,8 @@
   "upload_road_worthiness",
   "road_worthiness_file_url",
   "upload_vehicle_insurance",
-  "vehicle_insurance_file_url"
+  "vehicle_insurance_file_url",
+  "amended_from"
  ],
  "fields": [
   {
@@ -195,12 +197,30 @@
   {
    "fieldname": "column_break_oqxr",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Open\nPending\nRejected\nApproved\nCancelled"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Maintenance Allowance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-05-29 19:13:37.253738",
+ "modified": "2025-07-01 12:56:04.731062",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Vehicle Maintenance Allowance",

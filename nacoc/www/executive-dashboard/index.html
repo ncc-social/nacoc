@@ -340,7 +340,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="#employee-training-tab" class="fw-bold nav-link"
-                                        data-bs-toggle="tab">Training</a>
+                                        data-bs-toggle="tab">Other</a>
                                 </li>
                             </ul>
                         </div>
@@ -572,22 +572,25 @@
                                                         Balance
                                                     </div>
                                                     <input type="text" id="excess_leave_table_search"
-                                                        class="form-control mb-2" placeholder="Search...">
+                                                        class="form-control mb-2" placeholder="Search..." />
+                                                    <div class="mb-3">
+                                                        <button class="btn btn-sm btn-outline-success"
+                                                            onclick="TableManager.exportExcel('excess_leave_table', 'excess_leave_balances.xlsx')">
+                                                            Export to Excel
+                                                        </button>
+                                                    </div>
+
                                                     <div style="max-height: 300px; overflow-y: auto;">
                                                         <table class="table table-sm table-hover"
                                                             id="excess_leave_table">
                                                             <thead>
                                                                 <tr>
-                                                                    <th data-key="employee">Employee Name</th>
-                                                                    <th data-key="department">Department</th>
-                                                                    <th data-key="balance">Balance</th>
+                                                                    <th data-key="employee_name">Employee</th>
+                                                                    <th data-key="department_name">Department</th>
+                                                                    <th data-key="remaining_leaves">Leave Balance</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td colspan="3">Loading...</td>
-                                                                </tr>
-                                                            </tbody>
+                                                            <tbody></tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -2278,49 +2281,21 @@
             })
                 .then(res => res.json())
                 .then(res => {
-                    const tbody = document.querySelector("#excess_leave_table tbody");
-                    const rows = (res.message || []).map(row => `
-                <tr class="fs-5">
-                    <td>${row.employee_name.toUpperCase()}</td>
-                    <td>${row.department_name}</td>
-                    <td>${row.remaining_leaves}</td>
-                </tr>
-            `).join('');
-                    setupExcessLeaveSearch();
-                    tbody.innerHTML = rows || `<tr><td colspan="3">No excess balances</td></tr>`;
+                    const data = res.message || [];
+
+                    // Normalize and render data
+                    TableManager.render("excess_leave_table", data.map(row => ({
+                        employee_name: row.employee_name?.toUpperCase() || '',
+                        department_name: row.department_name || '',
+                        remaining_leaves: row.remaining_leaves || 0
+                    })));
+
+                    TableManager.sort("excess_leave_table");
+                    TableManager.search("excess_leave_table", "excess_leave_table_search");
                 })
                 .catch(err => {
                     console.error("Failed to load excess leave balances:", err);
                 });
-        }
-
-        function setupExcessLeaveSearch() {
-            const searchInput = document.getElementById("excess_leave_table_search");
-            if (!searchInput) return;
-
-            searchInput.addEventListener("keyup", function () {
-                const query = this.value.toLowerCase();
-                const rows = document.querySelectorAll("#excess_leave_table tbody tr");
-
-                rows.forEach(row => {
-                    let visible = false;
-                    [...row.cells].forEach(cell => {
-                        // Remove old highlights
-                        cell.querySelectorAll('span.highlight').forEach(span => span.replaceWith(span.textContent));
-                        const text = cell.textContent.toLowerCase();
-                        if (text.includes(query)) {
-                            visible = true;
-                            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-                            cell.innerHTML = cell.textContent.replace(regex, '<span class="highlight">$1</span>');
-                        }
-                    });
-                    row.style.display = visible ? '' : 'none';
-                });
-            });
-
-            function escapeRegExp(str) {
-                return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            }
         }
 
         // function loadBirthdaysThisWeek(department) {
