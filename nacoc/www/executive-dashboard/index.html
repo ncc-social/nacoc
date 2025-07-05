@@ -216,10 +216,6 @@
                 color: var(--tblr-body-color) !important;
             }
 
-            /* table {
-                page-break-inside: avoid;
-            } */
-
             .avatar-xl {
                 width: 100px;
                 height: 120px;
@@ -241,8 +237,7 @@
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
                                         <a class="nav-link" href="#" aria-current="page">
-                                            <span
-                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler.io/icons/icon/home -->
+                                            <span class="nav-link-icon d-md-none d-lg-inline-block">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -1453,7 +1448,6 @@
             </div>
             <div class="mt-auto space-y">
                 <button type="button" class="btn w-100" id="reset-changes">
-                    <!-- Download SVG icon from http://tabler.io/icons/icon/rotate -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-1">
@@ -1462,7 +1456,6 @@
                     Reset changes
                 </button>
                 <a href="#" class="btn btn-primary w-100" data-bs-dismiss="offcanvas">
-                    <!-- Download SVG icon from http://tabler.io/icons/icon/settings -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-1">
@@ -1494,124 +1487,6 @@
         const textColor = getComputedStyle(document.documentElement).getPropertyValue('--tblr-body-color').trim();
     </script>
     <script>
-        // const TableManager = (() => {
-        //     function render(tableId, data) {
-        //         const table = document.getElementById(tableId);
-        //         const tbody = table?.querySelector("tbody");
-        //         if (!table || !tbody) return;
-
-        //         const headers = Array.from(table.querySelectorAll("thead th"));
-        //         const keys = headers.map(th => th.dataset.key);
-
-        //         if (!Array.isArray(data) || data.length === 0) {
-        //             tbody.innerHTML = `<tr class="fs-5"><td colspan="${headers.length}" class="text-center text-muted">No records found</td></tr>`;
-        //             return;
-        //         }
-
-        //         tbody.innerHTML = data.map(row => `
-        //     <tr>
-        //         ${keys.map(key => `
-        //             <td class="fs-5" data-key="${key}">${row[key] ?? ''}</td>
-        //         `).join('')}
-        //     </tr>
-        // `).join('');
-        //     }
-
-        //     function sort(tableId) {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         let sortColumn = null;
-        //         let sortDirection = 1;
-
-        //         const headers = table.querySelectorAll("thead th");
-        //         headers.forEach(th => {
-        //             th.dataset.originalText = th.textContent;
-        //             th.style.cursor = "pointer";
-
-        //             th.addEventListener("click", () => {
-        //                 const key = th.dataset.key;
-        //                 if (!key) return;
-
-        //                 if (sortColumn === key) {
-        //                     sortDirection *= -1;
-        //                 } else {
-        //                     sortColumn = key;
-        //                     sortDirection = 1;
-        //                 }
-
-        //                 const tbody = table.querySelector("tbody");
-        //                 const rows = Array.from(tbody.querySelectorAll("tr"));
-
-        //                 rows.sort((a, b) => {
-        //                     const aText = a.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-        //                     const bText = b.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-        //                     return aText.localeCompare(bText) * sortDirection;
-        //                 });
-
-        //                 tbody.innerHTML = "";
-        //                 rows.forEach(row => tbody.appendChild(row));
-        //                 updateSortIndicators(tableId, sortColumn, sortDirection);
-        //             });
-        //         });
-
-        //         updateSortIndicators(tableId, sortColumn, sortDirection);
-        //     }
-
-        //     function updateSortIndicators(tableId, activeKey, direction) {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         table.querySelectorAll("thead th").forEach(th => {
-        //             th.innerHTML = th.dataset.originalText;
-        //             th.classList.remove("sort-asc", "sort-desc");
-
-        //             if (th.dataset.key === activeKey) {
-        //                 th.classList.add(direction === 1 ? "sort-asc" : "sort-desc");
-        //                 th.style.fontWeight = "bold";
-        //                 th.style.color = "var(--tblr-primary)";
-        //             } else {
-        //                 th.style.fontWeight = "";
-        //                 th.style.color = "";
-        //             }
-        //         });
-        //     }
-
-        //     function exportExcel(tableId, filename = "export.xlsx") {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
-        //         const rows = Array.from(table.querySelectorAll("tbody tr")).map(tr =>
-        //             Array.from(tr.children).map(td => td.textContent.trim())
-        //         );
-
-        //         const worksheetData = [headers, ...rows];
-        //         const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
-        //         const workbook = XLSX.utils.book_new();
-        //         XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
-        //         XLSX.writeFile(workbook, filename);
-        //     }
-
-        //     // Inject sort styling once
-        //     (function injectCSS() {
-        //         if (document.getElementById("sort-style")) return;
-        //         const style = document.createElement("style");
-        //         style.id = "sort-style";
-        //         style.textContent = `
-        //     .sort-asc::after { content: " ↑"; font-weight: bold; }
-        //     .sort-desc::after { content: " ↓"; font-weight: bold; }
-        // `;
-        //         document.head.appendChild(style);
-        //     })();
-
-        //     return {
-        //         render,
-        //         sort,
-        //         exportExcel
-        //     };
-        // })();
-
         const TableManager = (() => {
             function render(tableId, data, options = {}) {
                 const table = document.getElementById(tableId);
@@ -2132,16 +2007,6 @@
                                 padding: 4
                             }
                         },
-                        // grid: {
-                        //     show: false,
-                        //     borderColor: strokeColor + '80',
-                        //     yaxis: {
-                        //         show: true,
-                        //         lines: {
-                        //             show: true
-                        //         }
-                        //     },
-                        // },
                         yaxis: {
                             title: {
                                 text: 'Number of Employees',
@@ -2153,20 +2018,6 @@
                                     fontWeight: 400,
                                 },
                             },
-                            // axisBorder: {
-                            //     show: true,
-                            //     color: "#e0e0e0",
-                            //     offsetX: -1,
-                            //     offsetY: 0
-                            // },
-                            // axisTicks: {
-                            //     show: true,
-                            //     borderType: 'solid',
-                            //     color: '#e0e0e0',
-                            //     width: 4,
-                            //     offsetX: 0,
-                            //     offsetY: 0
-                            // },
                         },
                         colors: ['var(--tblr-primary)', '#EFA1B0'],
                         tooltip: {
@@ -2297,36 +2148,6 @@
                     console.error("Failed to load excess leave balances:", err);
                 });
         }
-
-        // function loadBirthdaysThisWeek(department) {
-        //     const query = department ? '?department=' + encodeURIComponent(department) : '';
-        //     fetch('/api/method/nacoc.my_scripts.executive_dashboard.get_birthdays_this_week' + query, {
-        //         method: 'GET',
-        //         headers: { 'Accept': 'application/json' },
-        //         credentials: 'include'
-        //     })
-        //         .then(response => response.json())
-        //         .then(res => {
-        //             const tbody = document.querySelector("#birthday_table tbody");
-        //             if (!res.message || !Array.isArray(res.message)) {
-        //                 console.error("Unexpected format");
-        //                 return;
-        //             }
-
-        //             tbody.innerHTML = res.message.map(row => `
-        //     <tr>
-        //         <td class="fs-5">${row.employee.toUpperCase() || ''}</td>
-        //         <td class="fs-5">${row.cell_number || ''}</td>
-        //         <td class="fs-5">${row.dob || ''}</td>
-        //     </tr>
-        // `).join('');
-
-        //             setupBirthdaySearch();
-        //         })
-        //         .catch(error => {
-        //             console.error('Error fetching birthday data:', error);
-        //         });
-        // }
 
         function loadBirthdaysThisWeek(department = "") {
             const query = department ? `?department=${encodeURIComponent(department)}` : '';
@@ -2469,23 +2290,6 @@
                 });
         }
 
-        // function renderAnniversaryTable(data) {
-        //     const tbody = document.querySelector("#anniversary_table tbody");
-        //     tbody.innerHTML = data.map(row => {
-        //         const badge = row.years_completed
-        //             ? `<span class="badge bg-green-lt ms-1">🎉 ${row.years_completed} year${row.years_completed > 1 ? 's' : ''}</span>`
-        //             : '';
-        //         return `
-        //     <tr>
-        //         <td data-key="employee" class="fs-5">${row.employee.toUpperCase() || ''} ${badge}</td>
-        //         <td data-key="cell_number" class="fs-5">${row.cell_number || ''}</td>
-        //         <td data-key="doj" class="fs-5">${row.doj || ''}</td>
-        //     </tr>
-        // `;
-        //     }).join('');
-        // }
-
-
         function setupAnniversarySearch() {
             const input = document.getElementById("anniversary_table_search");
             if (!input) return;
@@ -2524,15 +2328,6 @@
                             stacked: false,
                             toolbar: { show: true }
                         },
-                        // grid: {
-                        //     show: false,
-                        //     borderColor: strokeColor + '80',
-                        //     yaxis: {
-                        //         lines: {
-                        //             show: true
-                        //         }
-                        //     },
-                        // },
                         series: [
                             { name: 'Male', data: male },
                             { name: 'Female', data: female }
@@ -2567,20 +2362,6 @@
                                     fontWeight: 400,
                                 },
                             },
-                            // axisBorder: {
-                            //     show: true,
-                            //     color: "#e0e0e0",
-                            //     offsetX: -1,
-                            //     offsetY: 0
-                            // },
-                            // axisTicks: {
-                            //     show: true,
-                            //     borderType: 'solid',
-                            //     color: '#e0e0e0',
-                            //     width: 4,
-                            //     offsetX: 0,
-                            //     offsetY: 0
-                            // },
                         },
                         tooltip: {
                             theme: 'dark',
@@ -3361,124 +3142,6 @@
 
         // Initialize
         updateSortIndicators();
-
-        //     function setupTableSorting(tableId, dataKeyMap = {}) {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         let sortColumn = null;
-        //         let sortDirection = 1;
-
-        //         const headerCells = table.querySelectorAll("thead th");
-        //         headerCells.forEach(th => {
-        //             th.dataset.originalText = th.textContent;
-        //             th.style.cursor = "pointer";
-
-        //             th.addEventListener("click", () => {
-        //                 const key = th.dataset.key;
-        //                 if (!key) return;
-
-        //                 if (sortColumn === key) {
-        //                     sortDirection *= -1;
-        //                 } else {
-        //                     sortColumn = key;
-        //                     sortDirection = 1;
-        //                 }
-
-        //                 // Get rows and sort them
-        //                 const tbody = table.querySelector("tbody");
-        //                 const rows = Array.from(tbody.querySelectorAll("tr"));
-
-        //                 rows.sort((a, b) => {
-        //                     const aText = a.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-        //                     const bText = b.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-        //                     return aText.localeCompare(bText) * sortDirection;
-        //                 });
-
-        //                 tbody.innerHTML = "";
-        //                 rows.forEach(row => tbody.appendChild(row));
-        //                 updateSortIndicators(tableId, sortColumn, sortDirection);
-        //             });
-        //         });
-
-        //         updateSortIndicators(tableId, sortColumn, sortDirection);
-        //     }
-
-        //     function updateSortIndicators(tableId, activeColumn, sortDirection) {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         table.querySelectorAll("thead th").forEach(th => {
-        //             th.innerHTML = th.dataset.originalText;
-        //             th.classList.remove("sort-asc", "sort-desc");
-
-        //             if (th.dataset.key === activeColumn) {
-        //                 th.classList.add(sortDirection === 1 ? "sort-asc" : "sort-desc");
-        //                 th.style.fontWeight = "bold";
-        //                 th.style.color = "var(--tblr-primary)";
-        //             } else {
-        //                 th.style.fontWeight = "";
-        //                 th.style.color = "";
-        //             }
-        //         });
-        //     }
-
-        //     // Load CSS only once
-        //     (function injectSortCSS() {
-        //         if (document.getElementById("sort-style")) return;
-        //         const style = document.createElement('style');
-        //         style.id = "sort-style";
-        //         style.textContent = `
-        //     .sort-asc::after {
-        //         content: " ↑";
-        //         font-weight: bold;
-        //     }
-        //     .sort-desc::after {
-        //         content: " ↓";
-        //         font-weight: bold;
-        //     }
-        // `;
-        //         document.head.appendChild(style);
-        //     })();
-
-
-        //     // Excel
-        //     function exportTableToExcel(tableId, filename = 'export.xlsx') {
-        //         const table = document.getElementById(tableId);
-        //         if (!table) return;
-
-        //         const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
-        //         const rows = Array.from(table.querySelectorAll("tbody tr")).map(tr =>
-        //             Array.from(tr.children).map(td => td.textContent.trim())
-        //         );
-
-        //         const worksheetData = [headers, ...rows];
-        //         const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
-        //         const workbook = XLSX.utils.book_new();
-        //         XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
-        //         XLSX.writeFile(workbook, filename);
-        //     }
-
-        //     //Render Table with key
-        //     function renderTableRows(tbodyId, data, columns) {
-        //         const tbody = document.querySelector(`#${tbodyId} tbody`);
-        //         if (!tbody) return;
-
-        //         if (!Array.isArray(data) || data.length === 0) {
-        //             tbody.innerHTML = `<tr><td colspan="${columns.length}" class="text-center text-muted">No records found</td></tr>`;
-        //             return;
-        //         }
-
-        //         const rowsHTML = data.map(row => {
-        //             return `<tr>
-        //         ${columns.map(col => `
-        //             <td data-key="${col.key}">${row[col.key] ?? ''}</td>
-        //         `).join('')}
-        //     </tr>`;
-        //         }).join('');
-
-        //         tbody.innerHTML = rowsHTML;
-        //     }
 
 
     </script>
