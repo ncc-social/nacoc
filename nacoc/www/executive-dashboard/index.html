@@ -472,16 +472,17 @@
                                                     <input type="text" id="anniversary_table_search"
                                                         class="form-control mb-2" placeholder="Search...">
                                                     <div class="mb-3">
-                                                        <button id="export_anniversaries"
+                                                        <button id="export_work_anniversaries"
                                                             class="btn btn-sm btn-outline-success">Export
                                                             Excel</button>
                                                     </div>
                                                     <div style="max-height: 300px; overflow-y: auto;">
                                                         <table class="table table-sm table-hover"
-                                                            id="anniversary_table">
+                                                            id="work_anniversary_table">
                                                             <thead>
                                                                 <tr>
                                                                     <th data-key="employee">Employee</th>
+                                                                    <th data-key="years_completed">Years</th>
                                                                     <th data-key="cell_number">Cell Number</th>
                                                                     <th data-key="doj">Date of Joining</th>
                                                                 </tr>
@@ -525,6 +526,68 @@
                                 </div>
                                 <div class="tab-pane" id="leave-tab">
                                     <div class="row row-deck row-cards">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="subheader text-primary mb-2">Leave Report</div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-3">
+                                                            <select id="leave_report_year"
+                                                                class="form-select form-select-sm"></select>
+                                                        </div>
+                                                        <!-- <div class="col-md-3 d-flex align-items-end">
+                                                            <button class="btn btn-sm btn-primary"
+                                                                id="generate_leave_report">Generate</button>
+                                                        </div> -->
+                                                        <div
+                                                            class="col-md-9 d-flex align-items-end justify-content-end">
+                                                            <button class="btn btn-sm btn-outline-success d-none"
+                                                                data-hide-if-empty id="export_leave_report">Export to
+                                                                Excel</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="table-responsive">
+                                                        <input type="text" id="leave_report_search"
+                                                            class="form-control mb-2 d-none" data-hide-if-empty
+                                                            placeholder="Search...">
+                                                        <table class="table table-sm table-hover"
+                                                            id="leave_report_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th data-key="employee_number">PF Number</th>
+                                                                    <th data-key="full_name">Employee Name</th>
+                                                                    <th data-key="leave_arrears">Arrears</th>
+                                                                    <th data-key="leave_due">Earned</th>
+                                                                    <th data-key="total_leaves_allocated">Total</th>
+                                                                    <th data-key="Jan">Jan</th>
+                                                                    <th data-key="Feb">Feb</th>
+                                                                    <th data-key="Mar">Mar</th>
+                                                                    <th data-key="Apr">Apr</th>
+                                                                    <th data-key="May">May</th>
+                                                                    <th data-key="Jun">Jun</th>
+                                                                    <th data-key="Jul">Jul</th>
+                                                                    <th data-key="Aug">Aug</th>
+                                                                    <th data-key="Sep">Sep</th>
+                                                                    <th data-key="Oct">Oct</th>
+                                                                    <th data-key="Nov">Nov</th>
+                                                                    <th data-key="Dec">Dec</th>
+                                                                    <th data-key="outstanding_leave">Outstanding</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                        <div
+                                                            class="d-flex justify-content-between align-items-center mt-2">
+                                                            <div id="leave_report_summary" class="text-muted small">
+                                                            </div>
+                                                            <div id="leave_report_pagination"></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-12 col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
@@ -534,13 +597,14 @@
                                                     <input type="text" id="leave_table_search" class="form-control mb-2"
                                                         placeholder="Search...">
                                                     <div class="mb-3">
-                                                        <button id="export_leave_table"
+                                                        <button id="export_leave_returnees"
                                                             class="btn btn-sm btn-outline-success">Export
                                                             Excel</button>
                                                     </div>
 
                                                     <div style="max-height: 300px; overflow-y: auto;">
-                                                        <table class="table table-sm table-hover" id="leave_table">
+                                                        <table class="table table-sm table-hover"
+                                                            id="leave_returnees_table">
                                                             <thead>
                                                                 <tr>
                                                                     <th data-key="employee" class="fs-5" width="30%">
@@ -569,8 +633,8 @@
                                                     <input type="text" id="excess_leave_table_search"
                                                         class="form-control mb-2" placeholder="Search..." />
                                                     <div class="mb-3">
-                                                        <button class="btn btn-sm btn-outline-success"
-                                                            onclick="TableManager.exportExcel('excess_leave_table', 'excess_leave_balances.xlsx')">
+                                                        <button id="export_excess_leave"
+                                                            class="btn btn-sm btn-outline-success">
                                                             Export to Excel
                                                         </button>
                                                     </div>
@@ -592,6 +656,7 @@
                                             </div>
 
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="employee-tab">
@@ -607,7 +672,7 @@
                                                         <div
                                                             class="d-flex justify-content-between align-items-center mb-2">
                                                             <div class="mb-3">
-                                                                <button id="export_excel"
+                                                                <button id="export_employees"
                                                                     class="btn btn-sm btn-outline-success">Export
                                                                     Excel</button>
                                                             </div>
@@ -629,7 +694,7 @@
                                                             <thead class="sticky-top">
                                                                 <tr>
                                                                     <th data-key="employee_name">Employee Name</th>
-                                                                    <th data-key="date_of_birth">Date of Birth</th>
+                                                                    <th data-key="employee_number">PF Number</th>
                                                                     <th data-key="date_of_joining">Date of Joining</th>
                                                                     <th data-key="department">Department</th>
                                                                     <th data-key="cell_number">Cell Number</th>
@@ -1475,6 +1540,7 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script>
 
     <script>
         window.frappe = {};
@@ -1555,9 +1621,24 @@
                             .filter(row => !row.classList.contains("table-group-header"));
 
                         rows.sort((a, b) => {
-                            const aText = a.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-                            const bText = b.querySelector(`td[data-key="${key}"]`)?.textContent || "";
-                            return aText.localeCompare(bText) * sortDirection;
+                            const aCell = a.querySelector(`td[data-key="${key}"]`);
+                            const bCell = b.querySelector(`td[data-key="${key}"]`);
+
+                            // Extract text content (fallback to empty string if cell doesn't exist)
+                            const aText = aCell?.textContent || "";
+                            const bText = bCell?.textContent || "";
+
+                            // Check if the content is numeric
+                            const aNum = parseFloat(aText.replace(/,/g, ''));
+                            const bNum = parseFloat(bText.replace(/,/g, ''));
+
+                            if (!isNaN(aNum) && !isNaN(bNum)) {
+                                // Numeric comparison
+                                return (aNum - bNum) * sortDirection;
+                            } else {
+                                // Fallback to string comparison
+                                return aText.localeCompare(bText) * sortDirection;
+                            }
                         });
 
                         tbody.innerHTML = "";
@@ -1588,21 +1669,238 @@
                 });
             }
 
-            function exportExcel(tableId, filename = "export.xlsx") {
-                const table = document.getElementById(tableId);
-                if (!table) return;
+            // function exportExcel(tableId, filename = "export.xlsx") {
+            //     const table = document.getElementById(tableId);
+            //     if (!table) return;
 
-                const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
-                const rows = Array.from(table.querySelectorAll("tbody tr"))
-                    .filter(tr => !tr.classList.contains("table-group-header")) // skip headers
-                    .map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
+            //     const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+            //     const rows = Array.from(table.querySelectorAll("tbody tr"))
+            //         .filter(tr => !tr.classList.contains("table-group-header")) // skip headers
+            //         .map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
 
-                const worksheetData = [headers, ...rows];
-                const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
-                const workbook = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
-                XLSX.writeFile(workbook, filename);
-            }
+            //     const worksheetData = [headers, ...rows];
+            //     const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+            //     const workbook = XLSX.utils.book_new();
+            //     XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+            //     XLSX.writeFile(workbook, filename);
+            // }
+            // function exportExcel(tableId, filename = "export.xlsx", data = null) {
+            //     // If data is provided, use that instead of reading from the table
+            //     if (data && data.length) {
+            //         const headers = Object.keys(data[0]);
+            //         const rows = data.map(row => headers.map(key => row[key]));
+            //         const worksheetData = [headers, ...rows];
+            //         const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+            //         const workbook = XLSX.utils.book_new();
+            //         XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+            //         XLSX.writeFile(workbook, filename);
+            //         return;
+            //     }
+
+            //     // Fallback to table reading if no data provided
+            //     const table = document.getElementById(tableId);
+            //     if (!table) return;
+
+            //     const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+            //     const rows = Array.from(table.querySelectorAll("tbody tr"))
+            //         .filter(tr => !tr.classList.contains("table-group-header"))
+            //         .map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
+
+            //     const worksheetData = [headers, ...rows];
+            //     const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+            //     const workbook = XLSX.utils.book_new();
+            //     XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+            //     XLSX.writeFile(workbook, filename);
+            // }
+
+            // function exportExcel(tableId, filename = "export.xlsx", data = null, department = "", year = "") {
+            //     // Create workbook
+            //     const workbook = XLSX.utils.book_new();
+
+            //     // Prepare main data
+            //     let worksheetData = [];
+
+            //     // Add header rows (merged cells)
+            //     if (department || year) {
+            //         // Row 1: "Employee Leave Data"
+            //         worksheetData.push(["Employee Leave Data"]);
+
+            //         // Row 2: "for [department] in [year]"
+            //         const deptText = department ? `for ${department}` : "";
+            //         const yearText = year ? `in ${year}` : "";
+            //         worksheetData.push([`${deptText} ${yearText}`.trim()]);
+
+            //         // Empty row for spacing
+            //         worksheetData.push([]);
+            //     }
+
+            //     // Add data headers and rows
+            //     if (data && data.length) {
+            //         const headers = Object.keys(data[0]);
+            //         worksheetData.push(headers); // Column headers
+            //         worksheetData.push(...data.map(row => headers.map(key => row[key])));
+            //     } else {
+            //         // Fallback to table reading if no data provided
+            //         const table = document.getElementById(tableId);
+            //         if (table) {
+            //             const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+            //             const rows = Array.from(table.querySelectorAll("tbody tr"))
+            //                 .filter(tr => !tr.classList.contains("table-group-header"))
+            //                 .map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
+
+            //             worksheetData.push(headers);
+            //             worksheetData.push(...rows);
+            //         }
+            //     }
+
+            //     // Create worksheet
+            //     const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+
+            //     // Add merges for header rows
+            //     if (department || year) {
+            //         const merge = [];
+            //         const cols = worksheetData[worksheetData.length - 1].length; // Number of columns in data
+
+            //         // Merge first header row (A1:Z1 where Z is last column)
+            //         merge.push({ s: { r: 0, c: 0 }, e: { r: 0, c: cols - 1 } });
+
+            //         // Merge second header row (A2:Z2)
+            //         merge.push({ s: { r: 1, c: 0 }, e: { r: 1, c: cols - 1 } });
+
+            //         worksheet["!merges"] = merge;
+            //     }
+
+            //     // Add worksheet to workbook and save
+            //     XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+            //     XLSX.writeFile(workbook, filename);
+            // }
+
+            // async function exportExcel(tableId, filename = "leave_report.xlsx", data = null, department = "", year = "") {
+            //     const workbook = new ExcelJS.Workbook();
+            //     const worksheet = workbook.addWorksheet('Leave Report');
+
+            //     // Set default font for entire worksheet
+            //     worksheet.properties.defaultRowHeight = 20;
+            //     workbook.creator = 'Jupiter Platform';
+            //     workbook.lastModifiedBy = 'Jupiter Platform';
+            //     workbook.created = new Date();
+            //     workbook.modified = new Date();
+
+            //     // Set default font (applies to all cells unless overridden)
+            //     worksheet.eachRow(row => {
+            //         row.font = {
+            //             name: 'Calibri',
+            //             size: 11,
+            //             family: 2 // 2 = Swiss (sans-serif)
+            //         };
+            //     });
+
+            //     // Get headers from table TH elements
+            //     let headers = [];
+            //     const table = document.getElementById(tableId);
+            //     if (table) {
+            //         headers = Array.from(table.querySelectorAll("thead th"))
+            //             .map(th => ({
+            //                 key: th.dataset.key || th.textContent.trim(), // Backend field name
+            //                 label: th.textContent.trim()                   // Frontend display name
+            //             }))
+            //             .filter(h => h.label); // Remove empty headers
+            //     }
+
+            //     // Add styled header rows - FIXED FIRST ROW
+            //     let currentRow = 1;
+
+            //     // 1. MAIN TITLE ROW (ALWAYS SHOWS "EMPLOYEE LEAVE DATA")
+            //     worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+            //     const titleRow = worksheet.getRow(currentRow); // Get the row object
+            //     titleRow.height = 40; // Set row height here
+            //     const titleCell = worksheet.getCell(`A${currentRow}`);
+            //     titleCell.value = "NARCOTICS CONTROL COMMISSION"; // Fixed text
+            //     titleCell.font = { bold: true, size: 16, color: { argb: 'FFFFFFFF' } };
+            //     titleCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF00B050' } };
+            //     titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+            //     currentRow++;
+
+            //     // 2. DEPARTMENT/YEAR ROW (OPTIONAL)
+            //     if (department || year) {
+            //         worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+            //         const subtitleRow = worksheet.getRow(currentRow); // Get the row object
+            //         subtitleRow.height = 30; // Set row height here
+            //         const subtitleCell = worksheet.getCell(`A${currentRow}`);
+            //         const deptText = department ? `${department.toUpperCase()} LEAVE ` : "";
+            //         const yearText = year ? year : "";
+            //         subtitleCell.value = `${deptText} ${yearText}`.trim();
+            //         subtitleCell.font = { bold: true, size: 14, color: { argb: 'FFFFFFFF' } };
+            //         subtitleCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF00B050' } };
+            //         subtitleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+            //         currentRow++;
+            //     }
+
+            //     // 3. EMPTY ROW FOR SPACING
+            //     currentRow++;
+
+            //     // 4. COLUMN HEADERS ROW (using frontend labels)
+            //     const headerRow = worksheet.getRow(currentRow);
+            //     headerRow.values = headers.map(h => h.label); // Use friendly display names
+            //     headerRow.eachCell(cell => {
+            //         cell.font = { bold: true };
+            //         cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFD9E1F2' } };
+            //         cell.alignment = { horizontal: 'left' };
+            //     });
+            //     currentRow++;
+
+            //     // 5. DATA ROWS
+            //     if (data && data.length) {
+            //         data.forEach(rowData => {
+            //             const row = worksheet.getRow(currentRow);
+            //             // Map data using backend keys but maintain column order
+            //             row.values = headers.map(header => rowData[header.key]);
+            //             currentRow++;
+            //         });
+            //     } else if (table) {
+            //         // Fallback to table DOM export
+            //         Array.from(table.querySelectorAll("tbody tr"))
+            //             .filter(tr => !tr.classList.contains("table-group-header"))
+            //             .forEach(tr => {
+            //                 const row = worksheet.getRow(currentRow);
+            //                 row.values = Array.from(tr.children).map(td => td.textContent.trim());
+            //                 currentRow++;
+            //             });
+            //     }
+
+            //     // With this auto-width calculation:
+            //     worksheet.columns = headers.map((header, colIndex) => {
+            //         // Calculate maximum length of content in column
+            //         let maxLength = header.label.length; // Start with header width
+
+            //         if (data && data.length) {
+            //             data.forEach(row => {
+            //                 const cellValue = String(row[header.key] || '');
+            //                 maxLength = Math.max(maxLength, cellValue.length);
+            //             });
+            //         }
+
+            //         return {
+            //             width: Math.min(Math.max(maxLength + 2, 5), 30) // Add padding, set min 10, max 30
+            //         };
+            //     });
+
+            //     // Generate and download the file
+            //     const buffer = await workbook.xlsx.writeBuffer();
+            //     const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            //     saveAs(blob, filename);
+            // }
+
+            // // Helper function for browser download
+            // function saveAs(blob, filename) {
+            //     const link = document.createElement('a');
+            //     link.href = URL.createObjectURL(blob);
+            //     link.download = filename;
+            //     document.body.appendChild(link);
+            //     link.click();
+            //     document.body.removeChild(link);
+            // }
+
 
             function getData(tableId) {
                 const table = document.getElementById(tableId);
@@ -1622,21 +1920,55 @@
                 });
             }
 
-            function search(tableId, inputId) {
+            // function search(tableId, inputId) {
+            //     const input = document.getElementById(inputId);
+            //     const table = document.getElementById(tableId);
+            //     if (!input || !table) return;
+
+            //     input.addEventListener("input", function () {
+            //         const query = this.value.trim().toLowerCase();
+            //         const rows = table.querySelectorAll("tbody tr");
+
+            //         rows.forEach(row => {
+            //             const visible = [...row.cells].some(cell =>
+            //                 cell.textContent.toLowerCase().includes(query)
+            //             );
+            //             row.style.display = visible ? "" : "none";
+            //         });
+            //     });
+            // }
+
+            function search(tableId, inputId, callback, fullData = null) {
                 const input = document.getElementById(inputId);
-                const table = document.getElementById(tableId);
-                if (!input || !table) return;
+                if (!input) return;
 
                 input.addEventListener("input", function () {
                     const query = this.value.trim().toLowerCase();
-                    const rows = table.querySelectorAll("tbody tr");
 
-                    rows.forEach(row => {
-                        const visible = [...row.cells].some(cell =>
-                            cell.textContent.toLowerCase().includes(query)
+                    if (!fullData || !fullData.length) {
+                        // Fallback to DOM search if no data provided
+                        const table = document.getElementById(tableId);
+                        if (!table) return;
+
+                        const rows = table.querySelectorAll("tbody tr");
+                        rows.forEach(row => {
+                            const visible = [...row.cells].some(cell =>
+                                cell.textContent.toLowerCase().includes(query)
+                            );
+                            row.style.display = visible ? "" : "none";
+                        });
+                        return;
+                    }
+
+                    // Search through the full dataset
+                    const filtered = fullData.filter(row => {
+                        return Object.values(row).some(value =>
+                            String(value).toLowerCase().includes(query)
                         );
-                        row.style.display = visible ? "" : "none";
                     });
+
+                    // Call the callback with filtered results
+                    if (callback) callback(filtered);
                 });
             }
 
@@ -1655,11 +1987,327 @@
             return {
                 render,
                 sort,
-                exportExcel,
+                // exportExcel,
                 getData,
                 search
             };
         })();
+
+        const ExcelManager = (() => {
+            function saveAs(blob, filename) {
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            // async function exportExcel(tableId, filename, options = {}) {
+            //     try {
+            //         const workbook = new ExcelJS.Workbook();
+            //         const worksheet = workbook.addWorksheet('Report');
+
+            //         // Get table element
+            //         const table = document.getElementById(tableId);
+            //         if (!table) {
+            //             console.error(`Table with ID ${tableId} not found`);
+            //             return;
+            //         }
+
+            //         // Extract headers
+            //         const headers = Array.from(table.querySelectorAll("thead th"))
+            //             .map(th => ({
+            //                 key: th.dataset.key || th.textContent.trim(),
+            //                 label: th.textContent.trim()
+            //             }))
+            //             .filter(h => h.label);
+
+            //         // Extract data rows (either from DOM or provided data)
+            //         let rows = [];
+            //         if (options.data && options.data.length) {
+            //             // Use provided data array
+            //             rows = options.data.map(row =>
+            //                 headers.map(header => row[header.key] || '')
+            //             );
+            //         } else {
+            //             // Fallback to DOM extraction
+            //             rows = Array.from(table.querySelectorAll("tbody tr"))
+            //                 .filter(tr => !tr.classList.contains("table-group-header"))
+            //                 .map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
+            //         }
+
+            //         // Current row counter
+            //         let currentRow = 1;
+
+            //         // 1. MAIN TITLE ROW
+            //         if (options.title) {
+            //             worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+            //             const titleCell = worksheet.getCell(`A${currentRow}`);
+            //             titleCell.value = options.title.toUpperCase();
+            //             titleCell.font = {
+            //                 name: 'Calibri',
+            //                 size: 16,
+            //                 bold: true,
+            //                 color: { argb: 'FFFFFFFF' }
+            //             };
+            //             titleCell.fill = {
+            //                 type: 'pattern',
+            //                 pattern: 'solid',
+            //                 fgColor: { argb: 'FF4472C4' }
+            //             };
+            //             titleCell.alignment = {
+            //                 horizontal: 'center',
+            //                 vertical: 'middle'
+            //             };
+            //             worksheet.getRow(currentRow).height = 30;
+            //             currentRow++;
+            //         }
+
+            //         // 2. FILTER SUBTITLE ROW (if department or year provided)
+            //         if (options.department || options.year) {
+            //             worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+            //             const subtitleCell = worksheet.getCell(`A${currentRow}`);
+
+            //             let subtitleText = '';
+            //             if (options.department) subtitleText += `FOR ${options.department.toUpperCase()}`;
+            //             if (options.year) subtitleText += `${options.department ? ' ' : ''}IN ${options.year}`;
+
+            //             subtitleCell.value = subtitleText.trim();
+            //             subtitleCell.font = {
+            //                 name: 'Calibri',
+            //                 size: 12,
+            //                 bold: true,
+            //                 color: { argb: 'FFFFFFFF' }
+            //             };
+            //             subtitleCell.fill = {
+            //                 type: 'pattern',
+            //                 pattern: 'solid',
+            //                 fgColor: { argb: 'FF70AD47' }
+            //             };
+            //             subtitleCell.alignment = {
+            //                 horizontal: 'center',
+            //                 vertical: 'middle'
+            //             };
+            //             worksheet.getRow(currentRow).height = 25;
+            //             currentRow++;
+            //         }
+
+            //         // 3. EMPTY ROW FOR SPACING
+            //         currentRow++;
+
+            //         // 4. COLUMN HEADERS
+            //         const headerRow = worksheet.getRow(currentRow);
+            //         headerRow.values = headers.map(h => h.label);
+            //         headerRow.eachCell(cell => {
+            //             cell.font = {
+            //                 name: 'Calibri',
+            //                 size: 11,
+            //                 bold: true
+            //             };
+            //             cell.fill = {
+            //                 type: 'pattern',
+            //                 pattern: 'solid',
+            //                 fgColor: { argb: 'FFD9E1F2' }
+            //             };
+            //             cell.alignment = {
+            //                 horizontal: 'center'
+            //             };
+            //         });
+            //         currentRow++;
+
+            //         // 5. DATA ROWS
+            //         rows.forEach((rowData) => {
+            //             const row = worksheet.getRow(currentRow);
+            //             row.values = rowData;
+            //             row.font = {
+            //                 name: 'Calibri',
+            //                 size: 11
+            //             };
+            //             currentRow++;
+            //         });
+
+            //         // Auto-fit columns
+            //         worksheet.columns = headers.map((header, colIndex) => {
+            //             let maxLength = header.label.length;
+            //             rows.forEach(row => {
+            //                 const cellValue = String(row[colIndex] || '');
+            //                 maxLength = Math.max(maxLength, cellValue.length);
+            //             });
+            //             return {
+            //                 width: Math.min(Math.max(maxLength + 2, 10), 30)
+            //             };
+            //         });
+
+            //         // Generate and download
+            //         const buffer = await workbook.xlsx.writeBuffer();
+            //         saveAs(new Blob([buffer]), filename);
+            //     } catch (error) {
+            //         console.error('Error exporting to Excel:', error);
+            //     }
+            // }
+            async function exportExcel(tableId, filename, options = {}) {
+                try {
+                    const workbook = new ExcelJS.Workbook();
+                    const worksheet = workbook.addWorksheet('Report');
+
+                    // Get table element
+                    const table = document.getElementById(tableId);
+                    if (!table) {
+                        console.error(`Table with ID ${tableId} not found`);
+                        return;
+                    }
+
+                    // Extract headers (add Serial No as first column)
+                    const originalHeaders = Array.from(table.querySelectorAll("thead th"))
+                        .map(th => ({
+                            key: th.dataset.key || th.textContent.trim(),
+                            label: th.textContent.trim()
+                        }))
+                        .filter(h => h.label);
+
+                    // Add serial number column to headers
+                    const headers = [
+                        { key: 'serial_no', label: 'S.No' },
+                        ...originalHeaders
+                    ];
+
+                    // Extract data rows (either from DOM or provided data)
+                    let rows = [];
+                    if (options.data && options.data.length) {
+                        // Use provided data array with added serial numbers
+                        rows = options.data.map((row, index) => [
+                            index + 1, // Serial number
+                            ...headers.slice(1).map(header => row[header.key] || '')
+                        ]);
+                    } else {
+                        // Fallback to DOM extraction with added serial numbers
+                        rows = Array.from(table.querySelectorAll("tbody tr"))
+                            .filter(tr => !tr.classList.contains("table-group-header"))
+                            .map((tr, index) => [
+                                index + 1, // Serial number
+                                ...Array.from(tr.children).map(td => td.textContent.trim())
+                            ]);
+                    }
+
+                    // Add title row if specified
+                    let currentRow = 1;
+                    if (options.title) {
+                        // Merge cells for title (extended by 1 column for serial number)
+                        worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+                        const titleCell = worksheet.getCell(`A${currentRow}`);
+                        titleCell.value = options.title.toUpperCase();
+                        titleCell.font = {
+                            name: 'Calibri',
+                            size: 16,
+                            bold: true,
+                            color: { argb: 'FFFFFFFF' }
+                        };
+                        titleCell.fill = {
+                            type: 'pattern',
+                            pattern: 'solid',
+                            fgColor: { argb: 'FF4472C4' }
+                        };
+                        titleCell.alignment = {
+                            horizontal: 'center',
+                            vertical: 'middle'
+                        };
+                        worksheet.getRow(currentRow).height = 30;
+                        currentRow++;
+                    }
+
+                    // 2. FILTER SUBTITLE ROW (if department or year provided)
+                    if (options.department || options.year) {
+                        worksheet.mergeCells(`A${currentRow}:${String.fromCharCode(64 + headers.length)}${currentRow}`);
+                        const subtitleCell = worksheet.getCell(`A${currentRow}`);
+
+                        let subtitleText = '';
+                        if (options.department) subtitleText += `FOR ${options.department.toUpperCase()}`;
+                        if (options.year) subtitleText += `${options.department ? ' ' : ''}IN ${options.year}`;
+
+                        subtitleCell.value = subtitleText.trim();
+                        subtitleCell.font = {
+                            name: 'Calibri',
+                            size: 12,
+                            bold: true,
+                            color: { argb: 'FFFFFFFF' }
+                        };
+                        subtitleCell.fill = {
+                            type: 'pattern',
+                            pattern: 'solid',
+                            fgColor: { argb: 'FF70AD47' }
+                        };
+                        subtitleCell.alignment = {
+                            horizontal: 'center',
+                            vertical: 'middle'
+                        };
+                        worksheet.getRow(currentRow).height = 25;
+                        currentRow++;
+                    }
+                    // 3. EMPTY ROW FOR SPACING
+                    currentRow++;
+
+                    // Add column headers (including serial number)
+                    const headerRow = options.title ? worksheet.getRow(2) : worksheet.getRow(1);
+                    headerRow.values = headers.map(h => h.label);
+                    headerRow.eachCell(cell => {
+                        cell.font = {
+                            name: 'Calibri',
+                            size: 11,
+                            bold: true
+                        };
+                        cell.fill = {
+                            type: 'pattern',
+                            pattern: 'solid',
+                            fgColor: { argb: 'FFD9E1F2' }
+                        };
+                        cell.alignment = {
+                            horizontal: 'center'
+                        };
+                    });
+
+                    // Add data rows (including serial numbers)
+                    const dataStartRow = options.title ? 3 : 2;
+                    rows.forEach((rowData, index) => {
+                        const row = worksheet.getRow(dataStartRow + index);
+                        row.values = rowData;
+                        row.font = {
+                            name: 'Calibri',
+                            size: 11
+                        };
+                        // Right-align the serial number column
+                        const serialNoCell = row.getCell(1);
+                        serialNoCell.alignment = { horizontal: 'right' };
+                    });
+
+                    // Auto-fit columns
+                    worksheet.columns = headers.map((header, colIndex) => {
+                        let maxLength = header.label.length;
+                        rows.forEach(row => {
+                            const cellValue = String(row[colIndex] || '');
+                            maxLength = Math.max(maxLength, cellValue.length);
+                        });
+                        return {
+                            width: Math.min(Math.max(maxLength + 2, 10), 30)
+                        };
+                    });
+
+                    // Generate and download
+                    const buffer = await workbook.xlsx.writeBuffer();
+                    saveAs(new Blob([buffer]), filename);
+                } catch (error) {
+                    console.error('Error exporting to Excel:', error);
+                }
+            }
+
+            return {
+                exportExcel
+            };
+        })();
+
+
+
+
 
 
     </script>
@@ -1763,6 +2411,7 @@
                 loadRetirees(dept);
                 loadPaginatedEmployees(dept);
                 loadExcessLeaveBalances(dept);
+                loadLeaveReport(dept);
             });
         });
 
@@ -2085,7 +2734,7 @@
                         leave_days: row.leave_days || ''
                     }));
 
-                    TableManager.render("leave_table", data);
+                    TableManager.render("leave_returnees_table", data);
                 })
                 .catch(error => {
                     console.error('Error fetching leave data:', error);
@@ -2099,7 +2748,7 @@
 
             searchInput.addEventListener("keyup", function () {
                 const query = this.value.toLowerCase();
-                const rows = document.querySelectorAll("#leave_table tbody tr");
+                const rows = document.querySelectorAll("#leave_returnees_table tbody tr");
 
                 rows.forEach(row => {
                     let visible = false;
@@ -2275,14 +2924,13 @@
                     }
 
                     anniversaryData = res.message.map(row => ({
-                        employee: row.years_completed
-                            ? `${row.employee.toUpperCase()} <span class="badge bg-green-lt ms-1">🎉 ${row.years_completed} year${row.years_completed > 1 ? 's' : ''}</span>`
-                            : row.employee.toUpperCase(),
+                        employee: row.employee.toUpperCase(),
+                        years_completed: row.years_completed || '',
                         cell_number: row.cell_number || '',
                         doj: row.doj || ''
                     }));
 
-                    TableManager.render("anniversary_table", anniversaryData);
+                    TableManager.render("work_anniversary_table", anniversaryData);
                     setupAnniversarySearch(anniversaryData);
                 })
                 .catch(error => {
@@ -2299,11 +2947,12 @@
 
                 const filtered = anniversaryData.filter(row =>
                     (row.employee || '').toLowerCase().includes(query) ||
+                    (row.years_completed || '').toLowerCase().includes(query) ||
                     (row.cell_number || '').toLowerCase().includes(query) ||
                     (row.doj || '').toLowerCase().includes(query)
                 );
 
-                TableManager.render("anniversary_table", filtered);
+                TableManager.render("work_anniversary_table", filtered);
             });
         }
 
@@ -2470,7 +3119,8 @@
                             }
                         },
                         legend: {
-                            position: "top",
+                            show: true,
+                            position: 'top',
                             color: textColor,
                         },
                         dataLabels: {
@@ -2544,6 +3194,265 @@
             }
         }
 
+        // Leave Report code
+        // let leaveReportData = [];
+        // let leaveReportCurrentPage = 1;
+        // const leaveReportPageSize = 20;
+        // let leaveReportFiltered = [];
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const yearSelect = document.getElementById("leave_report_year");
+        //     const currentYear = new Date().getFullYear();
+
+        //     for (let y = 2024; y <= currentYear; y++) {
+        //         const opt = document.createElement("option");
+        //         opt.value = y;
+        //         opt.textContent = y;
+        //         if (y === currentYear) opt.selected = true;
+        //         yearSelect.appendChild(opt);
+        //     }
+
+        //     document.getElementById("generate_leave_report").addEventListener("click", () => {
+        //         const year = yearSelect.value;
+        //         const department = document.getElementById("department_filter").value || "";
+
+        //         const query = new URLSearchParams({ year, department });
+
+        //         fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_leave_report?${query}`, {
+        //             method: "GET",
+        //             headers: { 'Accept': 'application/json' },
+        //             credentials: "include"
+        //         })
+        //             .then(r => r.json())
+        //             .then(res => {
+        //                 leaveReportData = res.message || [];
+        //                 leaveReportCurrentPage = 1;
+        //                 const hasData = leaveReportData.length > 0;
+        //                 document.querySelectorAll("[data-hide-if-empty]").forEach(el => {
+        //                     el.classList.toggle("d-none", !hasData);
+        //                 });
+        //                 renderPaginatedLeaveReport();
+        //                 TableManager.search("leave_report_table", "leave_report_search", (filtered) => {
+        //                     leaveReportFiltered = filtered;
+        //                     leaveReportCurrentPage = 1;
+        //                     renderPaginatedLeaveReport();
+        //                 });
+        //             });
+        //     });
+
+        //     document.getElementById("export_leave_report").addEventListener("click", () => {
+        //         const toExport = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //         TableManager.exportExcel("leave_report_table", "leave_report.xlsx", toExport);
+        //     });
+        // });
+
+        // function loadLeaveReport(department = "") {
+        //     const yearSelect = document.getElementById("leave_report_year");
+        //     const currentYear = new Date().getFullYear();
+        //     if (!yearSelect.dataset.loaded) {
+        //         for (let y = 2020; y <= currentYear; y++) {
+        //             const opt = document.createElement("option");
+        //             opt.value = y;
+        //             opt.textContent = y;
+        //             if (y === currentYear) opt.selected = true;
+        //             yearSelect.appendChild(opt);
+        //         }
+        //         yearSelect.dataset.loaded = "true";
+        //     }
+
+        //     document.getElementById("generate_leave_report").onclick = () => {
+        //         const year = yearSelect.value;
+        //         const query = new URLSearchParams({ year, department });
+
+        //         fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_leave_report?${query}`, {
+        //             method: "GET",
+        //             headers: { 'Accept': 'application/json' },
+        //             credentials: "include"
+        //         })
+        //             .then(r => r.json())
+        //             .then(res => {
+        //                 leaveReportData = res.message || [];
+        //                 leaveReportCurrentPage = 1;
+        //                 leaveReportFiltered = [];
+
+        //                 // Show export button and others
+        //                 document.querySelectorAll("[data-hide-if-empty]").forEach(el => {
+        //                     el.classList.toggle("d-none", !leaveReportData.length);
+        //                 });
+
+        //                 renderPaginatedLeaveReport();
+
+        //                 // Hook search to filtered results
+        //                 TableManager.search("leave_report_table", "leave_report_search", (filtered) => {
+        //                     leaveReportFiltered = filtered;
+        //                     leaveReportCurrentPage = 1;
+        //                     renderPaginatedLeaveReport();
+        //                 });
+        //             });
+        //     };
+
+        // document.getElementById("export_leave_report").onclick = () => {
+        //     const toExport = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //     TableManager.exportExcel("leave_report_table", "leave_report.xlsx", toExport);
+        // };
+
+        // document.getElementById("export_leave_report").onclick = () => {
+        //     const toExport = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //     TableManager.exportExcel("leave_report_table", "leave_report.xlsx", toExport);
+        // };
+
+        // document.getElementById("export_leave_report").onclick = () => {
+        //     const toExport = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //     const department = document.getElementById("department_filter").value || "";
+        //     const year = document.getElementById("leave_report_year").value || "";
+        //     TableManager.exportExcel("leave_report_table", "leave_report.xlsx", toExport, department, year);
+        // };
+
+        // document.getElementById("export_leave_report").onclick = async () => {
+        //     const toExport = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //     const departmentSelect = document.getElementById("department_filter");
+        //     const department = departmentSelect
+        //         ? departmentSelect.options[departmentSelect.selectedIndex].text
+        //         : "";
+        //     const year = document.getElementById("leave_report_year").value || "";
+        //     await TableManager.exportExcel("leave_report_table", "leave_report.xlsx", toExport, department, year);
+        // };
+
+        document.getElementById("leave_report_year").addEventListener("change", () => {
+            const dept = document.getElementById("department_filter").value || "";
+            loadLeaveReport(dept); // 🔁 re-fetch on year change
+        });
+        // }
+
+        let leaveReportData = [];
+        let leaveReportFiltered = [];
+        let leaveReportCurrentPage = 1;
+        const leaveReportPageSize = 15;
+
+        function loadLeaveReport(department = "") {
+            const yearSelect = document.getElementById("leave_report_year");
+            const currentYear = new Date().getFullYear();
+
+            // Populate year dropdown once
+            if (!yearSelect.dataset.loaded) {
+                for (let y = 2023; y <= currentYear; y++) {
+                    const opt = document.createElement("option");
+                    opt.value = y;
+                    opt.textContent = y;
+                    if (y === currentYear) opt.selected = true;
+                    yearSelect.appendChild(opt);
+                }
+                yearSelect.dataset.loaded = "true";
+            }
+
+            const year = yearSelect.value;
+
+            const query = new URLSearchParams({ year, department });
+
+            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_leave_report?${query}`, {
+                method: "GET",
+                headers: { 'Accept': 'application/json' },
+                credentials: "include"
+            })
+                .then(r => r.json())
+                .then(res => {
+                    leaveReportData = res.message || [];
+                    leaveReportFiltered = [];
+                    leaveReportCurrentPage = 1;
+
+                    document.querySelectorAll("[data-hide-if-empty]").forEach(el => {
+                        el.classList.toggle("d-none", !leaveReportData.length);
+                    });
+
+                    renderPaginatedLeaveReport();
+
+                    // TableManager.search("leave_report_table", "leave_report_search", (filtered) => {
+                    //     leaveReportFiltered = filtered;
+                    //     leaveReportCurrentPage = 1;
+                    //     renderPaginatedLeaveReport();
+                    // });
+
+                    TableManager.search("leave_report_table", "leave_report_search", (filtered) => {
+                        leaveReportFiltered = filtered;
+                        leaveReportCurrentPage = 1;
+                        renderPaginatedLeaveReport();
+                    }, leaveReportData);
+                });
+        }
+
+
+
+        // function renderPaginatedLeaveReport() {
+        //     const data = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+        //     const start = (leaveReportCurrentPage - 1) * leaveReportPageSize;
+        //     const paginated = data.slice(start, start + leaveReportPageSize);
+
+        //     TableManager.render("leave_report_table", paginated);
+        //     TableManager.sort("leave_report_table");
+
+        //     // Summary
+        //     const summary = document.getElementById("leave_report_summary");
+        //     const total = data.length;
+        //     const from = total === 0 ? 0 : start + 1;
+        //     const to = Math.min(start + leaveReportPageSize, total);
+        //     summary.textContent = `Showing ${from}-${to} of ${total}`;
+
+        //     renderLeaveReportPagination(total);
+        // }
+
+        function renderPaginatedLeaveReport() {
+            const data = leaveReportFiltered.length ? leaveReportFiltered : leaveReportData;
+            const total = data.length;
+
+            const start = (leaveReportCurrentPage - 1) * leaveReportPageSize;
+            const paginated = data.slice(start, start + leaveReportPageSize);
+
+            TableManager.render("leave_report_table", paginated);
+            TableManager.sort("leave_report_table");
+
+            // Update pagination summary
+            const summary = document.getElementById("leave_report_summary");
+            const from = total === 0 ? 0 : start + 1;
+            const to = Math.min(start + leaveReportPageSize, total);
+            summary.textContent = `Showing ${from}-${to} of ${total}`;
+
+            renderLeaveReportPagination(total);
+        }
+
+
+        function renderLeaveReportPagination(total) {
+            const container = document.getElementById("leave_report_pagination");
+            container.innerHTML = "";
+            const totalPages = Math.ceil(total / leaveReportPageSize);
+            const range = 2;
+            const current = leaveReportCurrentPage;
+
+            const makeBtn = (label, target, disabled = false, active = false) => {
+                const btn = document.createElement("button");
+                btn.textContent = label;
+                btn.className = "btn btn-sm mx-1 " + (active ? "btn-primary" : "btn-outline-secondary");
+                if (disabled) btn.disabled = true;
+                btn.addEventListener("click", () => {
+                    leaveReportCurrentPage = target;
+                    renderPaginatedLeaveReport();
+                });
+                return btn;
+            };
+
+            container.appendChild(makeBtn("« First", 1, current === 1));
+            container.appendChild(makeBtn("‹ Prev", current - 1, current === 1));
+
+            for (let i = Math.max(1, current - range); i <= Math.min(totalPages, current + range); i++) {
+                container.appendChild(makeBtn(i, i, false, i === current));
+            }
+
+            container.appendChild(makeBtn("Next ›", current + 1, current === totalPages));
+            container.appendChild(makeBtn("Last »", totalPages, current === totalPages));
+        }
+
+
+        // Employee Table Report
+
         let currentPage = 1;
         let currentSearch = "";
         let pageSize = 10;  // Default page size
@@ -2589,7 +3498,7 @@
                     tbody.innerHTML = data.map(row => `
                         <tr>
                             <td><a href="#" onclick="showEmployeeDetails('${row.name}')" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal">${row.employee_name.toUpperCase()}</a></td>
-                            <td>${row.date_of_birth || ''}</td>
+                            <td>${row.employee_number || ''}</td>
                             <td>${row.date_of_joining || ''}</td>
                             <td>${row.department || ''}</td>
                             <td>${row.cell_number || ''}</td>
@@ -2969,27 +3878,193 @@
         TableManager.sort("probation_table");
         TableManager.sort("missing_docs_table");
         TableManager.sort("retirement_table");
-        TableManager.sort("anniversary_table");
-        TableManager.sort("leave_table");
+        TableManager.sort("work_anniversary_table");
+        TableManager.sort("leave_returnees_table");
         TableManager.search("birthday_table", "birthday_table_search");
 
 
         // Export button
-        document.getElementById("export_probation").addEventListener("click", () => {
-            TableManager.exportExcel("probation_table", "probation_list.xlsx");
-        });
-        document.getElementById("export_missing_docs").addEventListener("click", () => {
-            TableManager.exportExcel("missing_docs_table", "missing_documents.xlsx");
-        });
-        document.getElementById("export_retirees").addEventListener("click", () => {
-            TableManager.exportExcel("retirement_table", "retirees.xlsx");
-        });
-        document.getElementById("export_anniversaries").addEventListener("click", () => {
-            TableManager.exportExcel("anniversary_table", "anniversaries_this_month.xlsx");
+        // document.getElementById("export_probation").addEventListener("click", () => {
+        //     TableManager.exportExcel("probation_table", "probation_list.xlsx");
+        // });
+        // document.getElementById("export_missing_docs").addEventListener("click", () => {
+        //     TableManager.exportExcel("missing_docs_table", "missing_documents.xlsx");
+        // });
+        // document.getElementById("export_retirees").addEventListener("click", () => {
+        //     TableManager.exportExcel("retirement_table", "retirees.xlsx");
+        // });
+        // document.getElementById("export_work_anniversaries").addEventListener("click", () => {
+        //     TableManager.exportExcel("work_anniversary_table", "anniversaries_this_month.xlsx");
+        // });
+
+        // document.getElementById("export_leave_returnees").addEventListener("click", () => {
+        //     TableManager.exportExcel("leave_returnees_table", "approved_leaves_this_month.xlsx");
+        // });
+        // Updated event listeners with filter support
+        document.getElementById("export_probation").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("probation_table", "probation_list.xlsx", {
+                title: "Probation List",
+                department: department
+            });
         });
 
-        document.getElementById("export_leave_table").addEventListener("click", () => {
-            TableManager.exportExcel("leave_table", "approved_leaves_this_month.xlsx");
+        document.getElementById("export_missing_docs").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("missing_docs_table", "missing_documents.xlsx", {
+                title: "Missing Documents",
+                department: department
+            });
+        });
+
+        document.getElementById("export_retirees").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("retirement_table", "retirees.xlsx", {
+                title: "Retirees List",
+                department: department
+            });
+        });
+
+        document.getElementById("export_work_anniversaries").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("work_anniversary_table", "anniversaries_this_month.xlsx", {
+                title: "Work Anniversaries This Month",
+                department: department
+            });
+        });
+
+        document.getElementById("export_leave_returnees").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("leave_returnees_table", "returning_from_leave_this_month.xlsx", {
+                title: "Returning from Leave This Month",
+                department: department
+            });
+        });
+
+        document.getElementById("export_excess_leave").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("excess_leave_table", "excess_annual_leaves.xlsx", {
+                title: "Employees with Excess Annual Leave",
+                department: department
+            });
+        });
+
+        document.getElementById("export_birthdays").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            await ExcelManager.exportExcel("birthday_table", "birthdays_this_week.xlsx", {
+                title: "Birthdays This Week",
+                department: department
+            });
+        });
+
+        // document.getElementById("export_employees").addEventListener("click", async () => {
+        //     const departmentSelect = document.getElementById("department_filter");
+        //     const department = departmentSelect
+        //         ? departmentSelect.options[departmentSelect.selectedIndex].text
+        //         : "";
+        //     await ExcelManager.exportExcel("employee_table", "employees_info.xlsx", {
+        //         title: "Employee Information",
+        //         department: department,
+        //         data: data
+        //     });
+        // });
+        document.getElementById("export_employees").addEventListener("click", async () => {
+            try {
+                // Get current filter values
+                const departmentSelect = document.getElementById("department_filter");
+                const departmentValue = departmentSelect ? departmentSelect.value : "";
+                const departmentText = departmentSelect
+                    ? departmentSelect.options[departmentSelect.selectedIndex].text
+                    : "";
+                const searchTerm = document.getElementById("employee_table_search").value || "";
+                const table = document.getElementById("employee_table");
+                let sortColumn = table?.dataset.sortColumn || '';
+                let sortDirection = table?.dataset.sortDirection || 'asc';
+
+                // Show loading state
+                const exportBtn = document.getElementById("export_employees");
+                exportBtn.disabled = true;
+                exportBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Exporting...';
+
+                // Fetch ALL filtered data using get_all_employees endpoint
+                const queryParams = new URLSearchParams({
+                    department: departmentValue,
+                    search: searchTerm
+                });
+
+                const response = await fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_all_employees?${queryParams}`, {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json' },
+                    credentials: 'include'
+                });
+
+                if (!response.ok) throw new Error("Failed to fetch data");
+
+                const res = await response.json();
+                const allFilteredData = res.message;
+
+                // Transform data to match table structure
+                const exportData = allFilteredData.map(employee => ({
+                    employee_name: employee.employee_name.toUpperCase(),
+                    date_of_birth: employee.date_of_birth,
+                    date_of_joining: employee.date_of_joining,
+                    department: employee.department,
+                    cell_number: employee.cell_number
+                }));
+
+                // Export with ExcelManager
+                await ExcelManager.exportExcel("employee_table", "employees_info.xlsx", {
+                    title: "Employee Information",
+                    department: departmentText,
+                    data: exportData
+                });
+
+            } catch (error) {
+                console.error("Export failed:", error);
+                alert("Export failed. Please try again.");
+            } finally {
+                // Reset button state
+                const exportBtn = document.getElementById("export_employees");
+                exportBtn.disabled = false;
+                exportBtn.textContent = "Export to Excel";
+            }
+        });
+
+        // Special case for leave report with filters
+        document.getElementById("export_leave_report").addEventListener("click", async () => {
+            const departmentSelect = document.getElementById("department_filter");
+            const department = departmentSelect
+                ? departmentSelect.options[departmentSelect.selectedIndex].text
+                : "";
+            const year = document.getElementById("leave_report_year").value || "";
+
+            await ExcelManager.exportExcel("leave_report_table", "leave_report.xlsx", {
+                title: "Employee Leave Data",
+                department: department,
+                year: year,
+                data: leaveReportFiltered.length ? leaveReportFiltered : leaveReportData
+            });
         });
 
 
@@ -3028,48 +4103,48 @@
         }
 
         // Download Excel
-        document.getElementById("export_excel").addEventListener("click", () => {
-            const queryParams = new URLSearchParams({
-                department: document.getElementById("department_filter").value || "",
-                search: currentSearch
-            });
+        // document.getElementById("export_employees").addEventListener("click", () => {
+        //     const queryParams = new URLSearchParams({
+        //         department: document.getElementById("department_filter").value || "",
+        //         search: currentSearch
+        //     });
 
-            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_all_employees?${queryParams}`, {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' },
-                credentials: 'include'
-            })
-                .then(res => res.json())
-                .then(res => {
-                    // Use the array directly from get_all_employees
-                    const data = res.message || [];
-                    const sheet = XLSX.utils.json_to_sheet(data.map(row => ({
-                        "Employee Name": row.employee_name,
-                        "Date of Birth": row.date_of_birth || '',
-                        "Date of Joining": row.date_of_joining || '',
-                        "Department": row.department || '',
-                        "Cell Number": row.cell_number || ''
-                    })));
-                    const wb = XLSX.utils.book_new();
-                    XLSX.utils.book_append_sheet(wb, sheet, "Employees");
-                    XLSX.writeFile(wb, "employees.xlsx");
-                });
-        });
+        //     fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_all_employees?${queryParams}`, {
+        //         method: 'GET',
+        //         headers: { 'Accept': 'application/json' },
+        //         credentials: 'include'
+        //     })
+        //         .then(res => res.json())
+        //         .then(res => {
+        //             // Use the array directly from get_all_employees
+        //             const data = res.message || [];
+        //             const sheet = XLSX.utils.json_to_sheet(data.map(row => ({
+        //                 "Employee Name": row.employee_name,
+        //                 "Date of Birth": row.date_of_birth || '',
+        //                 "Date of Joining": row.date_of_joining || '',
+        //                 "Department": row.department || '',
+        //                 "Cell Number": row.cell_number || ''
+        //             })));
+        //             const wb = XLSX.utils.book_new();
+        //             XLSX.utils.book_append_sheet(wb, sheet, "Employees");
+        //             XLSX.writeFile(wb, "employees.xlsx");
+        //         });
+        // });
 
-        document.getElementById("export_birthdays").addEventListener("click", () => {
-            const rows = TableManager.getData("birthday_table")
-                .filter(row => row.employee) // exclude header rows
-                .map(row => ({
-                    Employee: row.employee.replace("🎉", "").trim(),
-                    "Cell Number": row.cell_number,
-                    Birthday: row.dob.replace("🎉", "").trim()
-                }));
+        // document.getElementById("export_birthdays").addEventListener("click", () => {
+        //     const rows = TableManager.getData("birthday_table")
+        //         .filter(row => row.employee) // exclude header rows
+        //         .map(row => ({
+        //             Employee: row.employee.replace("🎉", "").trim(),
+        //             "Cell Number": row.cell_number,
+        //             Birthday: row.dob.replace("🎉", "").trim()
+        //         }));
 
-            const sheet = XLSX.utils.json_to_sheet(rows);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, sheet, "Birthdays This Week");
-            XLSX.writeFile(wb, "birthdays_this_week.xlsx");
-        });
+        //     const sheet = XLSX.utils.json_to_sheet(rows);
+        //     const wb = XLSX.utils.book_new();
+        //     XLSX.utils.book_append_sheet(wb, sheet, "Birthdays This Week");
+        //     XLSX.writeFile(wb, "birthdays_this_week.xlsx");
+        // });
 
         let sortColumn = null;
         let sortDirection = 1; // 1 = asc, -1 = desc

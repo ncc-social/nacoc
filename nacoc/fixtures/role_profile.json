@@ -50,27 +50,6 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
-  "modified": "2023-12-25 09:44:30.697251",
-  "name": "MMU Officer",
-  "role_profile": "MMU Officer",
-  "roles": [
-   {
-    "parent": "MMU Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "MMU Officer"
-   },
-   {
-    "parent": "MMU Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
-    "role": "Employee"
-   }
-  ]
- },
- {
-  "docstatus": 0,
-  "doctype": "Role Profile",
   "modified": "2023-12-25 11:13:07.763055",
   "name": "MMU Manager",
   "role_profile": "MMU Manager",
@@ -218,6 +197,27 @@
     "parentfield": "roles",
     "parenttype": "Role Profile",
     "role": "Regional Precursor Officer"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2023-12-25 09:44:30.697251",
+  "name": "MMU Officer",
+  "role_profile": "MMU Officer",
+  "roles": [
+   {
+    "parent": "MMU Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "MMU Officer"
+   },
+   {
+    "parent": "MMU Officer",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Employee"
    }
   ]
  }

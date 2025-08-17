@@ -218,7 +218,8 @@ website_route_rules = [
 
 scheduler_events = {
     "cron": {
-        "* * * * *": ["nacoc.my_scripts.smartermail.log_server_status"]
+        "* * * * *": ["nacoc.my_scripts.smartermail.log_server_status"],
+        "0 10 * * 5": ["nacoc.my_scripts.weekly_leave_digest.send_weekly_leave_digest"]
     },
     "monthly": [
         "nacoc.my_scripts.leave_months.send_leave_month_notifications"
