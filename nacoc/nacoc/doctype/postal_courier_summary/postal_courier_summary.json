@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 15:03:48.459089",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "parcels_examined",
+  "outbound_parcels",
+  "inbound_parcels",
+  "destination_countries",
+  "origin_countries",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "parcels_examined",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Parcels Examined",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "outbound_parcels",
+   "fieldtype": "Int",
+   "label": "Outbound Parcels",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "inbound_parcels",
+   "fieldtype": "Int",
+   "label": "Inbound Parcels",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "destination_countries",
+   "fieldtype": "Data",
+   "label": "Destination Countries"
+  },
+  {
+   "fieldname": "origin_countries",
+   "fieldtype": "Data",
+   "label": "Origin Countries"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-17 15:07:11.578976",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Postal Courier Summary",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

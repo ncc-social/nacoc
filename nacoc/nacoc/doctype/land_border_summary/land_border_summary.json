@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 15:11:07.200053",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "border_post",
+  "date",
+  "passengers_profiled",
+  "luggage_searched",
+  "vehicles_inbound",
+  "vehicles_outbound",
+  "column_break_iuac",
+  "incident_report"
+ ],
+ "fields": [
+  {
+   "fieldname": "border_post",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Border Post",
+   "options": "Border Post",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "passengers_profiled",
+   "fieldtype": "Int",
+   "label": "Passengers Profiled"
+  },
+  {
+   "fieldname": "luggage_searched",
+   "fieldtype": "Int",
+   "label": "Luggage Searched"
+  },
+  {
+   "fieldname": "column_break_iuac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_report",
+   "fieldtype": "Small Text",
+   "label": "Incident Report"
+  },
+  {
+   "fieldname": "vehicles_inbound",
+   "fieldtype": "Int",
+   "label": "Vehicles Inbound"
+  },
+  {
+   "fieldname": "vehicles_outbound",
+   "fieldtype": "Int",
+   "label": "Vehicles Outbound"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-17 15:44:53.356435",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Land Border Summary",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

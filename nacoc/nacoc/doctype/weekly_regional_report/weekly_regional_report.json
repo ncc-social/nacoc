@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-17 15:47:10.524688",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_4kpd",
+  "amended_from",
+  "region",
+  "week_start_date",
+  "week_end_date",
+  "column_break_alze",
+  "week_number",
+  "month",
+  "year",
+  "demand_reduction_section",
+  "counselling_education",
+  "enforcement_conntrol",
+  "postal_courier_operations",
+  "airport_operations",
+  "land_border_operations",
+  "challenges_section",
+  "operational_challenges",
+  "recommendations_section",
+  "recommendations"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_4kpd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Weekly Regional Report",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region"
+  },
+  {
+   "fieldname": "week_start_date",
+   "fieldtype": "Date",
+   "label": "Week Start Date"
+  },
+  {
+   "fieldname": "week_end_date",
+   "fieldtype": "Date",
+   "label": "Week End Date"
+  },
+  {
+   "fieldname": "column_break_alze",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "week_number",
+   "fieldtype": "Int",
+   "label": "Week Number"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year"
+  },
+  {
+   "fieldname": "demand_reduction_section",
+   "fieldtype": "Section Break",
+   "label": "Demand Reduction"
+  },
+  {
+   "fieldname": "counselling_education",
+   "fieldtype": "Table",
+   "label": "Counselling & Education",
+   "options": "Demand Reduction Activities"
+  },
+  {
+   "fieldname": "enforcement_conntrol",
+   "fieldtype": "Section Break",
+   "label": "Enforcement & Control"
+  },
+  {
+   "fieldname": "postal_courier_operations",
+   "fieldtype": "Table",
+   "label": "Postal & Courier Operations",
+   "options": "Postal Courier Summary"
+  },
+  {
+   "fieldname": "airport_operations",
+   "fieldtype": "Table",
+   "label": "Airport Operations",
+   "options": "Airport Operations Summary"
+  },
+  {
+   "fieldname": "land_border_operations",
+   "fieldtype": "Table",
+   "label": "Land Border Operations",
+   "options": "Land Border Summary"
+  },
+  {
+   "fieldname": "challenges_section",
+   "fieldtype": "Section Break",
+   "label": "Challenges"
+  },
+  {
+   "fieldname": "operational_challenges",
+   "fieldtype": "Table",
+   "label": "Operational Challenges",
+   "options": "Operational Challenges"
+  },
+  {
+   "fieldname": "recommendations_section",
+   "fieldtype": "Section Break",
+   "label": "Recommendations"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Table",
+   "label": "Recommendations",
+   "options": "Recommendations"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-17 16:03:29.817956",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "Weekly Regional Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
