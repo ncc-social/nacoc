@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{institution}",
  "creation": "2025-09-17 14:49:38.475666",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -46,10 +47,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-17 15:00:02.859674",
+ "modified": "2025-09-17 17:15:35.380186",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Institution",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

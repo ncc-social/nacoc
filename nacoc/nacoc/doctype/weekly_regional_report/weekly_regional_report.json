@@ -14,6 +14,7 @@
   "week_number",
   "month",
   "year",
+  "table_fesd",
   "demand_reduction_section",
   "counselling_education",
   "enforcement_conntrol",
@@ -23,7 +24,11 @@
   "challenges_section",
   "operational_challenges",
   "recommendations_section",
-  "recommendations"
+  "recommendations",
+  "summary_tab",
+  "weekly_report",
+  "last_generated_on",
+  "last_data_update"
  ],
  "fields": [
   {
@@ -43,17 +48,20 @@
   {
    "fieldname": "region",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Region",
    "options": "Region"
   },
   {
    "fieldname": "week_start_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Week Start Date"
   },
   {
    "fieldname": "week_end_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Week End Date"
   },
   {
@@ -130,13 +138,41 @@
    "fieldtype": "Table",
    "label": "Recommendations",
    "options": "Recommendations"
+  },
+  {
+   "fieldname": "summary_tab",
+   "fieldtype": "Tab Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "weekly_report",
+   "fieldtype": "Markdown Editor",
+   "label": "Weekly Report"
+  },
+  {
+   "fieldname": "last_generated_on",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Last Generated On"
+  },
+  {
+   "fieldname": "last_data_update",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Last Data Update"
+  },
+  {
+   "fieldname": "table_fesd",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "options": "Weekly Report Countries"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-17 16:03:29.817956",
+ "modified": "2025-09-17 21:48:36.165667",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Weekly Regional Report",

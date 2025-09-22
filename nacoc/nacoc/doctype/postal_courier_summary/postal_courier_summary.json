@@ -10,6 +10,7 @@
   "parcels_examined",
   "outbound_parcels",
   "inbound_parcels",
+  "column_break_exgx",
   "destination_countries",
   "origin_countries",
   "remarks"
@@ -44,25 +45,31 @@
   },
   {
    "fieldname": "destination_countries",
-   "fieldtype": "Data",
-   "label": "Destination Countries"
+   "fieldtype": "Table MultiSelect",
+   "label": "Destination Countries",
+   "options": "Weekly Report Countries"
   },
   {
    "fieldname": "origin_countries",
-   "fieldtype": "Data",
-   "label": "Origin Countries"
+   "fieldtype": "Table MultiSelect",
+   "label": "Origin Countries",
+   "options": "Weekly Report Countries"
   },
   {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_exgx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-17 15:07:11.578976",
+ "modified": "2025-09-17 21:46:01.016374",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Postal Courier Summary",

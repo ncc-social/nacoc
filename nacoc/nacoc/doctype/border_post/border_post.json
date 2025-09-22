@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{border_post}",
  "creation": "2025-09-17 15:18:32.281897",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -33,10 +34,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-17 15:19:26.233310",
+ "modified": "2025-09-17 17:18:56.620718",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Border Post",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
