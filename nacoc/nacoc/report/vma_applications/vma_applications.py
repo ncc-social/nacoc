@@ -78,26 +78,42 @@ def execute(filters=None):
     warning_threshold = add_days(today_date, 30)
 
     for d in data:
-        expiry_dates = [
-            d.get("road_worthiness_expiry_date"),
-            d.get("vehicle_insurance_expiry_date"),
-            d.get("drivers_licence_expiry_date")
-        ]
+        # Map friendly names to the expiry date fields
+        expiry_map = {
+            "Road Worthiness": d.get("road_worthiness_expiry_date"),
+            "Insurance": d.get("vehicle_insurance_expiry_date"),
+            "Driver's Licence": d.get("drivers_licence_expiry_date"),
+        }
 
-        # Determine the nearest expiry among the three
-        nearest_expiry = min(
-            [getdate(e) for e in expiry_dates if e],
-            default=None
-        )
+        expired = []
+        expiring_soon = []
 
-        if not nearest_expiry:
-            d["status_color"] = "No Expiry"
-        elif nearest_expiry < today_date:
-            d["status_color"] = "Expired"
-        elif nearest_expiry <= warning_threshold:
-            d["status_color"] = "Expiring Soon"
+        for name, date_val in expiry_map.items():
+            if not date_val:
+                continue
+            date_obj = getdate(date_val)
+            if date_obj < today_date:
+                expired.append(name)
+            elif date_obj <= warning_threshold:
+                expiring_soon.append(name)
+
+        # Build a clear status message listing which documents are affected
+        if expired and expiring_soon:
+            d["status_color"] = (
+                "Expired: "
+                + ", ".join(expired)
+                + "; Expiring Soon: "
+                + ", ".join(expiring_soon)
+            )
+        elif expired:
+            d["status_color"] = "Expired: " + ", ".join(expired)
+        elif expiring_soon:
+            d["status_color"] = "Expiring Soon: " + ", ".join(expiring_soon)
         else:
-            d["status_color"] = "Valid"
+            # If all expiry fields are empty, indicate no expiry recorded
+            if not any(expiry_map.values()):
+                d["status_color"] = "No Expiry"
+            else:
+                d["status_color"] = "Valid"
 
     return columns, data
-

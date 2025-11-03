@@ -216,7 +216,10 @@ website_route_rules = [
 doc_events = {
     "Weekly Regional Report": {
         "before_save": "nacoc.my_scripts.weekly_regional_reports.before_save"
-    }
+    },
+    "Employee": {
+        "on_update": "nacoc.my_scripts.leave_months.sync_latest_leave_month_department"
+    },
 }
 
 # Scheduled Tasks

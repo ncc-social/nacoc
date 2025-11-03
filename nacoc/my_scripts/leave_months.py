@@ -66,7 +66,7 @@ def send_leave_month_notifications():
     hr_department_map = {}
     for (dept_name, _), employees in department_map.items():
         hr_department_map[dept_name] = employees
-    
+
     hr_context = {
         "current_month": current_month,
         "departments": hr_department_map
@@ -79,6 +79,102 @@ def send_leave_month_notifications():
         subject=hr_subject,
         message=hr_message
     )
+
+
+def sync_latest_leave_month_department(doc, method=None):
+    """
+    Keeps the department, department name, and department email
+    in the latest Leave Months record in sync with the Employee's department.
+    Triggered automatically when Employee is updated.
+    """
+    employee = doc.name
+    new_department = doc.department
+
+    if not new_department:
+        return
+
+    # Get department details
+    dept = frappe.db.get_value(
+        "Department",
+        new_department,
+        ["department_name", "custom_department_email"],
+        as_dict=True,
+    )
+
+    # Get the most recent Leave Months record for this employee
+    latest_leave = frappe.db.sql(
+        """
+        SELECT name
+        FROM `tabLeave Months`
+        WHERE employee_name = %s
+        ORDER BY leave_year DESC
+        LIMIT 1
+    """,
+        (employee,),
+        as_dict=True,
+    )
+
+    if latest_leave:
+        leave_doc_name = latest_leave[0].name
+
+        # Prepare updates
+        updates = {
+            "department": new_department,
+            "department_name": dept.department_name if dept else None,
+            "department_email": dept.custom_department_email if dept else None,
+        }
+
+        # Apply updates
+        frappe.db.set_value("Leave Months", leave_doc_name, updates)
+        frappe.logger().info(
+            f"Leave Months {leave_doc_name} synced to department {new_department}"
+        )
+
+
+@frappe.whitelist()
+def resync_all_leave_month_departments():
+    """
+    Resyncs the latest Leave Months record for each employee
+    with the current department, department name, and department email.
+    """
+    employees = frappe.get_all("Employee", fields=["name", "department"])
+
+    for emp in employees:
+        if not emp.department:
+            continue
+
+        # Fetch department info
+        dept = frappe.db.get_value(
+            "Department",
+            emp.department,
+            ["department_name", "custom_department_email"],
+            as_dict=True,
+        )
+
+        # Find latest leave record
+        latest_leave = frappe.db.sql(
+            """
+            SELECT name
+            FROM `tabLeave Months`
+            WHERE employee_name = %s
+            ORDER BY leave_year DESC
+            LIMIT 1
+        """,
+            (emp.name,),
+            as_dict=True,
+        )
+
+        if latest_leave:
+            updates = {
+                "department": emp.department,
+                "department_name": dept.department_name if dept else None,
+                "department_email": dept.custom_department_email if dept else None,
+            }
+            frappe.db.set_value("Leave Months", latest_leave[0].name, updates)
+
+    frappe.db.commit()
+    return "Resync completed successfully."
+
 
 @frappe.whitelist()
 def get_months(doctype, txt, searchfield, start, page_len, filters):
