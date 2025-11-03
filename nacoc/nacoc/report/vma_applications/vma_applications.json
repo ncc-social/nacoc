@@ -1,0 +1,42 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-22 13:09:48.267046",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-10-22 13:46:01.636055",
+ "modified_by": "Administrator",
+ "module": "NACOC",
+ "name": "VMA Applications",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    UPPER(employee_name) as \"Employee:Data:150\",\n    phone_number AS \"Phone No:Data:120\",\n    vehicle_number AS \"Vehicle No:Data:120\",\n    vehicle_registration_date AS \"Vehicle Registration Date:Date:120\",\n    road_worthiness_expiry_date AS \"Road Worthiness Expiry Date:Date:120\",\n    vehicle_insurance_expiry_date AS \"Insurance Expiry Date:Date:120\",\n    drivers_licence_expiry_date AS \"Driver's Licence Expiry Date:Date:120\",\n    bank_name AS \"Bank:Data:150\",\n    branch_name AS \"Branch:Data:150\",\n    bank_account_type AS \"A/C Type:Data:80\",\n    account_number AS \"A/C No:Data:100\",\n    creation AS \"Submission Date:Datetime:180\"\nFROM \n    `tabVehicle Maintenance Allowance`\nWHERE\n    (%(creation_start)s IS NULL OR DATE(creation) >= %(creation_start)s)\n    AND (%(creation_end)s IS NULL OR DATE(creation) <= %(creation_end)s)\n    AND (%(road_worthiness_expiry_date_start)s IS NULL OR road_worthiness_expiry_date >= %(road_worthiness_expiry_date_start)s)\n    AND (%(road_worthiness_expiry_date_end)s IS NULL OR road_worthiness_expiry_date <= %(road_worthiness_expiry_date_end)s)\nORDER BY creation DESC",
+ "ref_doctype": "Vehicle Maintenance Allowance",
+ "report_name": "VMA Applications",
+ "report_script": "",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Audit Head"
+  }
+ ],
+ "timeout": 0
+}

@@ -14,7 +14,8 @@
   "application_year",
   "vehicle_type",
   "vehicle_info",
-  "car_registration_date",
+  "vehicle_number",
+  "vehicle_registration_date",
   "drivers_licence_expiry_date",
   "column_break_ikrq",
   "road_worthiness_expiry_date",
@@ -30,12 +31,16 @@
   "form_a_file_url",
   "upload_drivers_licence",
   "drivers_licence_file_url",
+  "form_a_or_c",
+  "drivers_licence",
   "column_break_oqxr",
   "upload_road_worthiness",
   "road_worthiness_file_url",
   "upload_vehicle_insurance",
   "vehicle_insurance_file_url",
-  "amended_from"
+  "amended_from",
+  "road_worthiness",
+  "vehicle_insurance"
  ],
  "fields": [
   {
@@ -63,13 +68,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Vehicle Type",
-   "options": "\nCar\nMotorbike",
-   "reqd": 1
-  },
-  {
-   "fieldname": "car_registration_date",
-   "fieldtype": "Date",
-   "label": "Car Registration Date",
+   "options": "\nCar\nMotorbike\nBicycle",
    "reqd": 1
   },
   {
@@ -81,6 +80,7 @@
   {
    "fieldname": "upload_drivers_licence",
    "fieldtype": "HTML",
+   "hidden": 1,
    "label": "Upload Drivers Licence"
   },
   {
@@ -96,6 +96,7 @@
   {
    "fieldname": "upload_road_worthiness",
    "fieldtype": "HTML",
+   "hidden": 1,
    "label": "Upload Road Worthiness"
   },
   {
@@ -107,6 +108,7 @@
   {
    "fieldname": "upload_vehicle_insurance",
    "fieldtype": "HTML",
+   "hidden": 1,
    "label": "Upload Vehicle Insurance"
   },
   {
@@ -144,6 +146,7 @@
   {
    "fieldname": "upload_form_a",
    "fieldtype": "HTML",
+   "hidden": 1,
    "label": "Attach Form A or C"
   },
   {
@@ -214,13 +217,49 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_registration_date",
+   "fieldtype": "Date",
+   "label": "Vehicle Registration Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "form_a_or_c",
+   "fieldtype": "Attach",
+   "label": "Form A or C",
+   "reqd": 1
+  },
+  {
+   "fieldname": "drivers_licence",
+   "fieldtype": "Attach",
+   "label": "Drivers Licence",
+   "reqd": 1
+  },
+  {
+   "fieldname": "road_worthiness",
+   "fieldtype": "Attach",
+   "label": "Road Worthiness",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_insurance",
+   "fieldtype": "Attach",
+   "label": "Vehicle Insurance",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-01 12:56:04.731062",
+ "modified": "2025-11-02 16:48:54.115268",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Vehicle Maintenance Allowance",
@@ -241,6 +280,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
