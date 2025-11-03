@@ -13,6 +13,7 @@
   "column_break_srpq",
   "application_year",
   "vehicle_type",
+  "serial_number_of_bicycle",
   "vehicle_info",
   "vehicle_number",
   "vehicle_registration_date",
@@ -33,6 +34,7 @@
   "drivers_licence_file_url",
   "form_a_or_c",
   "drivers_licence",
+  "proof_of_purchase",
   "column_break_oqxr",
   "upload_road_worthiness",
   "road_worthiness_file_url",
@@ -72,10 +74,11 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "drivers_licence_expiry_date",
    "fieldtype": "Date",
    "label": "Driver's Licence Expiry Date",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
    "fieldname": "upload_drivers_licence",
@@ -88,10 +91,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "road_worthiness_expiry_date",
    "fieldtype": "Date",
    "label": "Road Worthiness Expiry Date",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
    "fieldname": "upload_road_worthiness",
@@ -100,10 +104,11 @@
    "label": "Upload Road Worthiness"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "vehicle_insurance_expiry_date",
    "fieldtype": "Date",
    "label": "Vehicle Insurance Expiry Date",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
    "fieldname": "upload_vehicle_insurance",
@@ -195,7 +200,7 @@
   {
    "fieldname": "upload_documents_section",
    "fieldtype": "Section Break",
-   "label": "Upload Documents"
+   "label": "Upload Document(s)"
   },
   {
    "fieldname": "column_break_oqxr",
@@ -219,47 +224,67 @@
    "search_index": 1
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "vehicle_number",
    "fieldtype": "Data",
    "label": "Vehicle Number",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "vehicle_registration_date",
    "fieldtype": "Date",
    "label": "Vehicle Registration Date",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "form_a_or_c",
    "fieldtype": "Attach",
    "label": "Form A or C",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "drivers_licence",
    "fieldtype": "Attach",
    "label": "Drivers Licence",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "road_worthiness",
    "fieldtype": "Attach",
    "label": "Road Worthiness",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
   },
   {
+   "depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1",
    "fieldname": "vehicle_insurance",
    "fieldtype": "Attach",
    "label": "Vehicle Insurance",
-   "reqd": 1
+   "mandatory_depends_on": "eval:[\n    \"Car\",\n    \"Motorbike\"]\n    .indexOf(doc.vehicle_type) \n    > -1"
+  },
+  {
+   "depends_on": "eval:doc.vehicle_type == \"Bicycle\"",
+   "fieldname": "serial_number_of_bicycle",
+   "fieldtype": "Data",
+   "label": "Serial Number of Bicycle",
+   "mandatory_depends_on": "eval:doc.vehicle_type == \"Bicycle\""
+  },
+  {
+   "depends_on": "eval:doc.vehicle_type == \"Bicycle\"",
+   "fieldname": "proof_of_purchase",
+   "fieldtype": "Attach",
+   "label": "Proof of Purchase",
+   "mandatory_depends_on": "eval:doc.vehicle_type == \"Bicycle\""
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-02 16:48:54.115268",
+ "modified": "2025-11-03 09:25:47.218512",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Vehicle Maintenance Allowance",
