@@ -229,11 +229,14 @@ scheduler_events = {
     "cron": {
         # "* * * * *": ["nacoc.my_scripts.smartermail.log_server_status"],
         "0 3 * * 1": ["nacoc.my_scripts.weekly_leave_digest.send_weekly_leave_digest"],
-        "5 1 1 * *": ["nacoc.my_scripts.monthly_leave_summary.send_monthly_leave_summary"]
+        "5 1 1 * *": [
+            "nacoc.my_scripts.monthly_leave_summary.send_monthly_leave_summary"
+        ],
     },
-    "monthly": [
-        "nacoc.my_scripts.leave_months.send_leave_month_notifications"
-    ]
+    "monthly": ["nacoc.my_scripts.leave_months.send_leave_month_notifications"],
+    "daily": [
+        "nacoc.my_scripts.vehicle_maintenance_allowance_reminder.send_vehicle_maintenance_reminders"
+    ],
 }
 
 # Testing
