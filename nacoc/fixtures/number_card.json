@@ -1,6 +1,7 @@
 [
  {
   "aggregate_function_based_on": "",
+  "background_color": null,
   "color": "#4463F0",
   "currency": null,
   "docstatus": 0,
@@ -27,6 +28,7 @@
  },
  {
   "aggregate_function_based_on": "",
+  "background_color": null,
   "color": "#1c996b",
   "currency": null,
   "docstatus": 0,
@@ -53,6 +55,7 @@
  },
  {
   "aggregate_function_based_on": "",
+  "background_color": null,
   "color": "#EC864B",
   "currency": null,
   "docstatus": 0,
@@ -79,6 +82,7 @@
  },
  {
   "aggregate_function_based_on": "",
+  "background_color": null,
   "color": "#761ACB",
   "currency": null,
   "docstatus": 0,
@@ -105,6 +109,7 @@
  },
  {
   "aggregate_function_based_on": "",
+  "background_color": null,
   "color": "#ED6396",
   "currency": null,
   "docstatus": 0,
