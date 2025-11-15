@@ -317,14 +317,14 @@
    "fieldname": "supervisor",
    "fieldtype": "Data",
    "label": "Supervisor",
-   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
+   "mandatory_depends_on": "eval:[\n    \"Sent to Regional Head for Approval\",\n    \"Sent to Head for Approval\"]\n    .indexOf(doc.workflow_state) \n    > -1",
    "permlevel": 1
   },
   {
    "fieldname": "supervisor_signature",
    "fieldtype": "Signature",
    "label": "Supervisor Signature",
-   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
+   "mandatory_depends_on": "eval:[\n    \"Sent to Regional Head for Approval\",\n    \"Sent to Head for Approval\"]\n    .indexOf(doc.workflow_state) \n    > -1",
    "permlevel": 1
   },
   {
@@ -339,7 +339,7 @@
    "fieldname": "supervisor_comments",
    "fieldtype": "Long Text",
    "label": "Supervisor Comments",
-   "mandatory_depends_on": "eval:doc.workflow_state == \"Sent to Head for Approval\"",
+   "mandatory_depends_on": "eval:[\n    \"Sent to Regional Head for Approval\",\n    \"Sent to Head for Approval\"]\n    .indexOf(doc.workflow_state) \n    > -1",
    "permlevel": 1
   },
   {
@@ -401,7 +401,7 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-31 12:52:03.015464",
+ "modified": "2025-11-14 16:38:15.981758",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Precursor Assessment",
@@ -409,6 +409,7 @@
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
