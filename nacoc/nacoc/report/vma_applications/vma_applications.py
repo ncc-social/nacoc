@@ -6,6 +6,7 @@
 
 import frappe
 from frappe.utils import getdate, add_days, today
+from datetime import datetime
 
 def execute(filters=None):
     filters = filters or {}
@@ -53,8 +54,11 @@ def execute(filters=None):
     if condition_str:
         condition_str = "WHERE " + condition_str
 
-    data = frappe.db.sql(f"""
+    # Select name and keep original creation as submission_creation.
+    data = frappe.db.sql(
+        f"""
         SELECT
+            name AS docname,
             employee_name,
             phone_number,
             vehicle_type,
@@ -67,11 +71,38 @@ def execute(filters=None):
             branch_name,
             bank_account_type,
             account_number,
-            creation
+            creation AS submission_creation
         FROM `tabVehicle Maintenance Allowance`
         {condition_str}
-        ORDER BY creation DESC
-    """, values, as_dict=True)
+    """,
+        values,
+        as_dict=True,
+    )
+
+    # For each row, try to get the latest workflow comment creation for the "Sent to INTERNAL AUDIT for Review" entry.
+    for d in data:
+        row = frappe.db.sql(
+            """
+            SELECT creation
+            FROM `tabComment`
+            WHERE reference_doctype = %s
+              AND reference_name = %s
+              AND comment_type = 'Workflow'
+              AND content = %s
+            ORDER BY creation DESC
+            LIMIT 1
+            """,
+            (
+                "Vehicle Maintenance Allowance",
+                d.get("docname"),
+                "Sent to INTERNAL AUDIT for Review",
+            ),
+            as_dict=True,
+        )
+        if row:
+            d["creation"] = row[0]["creation"]
+        else:
+            d["creation"] = d.get("submission_creation")
 
     # --- COLOR INDICATORS ---
     today_date = getdate(today())
@@ -115,5 +146,17 @@ def execute(filters=None):
                 d["status_color"] = "No Expiry"
             else:
                 d["status_color"] = "Valid"
+
+    # Sort by the chosen creation datetime (fallback to submission_creation or epoch)
+    def _sort_key(x):
+        val = x.get("creation") or x.get("submission_creation")
+        if isinstance(val, str):
+            try:
+                return datetime.fromisoformat(val)
+            except Exception:
+                return datetime.min
+        return val or datetime.min
+
+    data.sort(key=_sort_key, reverse=True)
 
     return columns, data

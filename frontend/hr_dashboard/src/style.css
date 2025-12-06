@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+:root {
+  --font-family-base: 'Bitter', serif;
+  font-family: var(--font-family-base);
+
+  /* Font Sizes */
+  /* --text-xs: 10px;
+  --text-sm: 11px;
+  --text-base: 12px;
+  --text-lg: 14px;
+  --text-xl: 16px;
+  --text-2xl: 18px;
+  --text-3xl: 20px; */
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+
+  /* Colors */
+  --color-primary: 23 143 163;
+  /* Pelorous 600 */
+
+  --color-pelorous-50: #eefdfd;
+  --color-pelorous-100: #d3f9fa;
+  --color-pelorous-200: #adf0f4;
+  --color-pelorous-300: #74e4ec;
+  --color-pelorous-400: #34cedc;
+  --color-pelorous-500: #18aebe;
+  --color-pelorous-600: #178fa3;
+  --color-pelorous-700: #1a7284;
+  --color-pelorous-800: #1e5e6c;
+  --color-pelorous-900: #1d4e5c;
+  --color-pelorous-950: #0d333f;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  accent-color: var(--color-pelorous-600);
+}

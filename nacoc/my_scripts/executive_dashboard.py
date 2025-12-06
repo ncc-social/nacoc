@@ -167,7 +167,6 @@ def get_gender_distribution(department=None):
     }
 
 
-
 @frappe.whitelist()
 def get_employees_by_rank(department=None):
 
@@ -330,7 +329,7 @@ def get_anniversaries_this_month(department=None):
     """
     return frappe.db.sql(query, params + [current_month], as_dict=True)
 
-    
+
 # Department Dashboard
 @frappe.whitelist()
 def get_departments():
@@ -487,11 +486,14 @@ def get_paginated_employees(department=None, search=None, page=1, page_size=10, 
     order_clause = f"ORDER BY {sort_column} {sort_direction}"
 
     # Main query
-    data = frappe.db.sql(f"""
+    data = frappe.db.sql(
+        f"""
         SELECT
             e.name,
             e.employee_name,
             e.employee_number,
+            e.user_id,
+            e.image,
             DATE_FORMAT(e.date_of_joining, '%d-%m-%Y') as date_of_joining,
             d.department_name as department,
             e.cell_number
@@ -500,7 +502,9 @@ def get_paginated_employees(department=None, search=None, page=1, page_size=10, 
         {where_clause}
         {order_clause}
         LIMIT {page_size} OFFSET {offset}
-    """, as_dict=True)
+    """,
+        as_dict=True,
+    )
 
     # Total count for pagination
     total = frappe.db.sql(f"""
@@ -601,9 +605,10 @@ def get_employee_details(employee_id):
 
     return employee[0]
 
+
 @frappe.whitelist()
-def get_work_history(employee):
-    employee_doc = frappe.get_doc("Employee", employee)
+def get_work_history(employee_id):
+    employee_doc = frappe.get_doc("Employee", employee_id)
     history = []
 
     for row in employee_doc.internal_work_history:
@@ -635,15 +640,12 @@ def get_work_history(employee):
 
 
 @frappe.whitelist()
-def get_leave_history(employee):
+def get_leave_history(employee_id):
     leave_history = frappe.db.get_all(
         "Leave Application",
-        filters={
-            "employee": employee,
-            "workflow_state": "Leave APPROVED"
-        },
+        filters={"employee": employee_id, "workflow_state": "Leave APPROVED"},
         fields=["leave_type", "from_date", "to_date", "total_leave_days"],
-        order_by="from_date desc"
+        order_by="from_date desc",
     )
 
     # Format dates
@@ -652,7 +654,7 @@ def get_leave_history(employee):
         leave["to_date"] = formatdate(leave["to_date"], "d MMM yyyy")
 
     from hrms.hr.doctype.leave_application.leave_application import get_leave_details
-    leave_details = get_leave_details(employee=employee, date=nowdate())
+    leave_details = get_leave_details(employee=employee_id, date=nowdate())
 
     leave_balances = []
     for leave_type, info in (leave_details.get("leave_allocation", {}) or {}).items():
@@ -669,10 +671,11 @@ def get_leave_history(employee):
         "leave_balances": leave_balances
     }
 
+
 # @frappe.whitelist()
 # def get_training_history(employee):
 #     rows = frappe.db.sql("""
-#         SELECT 
+#         SELECT
 #             t.name_of_programme, t.institution, t.venue, DATE_FORMAT(t.start_date, "%%d %%b %%Y") as start_date, DATE_FORMAT(t.end_date, "%%d %%b %%Y") as end_date
 #         FROM `tabTraining` t
 #         INNER JOIN `tabTrainees` tr ON t.name = tr.parent
@@ -682,11 +685,14 @@ def get_leave_history(employee):
 
 #     return rows
 
+
 @frappe.whitelist()
-def get_training_history(employee):
-    rows = frappe.db.sql("""
+def get_training_history(employee_id):
+    rows = frappe.db.sql(
+        """
         SELECT 
             YEAR(t.start_date) as year,
+            t.name,
             t.name_of_programme,
             t.institution,
             t.venue,
@@ -696,7 +702,10 @@ def get_training_history(employee):
         INNER JOIN `tabTrainees` tr ON t.name = tr.parent
         WHERE tr.employee = %s
         ORDER BY year DESC, t.start_date DESC
-    """, employee, as_dict=True)
+    """,
+        employee_id,
+        as_dict=True,
+    )
 
     return rows
 
@@ -912,7 +921,6 @@ def get_training_coverage(department=None):
     }
 
 
-
 @frappe.whitelist()
 def get_employees_missing_documents(department=None):
     filters = {"status": "Active"}
@@ -1059,3 +1067,306 @@ def get_leave_report(year=None, department=None):
         results.append(emp_data)
 
     return results
+
+
+@frappe.whitelist()
+def get_leave_applications(year=None, department=None):
+    """Return leave applications for a given year (defaults to current year).
+
+    Returns: list of dicts with fields:
+    - employee_name
+    - employee_image
+    - department_name
+    - from_date (DD-MM-YYYY)
+    - to_date (DD-MM-YYYY)
+    - total_leave_days
+    - leave_type
+    - reason
+    """
+    # Determine year (default to current)
+    try:
+        current_year = getdate(nowdate()).year
+    except Exception:
+        current_year = datetime.now().year
+
+    try:
+        year = int(year) if year else current_year
+    except Exception:
+        year = current_year
+
+    where_clauses = [
+        "la.docstatus = 1",
+        "(YEAR(la.from_date) = %s OR YEAR(la.to_date) = %s)",
+    ]
+    params = [year, year]
+
+    if department:
+        where_clauses.append("la.department = %s")
+        params.append(department)
+
+    where_sql = " AND ".join(where_clauses)
+
+    query = f"""
+        SELECT
+            la.name,
+            la.employee_name AS employee_name,
+            e.image AS employee_image,
+            d.department_name AS department_name,
+            DATE_FORMAT(la.from_date, '%%e %%M %%Y') AS from_date,
+            DATE_FORMAT(la.to_date, '%%e %%M %%Y') AS to_date,
+            DAY(la.from_date) AS from_day,
+            DAY(la.to_date) AS to_day,
+            MONTH(la.from_date) AS from_month_num,
+            MONTH(la.to_date) AS to_month_num,
+            YEAR(la.from_date) AS from_year,
+            YEAR(la.to_date) AS to_year,
+            la.total_leave_days AS total_leave_days,
+            la.leave_type AS leave_type,
+            IFNULL(la.description, '') AS reason
+        FROM `tabLeave Application` la
+        LEFT JOIN `tabEmployee` e ON la.employee = e.name
+        LEFT JOIN `tabDepartment` d ON la.department = d.name
+        WHERE {where_sql}
+        ORDER BY la.employee_name
+    """
+
+    return frappe.db.sql(query, params, as_dict=True)
+
+
+# Fetch training data for frontend cards
+# @frappe.whitelist()
+# def get_training_data(page=1, page_size=15):
+#     """
+#     Returns paginated trainings for frontend cards.
+
+#     Parameters:
+#     - page: 1-based page number
+#     - page_size: number of records per page (default 15)
+
+#     Returns dict with:
+#     - data: list of training summary dicts
+#     - total: total number of trainings
+#     - page: current page (int)
+#     - page_size: page size (int)
+#     - has_more: bool (if more records exist)
+#     """
+#     try:
+#         page = int(page)
+#     except Exception:
+#         page = 1
+
+#     try:
+#         page_size = int(page_size)
+#     except Exception:
+#         page_size = 15
+
+#     if page < 1:
+#         page = 1
+#     if page_size < 1:
+#         page_size = 15
+
+#     # Cap page_size to a reasonable maximum to avoid huge responses
+#     page_size = min(page_size, 100)
+
+#     offset = (page - 1) * page_size
+
+#     # Fetch paginated trainings
+#     trainings = frappe.get_all(
+#         "Training",
+#         fields=[
+#             "name",
+#             "name_of_programme",
+#             "type",
+#             "mode_of_programme",
+#             "start_date",
+#         ],
+#         order_by="start_date desc",
+#         limit_start=offset,
+#         limit_page_length=page_size,
+#     )
+
+#     result = []
+#     for t in trainings:
+#         # Count participants efficiently
+#         participant_count = frappe.db.count("Trainees", {"parent": t["name"]})
+
+#         # Format start_date
+#         start_date = (
+#             formatdate(t["start_date"], "d MMM yyyy") if t.get("start_date") else None
+#         )
+
+#         result.append(
+#             {
+#                 "name": t["name"],
+#                 "name_of_programme": t.get("name_of_programme"),
+#                 "type": t.get("type"),
+#                 "mode_of_programme": t.get("mode_of_programme"),
+#                 "participant_count": participant_count,
+#                 "start_date": start_date,
+#             }
+#         )
+
+#     total = frappe.db.count("Training")
+#     has_more = offset + len(result) < total
+
+#     return {
+#         "data": result,
+#         "total": total,
+#         "page": page,
+#         "page_size": page_size,
+#         "has_more": has_more,
+#     }
+
+
+@frappe.whitelist()
+def get_training_data(page=1, page_size=15, search=None):
+    """
+    Returns paginated trainings for frontend cards with search support.
+    """
+    try:
+        page = int(page)
+    except Exception:
+        page = 1
+    try:
+        page_size = int(page_size)
+    except Exception:
+        page_size = 15
+    if page < 1:
+        page = 1
+    if page_size < 1:
+        page_size = 15
+    # Cap page_size
+    page_size = min(page_size, 100)
+    offset = (page - 1) * page_size
+    # Build filters for search
+    filters = {}
+    if search:
+        # Search by programme name
+        filters["name_of_programme"] = ["like", f"%{search}%"]
+    # Fetch paginated trainings
+    trainings = frappe.get_all(
+        "Training",
+        fields=[
+            "name",
+            "name_of_programme",
+            "type",
+            "mode_of_programme",
+            "start_date",
+        ],
+        filters=filters,
+        order_by="start_date desc",
+        limit_start=offset,
+        limit_page_length=page_size,
+    )
+    result = []
+    for t in trainings:
+        # Count participants efficiently
+        participant_count = frappe.db.count("Trainees", {"parent": t["name"]})
+        # Format start_date
+        start_date = (
+            formatdate(t["start_date"], "d MMM yyyy") if t.get("start_date") else None
+        )
+        result.append(
+            {
+                "name": t["name"],
+                "name_of_programme": t.get("name_of_programme"),
+                "type": t.get("type"),
+                "mode_of_programme": t.get("mode_of_programme"),
+                "participant_count": participant_count,
+                "start_date": start_date,
+            }
+        )
+    # Get total count (respecting filters)
+    total = frappe.db.count("Training", filters=filters)
+    has_more = offset + len(result) < total
+    return {
+        "data": result,
+        "total": total,
+        "page": page,
+        "page_size": page_size,
+        "has_more": has_more,
+    }
+
+
+@frappe.whitelist()
+def get_training_by_name(training_name=None):
+    """Return full training details and participants for a specific training.
+
+    Accepts: `training_name` (Training.name). Returns a single dict with the
+    same fields previously used for full cards plus `participants` where each
+    participant includes `full_name` (from Employee.doctype).
+    """
+    if not training_name:
+        frappe.throw("training_name is required")
+
+    training = frappe.get_all(
+        "Training",
+        filters={"name": training_name},
+        fields=[
+            "name",
+            "name_of_programme",
+            "type",
+            "institution",
+            "mode_of_programme",
+            "venue",
+            "source_of_funding",
+            "start_date",
+            "end_date",
+            "programme_info",
+        ],
+        limit_page_length=1,
+    )
+
+    if not training:
+        return {}
+
+    t = training[0]
+
+    # Get participants rows from Trainees child table
+    raw_participants = frappe.get_all(
+        "Trainees",
+        filters={"parent": t["name"]},
+        fields=["employee", "department", "Rank", "Attendance"],
+        order_by="idx asc",
+    )
+
+    participants = []
+    for p in raw_participants:
+        full_name = None
+        department_name = None
+        if p.get("employee"):
+            full_name = frappe.db.get_value("Employee", p["employee"], "employee_name")
+            employee_image = frappe.db.get_value("Employee", p["employee"], "image")
+        if p.get("department"):
+            department_name = frappe.db.get_value(
+                "Department", p["department"], "department_name"
+            )
+        participant = dict(p)
+        # replace raw department link with friendly department_name
+        participant.pop("department", None)
+        participant["department_name"] = department_name
+        participant["full_name"] = full_name
+        participant["employee_image"] = employee_image
+        participants.append(participant)
+
+    # Format dates
+    start_date = (
+        formatdate(t.get("start_date"), "d MMM yyyy") if t.get("start_date") else None
+    )
+    end_date = (
+        formatdate(t.get("end_date"), "d MMM yyyy") if t.get("end_date") else None
+    )
+
+    return {
+        "name": t.get("name"),
+        "name_of_programme": t.get("name_of_programme"),
+        "type": t.get("type"),
+        "institution": t.get("institution"),
+        "mode_of_programme": t.get("mode_of_programme"),
+        "venue": t.get("venue"),
+        "source_of_funding": t.get("source_of_funding"),
+        "start_date": start_date,
+        "end_date": end_date,
+        "programme_info": t.get("programme_info"),
+        "participants": participants,
+    }

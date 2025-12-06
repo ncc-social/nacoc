@@ -24,7 +24,7 @@
   "section_break_xipq",
   "programme_info",
   "section_break_kyez",
-  "table_kvrl"
+  "participants"
  ],
  "fields": [
   {
@@ -95,12 +95,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "table_kvrl",
-   "fieldtype": "Table",
-   "label": "Participants",
-   "options": "Trainees"
-  },
-  {
    "fieldname": "type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -130,12 +124,18 @@
    "fieldtype": "Check",
    "hidden": 1,
    "label": "End Time Set"
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Trainees"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-17 09:20:46.955469",
+ "modified": "2025-11-21 23:59:27.790472",
  "modified_by": "Administrator",
  "module": "NACOC",
  "name": "Training",
@@ -156,6 +156,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

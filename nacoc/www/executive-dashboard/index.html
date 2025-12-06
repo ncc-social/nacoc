@@ -3693,7 +3693,7 @@
         }
 
         function loadWorkHistory(employeeId) {
-            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_work_history?employee=${employeeId}`)
+            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_work_history?employee_id=${employeeId}`)
                 .then(r => r.json())
                 .then(res => {
                     const tbody = document.querySelector("#work-history tbody");
@@ -3716,7 +3716,7 @@
         }
 
         function loadLeaveHistory(employeeId) {
-            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_leave_history?employee=${employeeId}`)
+            fetch(`/api/method/nacoc.my_scripts.executive_dashboard.get_leave_history?employee_id=${employeeId}`)
                 .then(r => r.json())
                 .then(res => {
                     const leaveHistory = res.message.leave_history || [];
