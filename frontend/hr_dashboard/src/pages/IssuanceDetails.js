@@ -88,7 +88,7 @@ export function IssuanceDetails(params) {
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serial No</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Caliber</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
           </tr>
         </thead>
         <tbody id="table_weapons" class="bg-white divide-y divide-gray-200">
@@ -100,8 +100,9 @@ export function IssuanceDetails(params) {
   rightCol.appendChild(weaponsCard);
 
   // Ammunition Table
-  const ammoCard = document.createElement('div');
-  ammoCard.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100';
+  const ammoCard = document.createElement("div");
+  ammoCard.className =
+    "bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100";
   ammoCard.innerHTML = `
     <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
       <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Ammunition</h3>
@@ -124,8 +125,9 @@ export function IssuanceDetails(params) {
   rightCol.appendChild(ammoCard);
 
   // Equipment Table
-  const equipCard = document.createElement('div');
-  equipCard.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100';
+  const equipCard = document.createElement("div");
+  equipCard.className =
+    "bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100";
   equipCard.innerHTML = `
     <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
       <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Equipment</h3>
@@ -136,7 +138,7 @@ export function IssuanceDetails(params) {
           <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
           </tr>
         </thead>
         <tbody id="table_equipment" class="bg-white divide-y divide-gray-200">
@@ -184,14 +186,18 @@ export function IssuanceDetails(params) {
 
       // Tables
       if (weapons && weapons.length) {
-        document.getElementById('table_weapons').innerHTML = weapons.map(w => `
+        document.getElementById("table_weapons").innerHTML = weapons
+          .map(
+            (w) => `
           <tr>
             <td class="px-6 py-4 text-sm text-gray-900 font-medium">${w.weapon_type}</td>
             <td class="px-6 py-4 text-sm text-gray-500">${w.serial_no}</td>
             <td class="px-6 py-4 text-sm text-gray-500">${w.caliber}</td>
-            <td class="px-6 py-4 text-sm text-gray-500">${w.status}</td>
+            <td class="px-6 py-4 text-sm text-gray-500">${w.condition}</td>
           </tr>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       if (ammunition && ammunition.length) {
@@ -205,13 +211,17 @@ export function IssuanceDetails(params) {
       }
 
       if (equipment && equipment.length) {
-        document.getElementById('table_equipment').innerHTML = equipment.map(e => `
+        document.getElementById("table_equipment").innerHTML = equipment
+          .map(
+            (e) => `
           <tr>
             <td class="px-6 py-4 text-sm text-gray-900 font-medium">${e.label}</td>
             <td class="px-6 py-4 text-sm text-gray-500">${e.quantity}</td>
-            <td class="px-6 py-4 text-sm text-gray-500">${e.status}</td>
+            <td class="px-6 py-4 text-sm text-gray-500">${e.condition}</td>
           </tr>
-        `).join('');
+        `
+          )
+          .join("");
       }
     })
     .catch(err => {

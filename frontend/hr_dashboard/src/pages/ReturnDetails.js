@@ -110,7 +110,8 @@ export function ReturnDetails(params) {
         <thead class="bg-white">
           <tr>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ammunition</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Qty Returned</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Remarks</th>
           </tr>
         </thead>
@@ -202,13 +203,22 @@ export function ReturnDetails(params) {
       }
 
       if (ammunition && ammunition.length) {
-        document.getElementById('table_ammunition').innerHTML = ammunition.map(a => `
+        document.getElementById("table_ammunition").innerHTML = ammunition
+          .map(
+            (a) => `
           <tr>
-            <td class="px-6 py-4 text-sm text-gray-900 font-medium">${a.ammunition || '-'}</td>
+            <td class="px-6 py-4 text-sm text-gray-900 font-medium">${
+              a.ammunition || "-"
+            }</td>
             <td class="px-6 py-4 text-sm text-gray-500">${a.qty_returned}</td>
-            <td class="px-6 py-4 text-sm text-gray-500">${a.remarks || '-'}</td>
+            <td class="px-6 py-4 text-sm text-gray-500">${
+              a.condition || "-"
+            }</td>
+            <td class="px-6 py-4 text-sm text-gray-500">${a.remarks || "-"}</td>
           </tr>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       if (equipment && equipment.length) {

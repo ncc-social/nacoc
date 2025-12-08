@@ -89,12 +89,47 @@ export function ItemDetails(params) {
       // Update Info
       const infoDiv = document.getElementById('item_info');
       let infoHtml = '';
+      const fieldLabels = {
+        weapon_type: "Weapon Type",
+        serial_no: "Serial No",
+        caliber: "Caliber",
+        condition: "Condition",
+        current_availability: "Availability",
+        location: "Storage Location",
+        last_service_date: "Last Service Date",
+        next_service_due_date: "Next Service Due",
+        service_interval_days: "Service Interval (Days)",
+        service_cost: "Last Service Cost",
+        total_service_cost: "Total Service Cost",
+        assigned_to: "Assigned To",
+        notes: "Notes",
+        item_name: "Item Name",
+        category: "Category",
+        tracking_type: "Tracking Type",
+        qty_on_hand: "Quantity On Hand",
+        minimum_stock_level: "Min Stock Level",
+      };
+
       for (const [key, value] of Object.entries(item)) {
-        if (['name', 'creation', 'modified', 'modified_by', 'owner', 'docstatus', 'idx'].includes(key)) continue;
-        if (!value) continue;
+        if (
+          [
+            "name",
+            "creation",
+            "modified",
+            "modified_by",
+            "owner",
+            "docstatus",
+            "idx",
+          ].includes(key)
+        )
+          continue;
+        if (!value && key !== "qty_on_hand") continue; // Allow 0 for quantity
+
+        const label =
+          fieldLabels[key] || key.replace(/_/g, " ").replace(/id$/, "").trim(); // Basic fallback for unmapped fields
         infoHtml += `
           <div>
-            <label class="text-xs text-gray-400 block capitalize">${key.replace(/_/g, ' ')}</label>
+            <label class="text-xs text-gray-400 block capitalize">${label}</label>
             <div class="text-sm font-medium text-gray-900 truncate" title="${value}">${value}</div>
           </div>
         `;
@@ -102,33 +137,52 @@ export function ItemDetails(params) {
       infoDiv.innerHTML = infoHtml;
 
       // Update History
-      const historyDiv = document.getElementById('history_list');
+      const historyDiv = document.getElementById("history_list");
 
       const formatDate = (dateStr) => {
-        if (!dateStr) return '';
+        if (!dateStr) return "";
         const date = new Date(dateStr);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = date.toLocaleString('default', { month: 'short' });
+        const day = date.getDate().toString().padStart(2, "0");
+        const month = date.toLocaleString("default", { month: "short" });
         const year = date.getFullYear();
-        const hours = date.getHours().toString().padStart(2, '0');
-        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
         return `${day} ${month} ${year} at ${hours}:${minutes}`;
       };
 
       if (related.issuance_history && related.issuance_history.length > 0) {
-        historyDiv.innerHTML = related.issuance_history.map(h => `
+        historyDiv.innerHTML = related.issuance_history
+          .map(
+            (h) => `
             <div class="border-l-2 border-pelorous-500 pl-3 py-1">
-                <div class="text-sm font-medium text-gray-900">Issued to ${h.issued_to_name || h.issued_to}</div>
-                <div class="text-xs text-gray-500">${formatDate(h.issue_datetime)} - ${h.status}</div>
+                <div class="text-sm font-medium text-gray-900">Issued ${h.qty ? `(Qty: ${h.qty})` : ''} to ${
+                  h.issued_to_name || h.issued_to
+                }</div>
+                <div class="text-xs text-gray-500">${formatDate(
+                  h.issue_datetime
+                )} - ${h.status}</div>
             </div>
-        `).join('');
-      } else if (related.maintenance_history && related.maintenance_history.length > 0) {
-        historyDiv.innerHTML = related.maintenance_history.map(h => `
+        `
+          )
+          .join("");
+      } else if (
+        related.maintenance_history &&
+        related.maintenance_history.length > 0
+      ) {
+        historyDiv.innerHTML = related.maintenance_history
+          .map(
+            (h) => `
             <div class="border-l-2 border-orange-500 pl-3 py-1">
-                <div class="text-sm font-medium text-gray-900">${h.service_type}</div>
-                <div class="text-xs text-gray-500">${h.service_date} - ${h.remarks || ''}</div>
+                <div class="text-sm font-medium text-gray-900">${
+                  h.service_type
+                }</div>
+                <div class="text-xs text-gray-500">${h.service_date} - ${
+              h.remarks || ""
+            }</div>
             </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       // Initialize 3D Viewer

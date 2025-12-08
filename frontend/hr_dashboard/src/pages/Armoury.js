@@ -97,14 +97,18 @@ export function Armoury() {
         <h3 class="text-lg font-semibold text-gray-800 mb-4">Maintenance Cost by Type</h3>
         <div id="chart_maintenance_cost" class="h-64 w-full"></div>
       </div>
+      <div class="bg-white rounded-lg shadow-sm p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Weapon & Equipment Condition</h3>
+        <div id="chart_condition_breakdown" class="h-64 w-full"></div>
+      </div>
     </div>
   `;
   contentContainer.appendChild(overviewTab);
 
   // 2. Issuances Tab
-  const issuancesTab = document.createElement('div');
-  issuancesTab.id = 'tab_issuances';
-  issuancesTab.className = 'space-y-6 hidden';
+  const issuancesTab = document.createElement("div");
+  issuancesTab.id = "tab_issuances";
+  issuancesTab.className = "space-y-6 hidden";
   issuancesTab.innerHTML = `
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
       <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
@@ -153,9 +157,9 @@ export function Armoury() {
   contentContainer.appendChild(issuancesTab);
 
   // 3. Returns Tab
-  const returnsTab = document.createElement('div');
-  returnsTab.id = 'tab_returns';
-  returnsTab.className = 'space-y-6 hidden';
+  const returnsTab = document.createElement("div");
+  returnsTab.id = "tab_returns";
+  returnsTab.className = "space-y-6 hidden";
   returnsTab.innerHTML = `
     <div class="bg-white rounded-lg shadow overflow-hidden">
       <div class="px-6 py-4 border-b border-gray-200">
@@ -181,9 +185,9 @@ export function Armoury() {
   contentContainer.appendChild(returnsTab);
 
   // 4. Inventory Tab
-  const inventoryTab = document.createElement('div');
-  inventoryTab.id = 'tab_inventory';
-  inventoryTab.className = 'space-y-6 hidden';
+  const inventoryTab = document.createElement("div");
+  inventoryTab.id = "tab_inventory";
+  inventoryTab.className = "space-y-6 hidden";
   inventoryTab.innerHTML = `
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div class="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col">
@@ -216,7 +220,7 @@ export function Armoury() {
               <tr>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Due In</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
               </tr>
             </thead>
             <tbody id="table_maintenance" class="bg-white divide-y divide-gray-200">
@@ -302,6 +306,7 @@ export function Armoury() {
     fetchOverdueIssuances();
     fetchReturnInspections();
     fetchMaintenanceCosts(dateFromStr, dateToStr);
+    fetchConditionBreakdown();
   };
 
   // Initial Load
@@ -584,4 +589,65 @@ function renderCostChart(breakdown) {
     }]
   });
   window.addEventListener('resize', () => myChart.resize());
+}
+
+function renderConditionBreakdownChart(data) {
+  const chartEl = document.getElementById("chart_condition_breakdown");
+  if (!chartEl) return;
+  const myChart = echarts.init(chartEl);
+  myChart.setOption({
+    tooltip: { trigger: "item" },
+    legend: { bottom: "0%", left: "center" },
+    series: [
+      {
+        type: "pie",
+        radius: ["40%", "70%"],
+        itemStyle: { borderRadius: 5, borderColor: "#fff", borderWidth: 2 },
+        color: PELOROUS_COLORS,
+        data: data,
+      },
+    ],
+  });
+  window.addEventListener("resize", () => myChart.resize());
+}
+
+async function fetchConditionBreakdown() {
+  try {
+    const [weaponRes, equipmentRes] = await Promise.all([
+      fetch(
+        "/api/method/nacoc_armoury.api.get_inventory_stats?item_type=Weapon"
+      ),
+      fetch(
+        "/api/method/nacoc_armoury.api.get_inventory_stats?item_type=Equipment"
+      ),
+    ]);
+
+    const weaponData = (await weaponRes.json()).message;
+    const equipmentData = (await equipmentRes.json()).message;
+
+    const combinedBreakdown = {};
+
+    if (weaponData?.condition_breakdown) {
+      for (const condition in weaponData.condition_breakdown) {
+        combinedBreakdown[condition] =
+          (combinedBreakdown[condition] || 0) +
+          weaponData.condition_breakdown[condition];
+      }
+    }
+
+    if (equipmentData?.condition_breakdown) {
+      for (const condition in equipmentData.condition_breakdown) {
+        combinedBreakdown[condition] =
+          (combinedBreakdown[condition] || 0) +
+          equipmentData.condition_breakdown[condition];
+      }
+    }
+
+    const chartData = Object.entries(combinedBreakdown).map(
+      ([name, value]) => ({ name, value })
+    );
+    renderConditionBreakdownChart(chartData);
+  } catch (err) {
+    console.error("Error fetching condition breakdown:", err);
+  }
 }

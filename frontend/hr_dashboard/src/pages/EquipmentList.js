@@ -23,7 +23,7 @@ export function EquipmentList() {
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tracking Type</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-              <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
             </tr>
           </thead>
@@ -69,21 +69,37 @@ export function EquipmentList() {
           loadMoreBtn.classList.remove('hidden');
         }
 
-        const html = items.map(item => `
+        const html = items
+          .map(
+            (item) => `
           <tr class="hover:bg-gray-50">
-            <td class="px-3 py-1.5 whitespace-nowrap text-sm font-bold text-gray-900">${item.label}</td>
-            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${item.tracking_type}</td>
-            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${item.qty_on_hand}</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-sm font-bold text-gray-900">${
+              item.label
+            }</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${
+              item.tracking_type
+            }</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${
+              item.qty_on_hand
+            }</td>
             <td class="px-3 py-1.5 whitespace-nowrap text-xs">
-              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${item.status === 'In Stock' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
-                ${item.status || 'Unknown'}
+              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                item.condition === "Serviceable"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-gray-100 text-gray-800"
+              }">
+                ${item.condition || "Unknown"}
               </span>
             </td>
             <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">
-              <a href="#/armoury/details/Equipment/${item.name}" class="text-pelorous-600 hover:text-pelorous-900 font-medium">View Details</a>
+              <a href="#/armoury/details/Equipment/${
+                item.name
+              }" class="text-pelorous-600 hover:text-pelorous-900 font-medium">View Details</a>
             </td>
           </tr>
-        `).join('');
+        `
+          )
+          .join("");
 
         tbody.insertAdjacentHTML('beforeend', html);
         start += items.length;

@@ -23,7 +23,7 @@ export function WeaponList() {
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serial No</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Caliber</th>
-              <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
               <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
             </tr>
           </thead>
@@ -69,24 +69,41 @@ export function WeaponList() {
           loadMoreBtn.classList.remove('hidden');
         }
 
-        const html = items.map(item => `
+        const html = items
+          .map(
+            (item) => `
           <tr class="hover:bg-gray-50">
-            <td class="px-3 py-1.5 whitespace-nowrap text-sm font-bold text-gray-900">${item.label}</td>
-            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${item.weapon_type}</td>
-            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${item.caliber}</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-sm font-bold text-gray-900">${
+              item.label
+            }</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${
+              item.weapon_type
+            }</td>
+            <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">${
+              item.caliber
+            }</td>
             <td class="px-3 py-1.5 whitespace-nowrap text-xs">
-              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${item.status === 'In Stock' ? 'bg-green-100 text-green-800' :
-            item.status === 'Issued' ? 'bg-blue-100 text-blue-800' :
-              'bg-gray-100 text-gray-800'
-          }">
-                ${item.status}
+              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                item.condition === "Serviceable"
+                  ? "bg-green-100 text-green-800"
+                  : item.condition === "Under Maintenance"
+                  ? "bg-yellow-100 text-yellow-800"
+                  : item.condition === "Withdrawn"
+                  ? "bg-red-100 text-red-800"
+                  : "bg-gray-100 text-gray-800"
+              }">
+                ${item.condition}
               </span>
             </td>
             <td class="px-3 py-1.5 whitespace-nowrap text-xs text-gray-500">
-              <a href="#/armoury/details/Weapon/${item.name}" class="text-pelorous-600 hover:text-pelorous-900 font-medium">View Details</a>
+              <a href="#/armoury/details/Weapon/${
+                item.name
+              }" class="text-pelorous-600 hover:text-pelorous-900 font-medium">View Details</a>
             </td>
           </tr>
-        `).join('');
+        `
+          )
+          .join("");
 
         tbody.insertAdjacentHTML('beforeend', html);
         start += items.length;
@@ -101,10 +118,26 @@ export function WeaponList() {
         const grid = container.querySelector('#stats_grid');
 
         const cards = [
-          { title: 'Total Weapons', value: stats.total_count, color: 'bg-blue-50 text-blue-700' },
-          { title: 'Serviceable', value: stats.serviceable_count, color: 'bg-green-50 text-green-700' },
-          { title: 'Issued', value: stats.status_breakdown?.['Issued'] || 0, color: 'bg-yellow-50 text-yellow-700' },
-          { title: 'Maintenance', value: stats.maintenance_count, color: 'bg-red-50 text-red-700' }
+          {
+            title: "Total Weapons",
+            value: stats.total_count,
+            color: "bg-blue-50 text-blue-700",
+          },
+          {
+            title: "Serviceable",
+            value: stats.serviceable_count,
+            color: "bg-green-50 text-green-700",
+          },
+          {
+            title: "Issued",
+            value: stats.condition_breakdown?.["Issued"] || 0,
+            color: "bg-yellow-50 text-yellow-700",
+          },
+          {
+            title: "Maintenance",
+            value: stats.maintenance_count,
+            color: "bg-red-50 text-red-700",
+          },
         ];
 
         grid.innerHTML = cards.map(card => `

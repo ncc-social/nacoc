@@ -98,9 +98,21 @@ export function AmmoList() {
         const grid = container.querySelector('#stats_grid');
 
         const cards = [
-          { title: 'Total Types', value: stats.total_types, color: 'bg-blue-50 text-blue-700' },
-          { title: 'Total Rounds', value: stats.total_rounds.toLocaleString(), color: 'bg-green-50 text-green-700' },
-          { title: 'Low Stock Alerts', value: stats.low_stock_count, color: 'bg-red-50 text-red-700' }
+          {
+            title: "Ammunition Types",
+            value: stats.total_types,
+            color: "bg-blue-50 text-blue-700",
+          },
+          {
+            title: "Total Rounds in Armoury",
+            value: stats.total_rounds.toLocaleString(),
+            color: "bg-green-50 text-green-700",
+          },
+          {
+            title: "Low Stock Alerts",
+            value: stats.low_stock_count,
+            color: "bg-red-50 text-red-700",
+          },
         ];
 
         grid.innerHTML = cards.map(card => `
