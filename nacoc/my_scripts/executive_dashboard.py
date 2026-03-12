@@ -339,14 +339,185 @@ def get_departments():
         fields=["name", "department_name"], 
         order_by="department_name ASC"
     )
-    
+
     # Filter out the "All Departments" entry if it exists
     filtered_departments = [
         dept for dept in departments 
         if dept.get("department_name") != "All Departments"
     ]
-    
+
     return filtered_departments
+
+
+def _parse_excluded_departments(excluded):
+    if not excluded:
+        return []
+
+    if isinstance(excluded, (list, tuple)):
+        return list(excluded)
+
+    if isinstance(excluded, str):
+        try:
+            return frappe.parse_json(excluded)
+        except Exception:
+            return [d.strip() for d in excluded.split(",") if d.strip()]
+
+    return []
+
+
+def _parse_list(value):
+    if not value:
+        return []
+    if isinstance(value, (list, tuple)):
+        return list(value)
+    try:
+        return frappe.parse_json(value)
+    except Exception:
+        return [v.strip() for v in str(value).split(",") if v.strip()]
+
+
+@frappe.whitelist()
+def get_parent_departments():
+    cache_key = "parent_departments_v1"
+    cached = frappe.cache().get_value(cache_key)
+
+    if cached:
+        return cached
+
+    departments = frappe.get_all(
+        "Department",
+        filters={
+            "disabled": 0,
+            "is_group": 1,
+            "name": ["!=", "All Departments"],
+        },
+        fields=["name", "department_name"],
+        order_by="department_name asc",
+    )
+
+    result = {
+        "results": [{"value": d.name, "label": d.department_name} for d in departments]
+    }
+
+    frappe.cache().set_value(cache_key, result, expires_in_sec=3600)
+    return result
+
+
+@frappe.whitelist()
+def get_child_departments(parent_department):
+    cache_key = f"child_departments::{parent_department}"
+    cached = frappe.cache().get_value(cache_key)
+
+    if cached:
+        return cached
+
+    parent = frappe.db.get_value(
+        "Department", parent_department, ["lft", "rgt"], as_dict=True
+    )
+
+    children = frappe.get_all(
+        "Department",
+        filters={"lft": [">", parent.lft], "rgt": ["<", parent.rgt], "disabled": 0},
+        fields=["name", "department_name"],
+        order_by="department_name asc",
+    )
+
+    result = {
+        "results": [{"value": c.name, "label": c.department_name} for c in children]
+    }
+
+    frappe.cache().set_value(cache_key, result, expires_in_sec=3600)
+    return result
+
+
+# Get Employee Summary by Parent Department
+@frappe.whitelist()
+def get_employee_summary_by_parent_department(
+    parent_department, exclude_departments=None, status="Active"
+):
+    """
+    Returns:
+    {
+        total: 42,
+        labels: ["ANDO", "DNDO", "NDO", ...],
+        counts: [5, 7, 10, ...]
+    }
+    """
+
+    if not parent_department:
+        return {"total": 0, "labels": [], "counts": []}
+
+    excluded = _parse_excluded_departments(exclude_departments)
+
+    parent = frappe.db.get_value(
+        "Department", parent_department, ["lft", "rgt"], as_dict=True
+    )
+
+    if not parent:
+        return {"total": 0, "labels": [], "counts": []}
+
+    # Departments under parent, minus excluded
+    dept_filters = {"lft": [">=", parent.lft], "rgt": ["<=", parent.rgt]}
+
+    if excluded:
+        dept_filters["name"] = ["not in", excluded]
+
+    departments = frappe.get_all("Department", filters=dept_filters, pluck="name")
+
+    if not departments:
+        return {"total": 0, "labels": [], "counts": []}
+
+    # Grade grouping
+    rows = frappe.db.sql(
+        """
+    SELECT
+        e.grade,
+        COUNT(*) AS count,
+        COALESCE(g.custom_order, 999) AS grade_order,
+        SUM(e.gender = 'Male') AS male,
+        SUM(e.gender = 'Female') AS female
+    FROM `tabEmployee` e
+    LEFT JOIN `tabEmployee Grade` g
+        ON g.name = e.grade
+    WHERE
+        e.department IN %(departments)s
+        AND e.status = %(status)s
+    GROUP BY e.grade, grade_order
+    ORDER BY grade_order ASC, e.grade ASC
+    """,
+        {
+            "departments": departments,
+            "status": status,
+        },
+        as_dict=True,
+    )
+
+    labels = [r.grade for r in rows]
+    counts = [r.count for r in rows]
+    male = [r.male for r in rows]
+    female = [r.female for r in rows]
+    total = sum(counts)
+
+    excluded_names = []
+    if excluded:
+        excluded_names = frappe.get_all(
+            "Department",
+            filters={"name": ["in", excluded]},
+            fields=["department_name"],
+            pluck="department_name",
+        )
+
+    return {
+        "total": total,
+        "labels": labels,
+        "counts": counts,
+        "male": male,
+        "female": female,
+        "excluded_departments": excluded_names,
+        "parent_department_name": frappe.db.get_value(
+            "Department", parent_department, "department_name"
+        ),
+    }
 
 
 @frappe.whitelist()
@@ -448,14 +619,50 @@ def get_upcoming_retirees(department=None):
 
 
 @frappe.whitelist()
-def get_paginated_employees(department=None, search=None, page=1, page_size=10, sort_by=None, sort_dir='asc'):
+def get_paginated_employees(
+    department=None,
+    parent_department=None,
+    exclude_departments=None,
+    grade=None,
+    search=None,
+    page=1,
+    page_size=10,
+    sort_by=None,
+    sort_dir="asc",
+):
     page = int(page)
     page_size = int(page_size)
     offset = (page - 1) * page_size
 
     filters = ["e.status = 'Active'"]
+    if parent_department:
+        parent = frappe.db.get_value(
+            "Department", parent_department, ["lft", "rgt"], as_dict=True
+        )
+
+        if parent:
+            excluded = _parse_list(exclude_departments)
+
+            dept_filters = {
+                "lft": [">=", parent.lft],
+                "rgt": ["<=", parent.rgt],
+            }
+
+            if excluded:
+                dept_filters["name"] = ["not in", excluded]
+
+            departments = frappe.get_all(
+                "Department", filters=dept_filters, pluck="name"
+            )
+
+            if departments:
+                departments_sql = ", ".join(frappe.db.escape(d) for d in departments)
+                filters.append(f"e.department IN ({departments_sql})")
     if department:
         filters.append(f"e.department = {frappe.db.escape(department)}")
+    if grade:
+        filters.append(f"e.grade = {frappe.db.escape(grade)}")
+
     if search:
         search = f"%{search}%"
         filters.append(
@@ -519,6 +726,7 @@ def get_paginated_employees(department=None, search=None, page=1, page_size=10, 
         "page": page,
         "page_size": page_size
     }
+
 
 @frappe.whitelist()
 def get_all_employees(department=None, search=None):

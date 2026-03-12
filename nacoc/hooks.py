@@ -8,99 +8,111 @@ app_email = "social@ncc.gov.gh"
 app_license = "MIT"
 
 fixtures = [
-    {"dt": "Workspace", "filters": [
-        [
-            "title", "in", [
-                "NACOC"
+    {"dt": "Workspace", "filters": [["title", "in", ["NACOC"]]]},
+    {
+        "dt": "Workflow",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Leave Application Workflow",
+                    "Vehicle Maintenance Allowance",
+                    "PCU Assessment Workflow",
+                    "Issuance Workflow",
+                ],
             ]
-        ]
-    ]},
-    {"dt": "Number Card", "filters": [
-        [
-            "document_type", "in", [
-                "Precursor Assessment",
-                "MMU Vessel"
+        ],
+    },
+    {
+        "dt": "Number Card",
+        "filters": [["document_type", "in", ["Precursor Assessment", "MMU Vessel"]]],
+    },
+    {
+        "dt": "Dashboard Chart",
+        "filters": [["document_type", "in", ["Precursor Assessment", "MMU Vessel"]]],
+    },
+    {"dt": "Client Script", "filters": [["module", "in", ["NACOC"]]]},
+    {
+        "dt": "Role Profile",
+        "filters": [
+            [
+                "role_profile",
+                "in",
+                [
+                    "Precursor Manager",
+                    "Precursor Officer",
+                    "Regional Precursor Manager",
+                    "Regional Precursor Officer",
+                    "NACOC Profile",
+                    "MMU Manager",
+                    "MMU Officer",
+                    "Aviance Officer",
+                    "Aviance Manager",
+                ],
             ]
-        ]
-    ]},
-    {"dt": "Dashboard Chart", "filters": [
-        [
-            "document_type", "in", [
-                "Precursor Assessment",
-                "MMU Vessel"
+        ],
+    },
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            [
+                "role",
+                "in",
+                [
+                    "Precursor Manager",
+                    "Precursor Officer",
+                    "Regional Precursor Manager",
+                    "Regional Precursor Officer",
+                    "NACOC User",
+                    "MMU Manager",
+                    "MMU Officer",
+                    "Aviance Officer",
+                    "Aviance Manager",
+                ],
             ]
-        ]
-    ]},
-    {"dt": "Client Script", "filters": [
-        [
-            "module", "in", [
-                "NACOC"
+        ],
+    },
+    {
+        "dt": "Role",
+        "filters": [
+            [
+                "role_name",
+                "in",
+                [
+                    "Precursor Manager",
+                    "Precursor Officer",
+                    "Regional Precursor Manager",
+                    "Regional Precursor Officer",
+                    "NACOC User",
+                    "MMU Manager",
+                    "MMU Officer",
+                    "Aviance Officer",
+                    "Aviance Manager",
+                ],
             ]
-        ]
-    ]},
-    {"dt": "Role Profile", "filters": [
-        [
-            "role_profile", "in", [
-                "Precursor Manager",
-                "Precursor Officer",
-                "Regional Precursor Manager",
-                "Regional Precursor Officer",
-                "NACOC Profile",
-                "MMU Manager",
-                "MMU Officer",
-                "Aviance Officer",
-                "Aviance Manager"
+        ],
+    },
+    {
+        "dt": "Module Profile",
+        "filters": [["module_profile_name", "in", ["NACOC Profile"]]],
+    },
+    {
+        "dt": "Print Format",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Leave Letter Format",
+                    "Clearance Permit",
+                    "PCU Assessment Report",
+                    "MMU Target Sheet",
+                    "Drug Test Report",
+                ],
             ]
-        ]
-    ]},
-    {"dt": "Custom DocPerm", "filters": [
-        [
-            "role", "in", [
-                "Precursor Manager",
-                "Precursor Officer",
-                "Regional Precursor Manager",
-                "Regional Precursor Officer",
-                "NACOC User",
-                "MMU Manager",
-                "MMU Officer",
-                "Aviance Officer",
-                "Aviance Manager"
-            ]
-        ]
-    ]},
-    {"dt": "Role", "filters": [
-        [
-            "role_name", "in", [
-                "Precursor Manager",
-                "Precursor Officer",
-                "Regional Precursor Manager",
-                "Regional Precursor Officer",
-                "NACOC User",
-                "MMU Manager",
-                "MMU Officer",
-                "Aviance Officer",
-                "Aviance Manager"
-            ]
-        ]
-    ]},
-    {"dt": "Module Profile", "filters": [
-        [
-            "module_profile_name", "in", [
-                "NACOC Profile"
-            ]
-        ]
-    ]},
-    {"dt": "Print Format", "filters": [
-        [
-            "name", "in", [
-                "Leave Letter Format",
-                "Clearance Permit",
-                "PCU Assessment Report",
-                "MMU Target Sheet",
-                "Drug Test Report",
-            ]
-        ]
-    ]}
+        ],
+    },
 ]
 
 # Includes in <head>

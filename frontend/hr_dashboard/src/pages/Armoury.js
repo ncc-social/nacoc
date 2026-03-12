@@ -486,7 +486,7 @@ function fetchMaintenanceCosts(dateFrom, dateTo) {
       const breakdown = data.message?.by_service_type || {};
 
       if (summary) {
-        document.getElementById('kpi_maintenance_cost').textContent = '$' + (summary.total_cost || 0).toLocaleString();
+        document.getElementById('kpi_maintenance_cost').textContent = '¢' + (summary.total_cost || 0).toLocaleString();
       }
 
       const tbody = document.getElementById('table_maintenance_cost');
@@ -497,8 +497,8 @@ function fetchMaintenanceCosts(dateFrom, dateTo) {
             <tr>
               <td class="px-6 py-4 text-sm text-gray-900 font-medium">${type}</td>
               <td class="px-6 py-4 text-sm text-gray-500">${stats.count}</td>
-              <td class="px-6 py-4 text-sm text-gray-500">$${stats.total.toLocaleString()}</td>
-              <td class="px-6 py-4 text-sm text-gray-500">$${stats.average.toFixed(2)}</td>
+              <td class="px-6 py-4 text-sm text-gray-500">¢${stats.total.toLocaleString()}</td>
+              <td class="px-6 py-4 text-sm text-gray-500">¢${stats.average.toFixed(2)}</td>
             </tr>
           `;
         });

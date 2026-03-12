@@ -155,12 +155,11 @@ export function ItemDetails(params) {
           .map(
             (h) => `
             <div class="border-l-2 border-pelorous-500 pl-3 py-1">
-                <div class="text-sm font-medium text-gray-900">Issued ${h.qty ? `(Qty: ${h.qty})` : ''} to ${
-                  h.issued_to_name || h.issued_to
-                }</div>
+                <div class="text-sm font-medium text-gray-900">Issued ${h.qty ? `(Qty: ${h.qty})` : ''} to ${h.issued_to_name || h.issued_to
+              }</div>
                 <div class="text-xs text-gray-500">${formatDate(
-                  h.issue_datetime
-                )} - ${h.status}</div>
+                h.issue_datetime
+              )} - ${h.status}</div>
             </div>
         `
           )
@@ -173,12 +172,10 @@ export function ItemDetails(params) {
           .map(
             (h) => `
             <div class="border-l-2 border-orange-500 pl-3 py-1">
-                <div class="text-sm font-medium text-gray-900">${
-                  h.service_type
-                }</div>
-                <div class="text-xs text-gray-500">${h.service_date} - ${
-              h.remarks || ""
-            }</div>
+                <div class="text-sm font-medium text-gray-900">${h.service_type
+              }</div>
+                <div class="text-xs text-gray-500">${h.service_date} - ${h.remarks || ""
+              }</div>
             </div>
         `
           )
@@ -355,9 +352,6 @@ function initThreeJS(container, weaponType = 'Rifle', modelUrl = null) {
     loader.load(modelUrl, (gltf) => {
       const model = gltf.scene;
 
-      // Debug info
-      console.log('Model loaded:', modelUrl);
-
       // Create a wrapper to handle centering and scaling
       // Remove any previously added loaded wrapper to avoid duplicate models
       const previous = scene.getObjectByName('loaded_wrapper');
@@ -414,14 +408,7 @@ function initThreeJS(container, weaponType = 'Rifle', modelUrl = null) {
         /* ignore */
       }
 
-      // Debug Helpers
-      // const boxHelper = new THREE.BoxHelper(wrapper, 0xffff00);
-      // scene.add(boxHelper);
-      // const axesHelper = new THREE.AxesHelper(2);
-      // scene.add(axesHelper);
-
     }, (xhr) => {
-      // Progress
       try {
         if (xhr && xhr.loaded && xhr.total) {
           const pct = Math.round((xhr.loaded / xhr.total) * 100);

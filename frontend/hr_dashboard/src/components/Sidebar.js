@@ -15,7 +15,7 @@ export function Sidebar() {
   const logoText = document.createElement('span');
   logoText.className = 'text-xl font-bold text-white transition-opacity duration-300';
   logoText.id = 'logo-text';
-  logoText.textContent = 'HR Admin';
+  logoText.textContent = 'Insights';
 
   const toggleBtn = document.createElement('button');
   toggleBtn.id = 'toggle-sidebar';
