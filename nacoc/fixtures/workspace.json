@@ -881,6 +881,7 @@
   "roles": [],
   "sequence_id": 3.0,
   "shortcuts": [],
-  "title": "NACOC"
+  "title": "NACOC",
+  "type": "Workspace"
  }
 ]
