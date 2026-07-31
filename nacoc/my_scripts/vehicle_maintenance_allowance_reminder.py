@@ -11,7 +11,6 @@ def send_vehicle_maintenance_reminders():
         "Vehicle Maintenance Allowance",
         fields=[
             "name",
-            "employee",
             "employee_name",
             "road_worthiness_expiry_date",
             "vehicle_insurance_expiry_date",
@@ -46,7 +45,7 @@ def send_vehicle_maintenance_reminders():
             continue
 
         # Get email
-        email = frappe.db.get_value("Employee", r.employee, "company_email")
+        email = frappe.db.get_value("Employee", {"employee_name": r.employee_name}, "company_email")
         if not email:
             continue
 

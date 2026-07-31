@@ -43,7 +43,9 @@
   "vehicle_insurance_file_url",
   "amended_from",
   "road_worthiness",
-  "vehicle_insurance"
+  "vehicle_insurance",
+  "reminder_2m_sent",
+  "reminder_1m_sent"
  ],
  "fields": [
   {
@@ -285,6 +287,26 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Rejection Reason"
+  },
+  {
+   "default": "0",
+   "fieldname": "reminder_2m_sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Reminder Sent (2 Months)",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "reminder_1m_sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Reminder Sent (1 Month)",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
