@@ -7,27 +7,15 @@
   "role_profile": "Precursor Manager",
   "roles": [
    {
-    "parent": "Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Precursor Manager"
    },
    {
-    "parent": "Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Precursor Officer"
    },
    {
-    "parent": "Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Leave Approver"
    },
    {
-    "parent": "Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    }
   ]
@@ -40,9 +28,6 @@
   "role_profile": "NACOC Profile",
   "roles": [
    {
-    "parent": "NACOC Profile",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "NACOC User"
    }
   ]
@@ -55,27 +40,15 @@
   "role_profile": "MMU Manager",
   "roles": [
    {
-    "parent": "MMU Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "MMU Manager"
    },
    {
-    "parent": "MMU Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "MMU Officer"
    },
    {
-    "parent": "MMU Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    },
    {
-    "parent": "MMU Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Leave Approver"
    }
   ]
@@ -88,21 +61,12 @@
   "role_profile": "Aviance Officer",
   "roles": [
    {
-    "parent": "Aviance Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Aviance Officer"
    },
    {
-    "parent": "Aviance Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "NACOC User"
    },
    {
-    "parent": "Aviance Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    }
   ]
@@ -115,33 +79,18 @@
   "role_profile": "Aviance Manager",
   "roles": [
    {
-    "parent": "Aviance Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Aviance Manager"
    },
    {
-    "parent": "Aviance Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Aviance Officer"
    },
    {
-    "parent": "Aviance Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    },
    {
-    "parent": "Aviance Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "NACOC User"
    },
    {
-    "parent": "Aviance Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Leave Approver"
    }
   ]
@@ -154,15 +103,9 @@
   "role_profile": "Precursor Officer",
   "roles": [
    {
-    "parent": "Precursor Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Precursor Officer"
    },
    {
-    "parent": "Precursor Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    }
   ]
@@ -175,27 +118,15 @@
   "role_profile": "Regional Precursor Manager",
   "roles": [
    {
-    "parent": "Regional Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    },
    {
-    "parent": "Regional Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Leave Approver"
    },
    {
-    "parent": "Regional Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Regional Precursor Manager"
    },
    {
-    "parent": "Regional Precursor Manager",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Regional Precursor Officer"
    }
   ]
@@ -208,15 +139,9 @@
   "role_profile": "MMU Officer",
   "roles": [
    {
-    "parent": "MMU Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "MMU Officer"
    },
    {
-    "parent": "MMU Officer",
-    "parentfield": "roles",
-    "parenttype": "Role Profile",
     "role": "Employee"
    }
   ]

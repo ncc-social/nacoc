@@ -1,24 +1,25 @@
 [
  {
+  "app": "nacoc",
   "charts": [
    {
     "chart_name": "Field Assessments by Day",
-    "label": "Field Assessments by Day",
-    "parent": "NACOC",
-    "parentfield": "charts",
-    "parenttype": "Workspace"
+    "label": "Field Assessments by Day"
    }
   ],
   "content": "[{\"id\":\"zOTY0s1StP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>NACOC Workspace</b></span>\",\"col\":12}},{\"id\":\"d81Nng3qH4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xOfKOBuyZy\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Field Assessments\",\"col\":3}},{\"id\":\"XC6dMtg0M6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Routine Site Inspection\",\"col\":3}},{\"id\":\"o5-653RCe3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow-Up\",\"col\":3}},{\"id\":\"WnquWRzywp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pre-Registration\",\"col\":3}},{\"id\":\"9O10cd_0UL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Vessels\",\"col\":4}},{\"id\":\"bHCpkwh051\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Targets\",\"col\":4}},{\"id\":\"16tKbeFq9Y\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Vessels at Anchorage\",\"col\":4}},{\"id\":\"5hDZSeS9Xh\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No of Weapons\",\"col\":4}},{\"id\":\"Wn6FYiCpuu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Field Assessments by Day\",\"col\":12}},{\"id\":\"Rr_tR0XZsG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"XYXdf22bLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Freight\",\"col\":3}},{\"id\":\"VwYdKnEwAM\",\"type\":\"card\",\"data\":{\"card_name\":\"Human Resource\",\"col\":3}},{\"id\":\"BsxuZ4FqI2\",\"type\":\"card\",\"data\":{\"card_name\":\"Precursor Control\",\"col\":3}},{\"id\":\"0B1Mg-cpQk\",\"type\":\"card\",\"data\":{\"card_name\":\"Maritime Monitoring\",\"col\":3}},{\"id\":\"rMDfu7yxCA\",\"type\":\"card\",\"data\":{\"card_name\":\"Library\",\"col\":3}},{\"id\":\"wCTnMBznNz\",\"type\":\"card\",\"data\":{\"card_name\":\"Armoury\",\"col\":3}},{\"id\":\"iOve2SkTGw\",\"type\":\"card\",\"data\":{\"card_name\":\"Armoury Reports 1\",\"col\":3}},{\"id\":\"PybVPh0L5t\",\"type\":\"card\",\"data\":{\"card_name\":\"Armoury Report 2\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
+  "external_link": null,
   "for_user": "",
   "hide_custom": 0,
   "icon": "stock",
   "indicator_color": null,
   "is_hidden": 0,
   "label": "NACOC",
+  "link_to": null,
+  "link_type": null,
   "links": [
    {
     "dependencies": null,
@@ -32,9 +33,6 @@
     "link_type": null,
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -50,9 +48,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -68,9 +63,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -86,9 +78,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -104,9 +93,6 @@
     "link_type": null,
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -122,9 +108,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -140,9 +123,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -158,9 +138,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -176,9 +153,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -194,9 +168,6 @@
     "link_type": null,
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -212,9 +183,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -230,9 +198,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -248,9 +213,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -266,9 +228,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -284,9 +243,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -302,9 +258,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -320,9 +273,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -338,9 +288,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -356,9 +303,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -374,9 +318,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -392,9 +333,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -410,9 +348,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -428,9 +363,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -446,9 +378,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -464,9 +393,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -482,9 +408,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -500,9 +423,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -518,9 +438,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -536,9 +453,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -554,9 +468,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -572,9 +483,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -590,9 +498,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -608,9 +513,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -626,9 +528,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -644,9 +543,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -662,9 +558,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -680,9 +573,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -698,9 +588,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -716,9 +603,6 @@
     "link_type": "Report",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -734,9 +618,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Card Break"
    },
@@ -752,9 +633,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -770,9 +648,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -788,9 +663,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    },
@@ -806,9 +678,6 @@
     "link_type": "DocType",
     "onboard": 0,
     "only_for": null,
-    "parent": "NACOC",
-    "parentfield": "links",
-    "parenttype": "Workspace",
     "report_ref_doctype": null,
     "type": "Link"
    }
@@ -819,59 +688,35 @@
   "number_cards": [
    {
     "label": "Total Field Assessments",
-    "number_card_name": "Field Assessments",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Field Assessments"
    },
    {
     "label": "No of Weapons",
-    "number_card_name": "Number of Weapons",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Number of Weapons"
    },
    {
     "label": "No of Vessels",
-    "number_card_name": "No of Vessels",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "No of Vessels"
    },
    {
     "label": "Routine Site Inspection",
-    "number_card_name": "Routine Site Inspection",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Routine Site Inspection"
    },
    {
     "label": "No of Targets",
-    "number_card_name": "Vessel Target",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Vessel Target"
    },
    {
     "label": "Follow-Up",
-    "number_card_name": "Follow-Up",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Follow-Up"
    },
    {
     "label": "Vessels at Anchorage",
-    "number_card_name": "Vessels at Anchorage",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Vessels at Anchorage"
    },
    {
     "label": "Pre-Registration",
-    "number_card_name": "Pre-Registration",
-    "parent": "NACOC",
-    "parentfield": "number_cards",
-    "parenttype": "Workspace"
+    "number_card_name": "Pre-Registration"
    }
   ],
   "parent_page": "",
